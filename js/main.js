@@ -1,16 +1,23 @@
-const navToggle = document.getElementById('nav-toggle');
- navToggle.addEventListener('click', () => {
-    const isOpen = document.body.classList.toggle('nav-open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-  });
+document.addEventListener('DOMContentLoaded', () => {
 
-  document.querySelectorAll('#main-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.body.classList.remove('nav-open');
-      navToggle.setAttribute('aria-expanded', 'false');
+  // 1. Alternar Menu Mobile
+  const navToggle = document.getElementById('botao-menu-mobile');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('menu-aberto');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
     });
-  });
 
+    // Fechar menu ao clicar num link
+    document.querySelectorAll('#menu-navegacao a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('menu-aberto');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // 2. Animação de Surgimento ao Rolar a Página (Scroll Reveal)
   const revealItems = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -20,22 +27,31 @@ const navToggle = document.getElementById('nav-toggle');
       }
     });
   }, { threshold: 0.15 });
+
   revealItems.forEach(item => revealObserver.observe(item));
 
-  const form = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const payload = {
-      nome: form.nome.value,
-      email: form.email.value,
-      mensagem: form.mensagem.value
-    };
-    console.log('Payload pronto para envio:', payload);
-    formStatus.textContent = 'Mensagem pronta para envio — conecte aqui sua integração.';
-  });
+  // 3. Envio do Formulário de Contato
+  const form = document.getElementById('form-contato');
+  const mensagemSucesso = document.getElementById('mensagem-sucesso');
 
-  document.getElementById('whatsapp-link').addEventListener('click', (event) => {
-    event.preventDefault();
-    console.log('Substitua este handler pelo link real do WhatsApp.');
-  });
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const payload = {
+        nome: form.nome.value,
+        email: form.email.value,
+        mensagem: form.mensagem.value
+      };
+
+      console.log('Mensagem capturada com sucesso:', payload);
+
+      // Oculta o formulário e exibe o aviso de sucesso
+      form.style.display = 'none';
+      if (mensagemSucesso) {
+        mensagemSucesso.style.display = 'block';
+      }
+    });
+  }
+
+});
