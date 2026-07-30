@@ -1,239 +1,306 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juntos pelas Virtudes | Chapa GE-PI 2026/2027</title>
-  
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <title>Institucional & Soluções</title>
   
   <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ================= CABEÇALHO PRINCIPAL ================= -->
+  <!-- ==========================================================================
+     CABECALHO
+     ========================================================================== -->
   <header class="cabecalho-principal">
     <div class="conteudo-navegacao">
-      <a href="#inicio" class="marca">
-        <svg class="icone-marca" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="24" cy="24" r="22" stroke="#C9A84C" stroke-width="1.4"/>
-          <path d="M24 6v14M24 6l-4 4M24 6l4 4" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M14 30c4 4 6 6 10 6s6-2 10-6" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+      <a href="#" class="marca">
+        <svg class="icone-marca" viewBox="0 0 24 24" fill="none" stroke="var(--dourado)" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
         </svg>
-        <span>Chapa JG<small>GE‑PI 2026 / 2027</small></span>
+        <div>
+          INSTITUTO
+          <small>Tradição & Justiça</small>
+        </div>
       </a>
 
-      <button id="botao-menu-mobile" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-navegacao">☰</button>
+      <button id="botao-menu-mobile" aria-label="Abrir Menu">☰</button>
 
-      <nav class="menu-principal" id="menu-navegacao">
+      <nav class="menu-principal">
         <ul>
-          <li><a href="#sobre">Quem somos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
           <li><a href="#pilares">Pilares</a></li>
-          <li><a href="#diretoria">Time</a></li>
-          <li><a href="#contato">Conectar</a></li>
+          <li><a href="#diretoria">Diretoria</a></li>
+          <li><a href="#jornada">Jornada</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- ================= SEÇÃO DIRETORIA / TIME ================= -->
-    <section class="diretoria" id="diretoria">
-      <div class="caixa">
-        
-        <header class="cabecalho-secao reveal">
-          <span class="chapeu">Nossa Liderança</span>
-          <h2>Liderança Executiva & Diretoria</h2>
-          <p>Irmãos comprometidos com o fortalecimento e o futuro da Ordem DeMolay no Piauí.</p>
-        </header>
 
-        <div class="diretoria-grid">
-
-          <!-- CARD 1: JOÃO GUILHERME (MCE) -->
-          <article class="cartao-membro reveal">
-            <div class="foto-membro">
-              <img src="WhatsApp Image 2026-07-28 at 19.33.23.jpeg" alt="Foto de João Guilherme Martins Lopes Monteiro">
-            </div>
-
-            <span class="cargo">Candidato a MCE</span>
-            <h3>João Guilherme M. L. Monteiro</h3>
-
-            <details class="info-expansivel">
-              <summary class="btn-saber-mais">CONHEÇA O HISTÓRICO</summary>
-              <div class="detalhes-conteudo">
-                <p class="afiliacao">
-                  <strong>Capítulos:</strong> Prof. Carvalho Neves N° 500 & Luiz Ribeiro Gonçalves Neto N° 408<br>
-                  <strong>Priorado:</strong> Cavaleiros de Argonath N° 247
-                </p>
-                <hr class="divisor">
-                <h4>Histórico DeMolay</h4>
-                <ul>
-                  <li><strong>Iniciação:</strong> 26/08/2023</li>
-                  <li><strong>Elevação:</strong> 10/12/2023</li>
-                  <li><strong>Investidura (Nobre Cavaleiro):</strong> 25/05/2024</li>
-                  <li><strong>Cavaleiro da Capela:</strong> 05/10/2025</li>
-                  <li><strong>Cavaleiro da Cruz de Salém:</strong> 21/06/2026</li>
-                </ul>
-              </div>
-            </details>
-          </article>
-
-          <!-- CARD 2: CANDIDATO A MCEA -->
-          <article class="cartao-membro reveal">
-            <div class="foto-membro">
-              <img src="NOME_DA_FOTO_DO_MCEA.jpg" alt="Foto do Candidato a MCEA">
-            </div>
-
-            <span class="cargo">Candidato a MCEA</span>
-            <h3>Nome do Candidato a MCEA</h3>
-
-            <details class="info-expansivel">
-              <summary class="btn-saber-mais">CONHEÇA O HISTÓRICO</summary>
-              <div class="detalhes-conteudo">
-                <p class="afiliacao">
-                  <strong>Capítulo:</strong> Nome do Capítulo N° 000<br>
-                  <strong>Priorado:</strong> Nome do Priorado N° 000
-                </p>
-                <hr class="divisor">
-                <h4>Histórico DeMolay</h4>
-                <ul>
-                  <li><strong>Iniciação:</strong> DD/MM/AAAA</li>
-                  <li><strong>Elevação:</strong> DD/MM/AAAA</li>
-                  <li><strong>Investidura:</strong> DD/MM/AAAA</li>
-                </ul>
-              </div>
-            </details>
-          </article>
-
-          <!-- CARD 3: INTEGRANTE DA DIRETORIA -->
-          <article class="cartao-membro reveal">
-            <div class="foto-membro">
-              <img src="NOME_DA_FOTO_DO_MEMBRO.jpg" alt="Foto do Membro da Diretoria">
-            </div>
-
-            <span class="cargo">Cargo / Função</span>
-            <h3>Nome do Membro</h3>
-
-            <details class="info-expansivel">
-              <summary class="btn-saber-mais">CONHEÇA O HISTÓRICO</summary>
-              <div class="detalhes-conteudo">
-                <p class="afiliacao">
-                  <strong>Capítulo:</strong> Nome do Capítulo N° 000<br>
-                  <strong>Priorado:</strong> Nome do Priorado N° 000
-                </p>
-                <hr class="divisor">
-                <h4>Histórico DeMolay</h4>
-                <ul>
-                  <li><strong>Iniciação:</strong> DD/MM/AAAA</li>
-                  <li><strong>Elevação:</strong> DD/MM/AAAA</li>
-                </ul>
-              </div>
-            </details>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= SEÇÃO CONTATO ================= -->
-    <section class="contato" id="contato">
-      <div class="caixa">
-        
-        <header class="cabecalho-secao reveal">
-          <span class="chapeu">Fale Conosco</span>
-          <h2>Conecte-se com a Nossa Chapa</h2>
-          <p>Estamos à disposição para ouvir capítulos, lideranças e irmãos de todo o Piauí.</p>
-        </header>
-
-        <!-- CARDS DE CONTATO RÁPIDO -->
-        <div class="contato-grid">
-          
-          <div class="card-contato reveal">
-            <div class="icone-contato">📱</div>
-            <h3>Candidato a MCE</h3>
-            <p class="subtitulo-contato">João Guilherme Monteiro</p>
-            <a href="https://wa.me/5586988351742" target="_blank" rel="noopener noreferrer" class="link-contato">
-              (86) 98835-1742
-            </a>
-          </div>
-
-          <div class="card-contato reveal">
-            <div class="icone-contato">📱</div>
-            <h3>Candidato a MCEA</h3>
-            <p class="subtitulo-contato">Candidato Adjunto</p>
-            <a href="https://wa.me/5589999297467" target="_blank" rel="noopener noreferrer" class="link-contato">
-              (89) 99929-7467
-            </a>
-          </div>
-
-          <div class="card-contato reveal">
-            <div class="icone-contato">📷</div>
-            <h3>Instagram</h3>
-            <p class="subtitulo-contato">Siga nossa jornada</p>
-            <a href="https://instagram.com/juntospelasvirtudes" target="_blank" rel="noopener noreferrer" class="link-contato">
-              @juntospelasvirtudes
-            </a>
-          </div>
-
-          <div class="card-contato reveal">
-            <div class="icone-contato">✉️</div>
-            <h3>E-mail Oficial</h3>
-            <p class="subtitulo-contato">Atendimento direto</p>
-            <a href="mailto:juntospelasvirtudes@gmail.com" class="link-contato">
-              juntospelasvirtudes@gmail.com
-            </a>
-          </div>
-
-        </div>
-
-        <!-- FORMULÁRIO DE MENSAGEM -->
-        <div class="formulario-container reveal">
-          <h3>Envie uma mensagem para a Chapa</h3>
-          <p class="form-descricao">Preencha os campos abaixo para nos enviar sua proposta, dúvida ou mensagem.</p>
-          
-          <form id="form-contato">
-            <div class="campo-grupo">
-              <label for="nome">Seu Nome / Capítulo</label>
-              <input type="text" id="nome" name="nome" placeholder="Ex: Irmão Pedro - Capítulo N° 00" required>
-            </div>
-
-            <div class="campo-grupo">
-              <label for="email">Seu E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-            </div>
-
-            <div class="campo-grupo">
-              <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-          </form>
-
-          <!-- MENSAGEM DE AGRADECIMENTO -->
-          <div id="mensagem-sucesso" class="mensagem-sucesso" style="display: none;">
-            <span class="icone-sucesso">✨</span>
-            <p>Agradecemos seu contato, responderemos assim que possível!</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- RODAPÉ PRINCIPAL -->
-  <footer class="rodape-principal">
+  <!-- ==========================================================================
+     SEÇÃO HERO / CAPA
+     ========================================================================== -->
+  <section class="capa reveal">
+    <div class="faixa-bandeira"></div>
     <div class="caixa">
-      <p>&copy; 2026 Chapa Juntos pelas Virtudes — Todos os direitos reservados.</p>
+      <div class="brasao">
+        <svg viewBox="0 0 100 100" fill="none" stroke="var(--dourado)" stroke-width="2">
+          <circle cx="50" cy="50" r="45"/>
+          <path d="M50 15 L50 85 M15 50 L85 50"/>
+        </svg>
+      </div>
+
+      <span class="chapeu">Excelência & Compromisso</span>
+      <h1>Defendendo valores com <em>precisão</em> e soberania</h1>
+      <p class="chamada">Atuação estratégica pautada na ética, na erudição jurídica e no compromisso inabalável com nossos representados.</p>
+      
+      <div class="botoes-acao">
+        <a href="#contato" class="btn btn-destaque">Falar com Especialista</a>
+        <a href="#sobre" class="btn btn-suave">Conhecer a História</a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="divisor-brasao reveal">
+    <svg viewBox="0 0 24 24" fill="var(--dourado)">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>
+  </div>
+
+
+  <!-- ==========================================================================
+     SEÇÃO SOBRE
+     ========================================================================== -->
+  <section id="sobre" class="sobre reveal">
+    <div class="caixa">
+      <div class="sobre-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Sede do Instituto">
+          <figcaption>Sede Institucional — Tradição e modernidade.</figcaption>
+        </figure>
+
+        <div>
+          <span class="chapeu">Nossa Instituição</span>
+          <h2>Uma trajetória pautada pela integridade e excelência</h2>
+          <p>Fundado com o propósito de oferecer suporte jurídico e estratégico de alto nível, o Instituto atua na preservação de direitos e na construção de soluções sólidas.</p>
+          <p>Nossa equipe une vasta experiência acadêmica à prática atuante, garantindo atendimento personalizado e eficaz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SEÇÃO PILARES
+     ========================================================================== -->
+  <section id="pilares" class="pilares reveal">
+    <div class="caixa">
+      <div class="cabecalho-secao">
+        <h2>Nossos Pilares</h2>
+        <p>Fundamentos que guiam cada decisão e estratégia de nossa atuação.</p>
+      </div>
+
+      <div class="pilares-grid">
+        <div class="cartao-pilar reveal">
+          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <h3>Ética e Rigor</h3>
+          <p>Compromisso irrestrito com as normas legais e a transparência em todos os atos.</p>
+        </div>
+
+        <div class="cartao-pilar reveal">
+          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+          </svg>
+          <h3>Agilidade</h3>
+          <p>Respostas céleres e soluções preventivas diante de cenários complexos.</p>
+        </div>
+
+        <div class="cartao-pilar reveal">
+          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+          </svg>
+          <h3>Humanidade</h3>
+          <p>Atendimento próximo, focado nas reais necessidades e particularidades de cada cliente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SEÇÃO DIRETORIA
+     ========================================================================== -->
+  <section id="diretoria" class="diretoria reveal">
+    <div class="caixa">
+      <div class="cabecalho-secao">
+        <h2>Corpo Diretivo</h2>
+        <p>Lideranças com sólida formação e vasta experiência no setor.</p>
+      </div>
+
+      <div class="diretoria-grid">
+        <div class="cartao-membro reveal">
+          <div class="foto-membro">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Dr. Carlos Silva">
+          </div>
+          <h3>Dr. Carlos Silva</h3>
+          <span class="cargo">Diretor Presidente</span>
+          
+          <details class="info-expansivel">
+            <summary class="btn-saber-mais">Histórico Acadêmico</summary>
+            <div class="detalhes-conteudo">
+              <ul>
+                <li>• Doutor em Direito Constitucional</li>
+                <li>• Mestre em Relações Internacionais</li>
+                <li>• Mais de 20 anos de atuação</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="cartao-membro reveal">
+          <div class="foto-membro">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Dra. Helena Mendes">
+          </div>
+          <h3>Dra. Helena Mendes</h3>
+          <span class="cargo">Diretora Operacional</span>
+          
+          <details class="info-expansivel">
+            <summary class="btn-saber-mais">Histórico Acadêmico</summary>
+            <div class="detalhes-conteudo">
+              <ul>
+                <li>• Especialista em Gestão Estratégica</li>
+                <li>• Mestre em Direito Administrativo</li>
+                <li>• Ex-conselheira de Ordem</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SEÇÃO LINHA DO TEMPO / JORNADA
+     ========================================================================== -->
+  <section id="jornada" class="linha-tempo reveal">
+    <div class="caixa">
+      <div class="cabecalho-secao">
+        <h2>Nossa Jornada</h2>
+        <p>Marcos importantes que consolidaram a história do Instituto.</p>
+      </div>
+
+      <div class="lista-linha-tempo">
+        <div class="item-linha-tempo reveal" data-passo="1">
+          <h3>Fundação do Instituto</h3>
+          <time>2010</time>
+          <p>Início das atividades focadas em consultoria institucional e suporte estratégico.</p>
+        </div>
+
+        <div class="item-linha-tempo reveal" data-passo="2">
+          <h3>Expansão Nacional</h3>
+          <time>2016</time>
+          <p>Abertura de novas frentes de representação e consolidação de parcerias chave.</p>
+        </div>
+
+        <div class="item-linha-tempo reveal" data-passo="3">
+          <h3>Modernização Digital</h3>
+          <time>2023</time>
+          <p>Implementação de processos digitais avançados para maior celeridade e segurança.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SEÇÃO CONTATO
+     ========================================================================== -->
+  <section id="contato" class="contato reveal">
+    <div class="caixa">
+      <div class="cabecalho-secao">
+        <h2>Atendimento & Contato</h2>
+        <p>Estamos à disposição para prestar todo o suporte necessário.</p>
+      </div>
+
+      <div class="contato-grid">
+        <div class="card-contato reveal">
+          <div class="icone-contato">📍</div>
+          <div class="subtitulo-contato">Endereço</div>
+          <p class="link-contato">Av. Paulista, 1000 — São Paulo/SP</p>
+        </div>
+
+        <div class="card-contato reveal">
+          <div class="icone-contato">📞</div>
+          <div class="subtitulo-contato">Telefone</div>
+          <a href="tel:0800123456" class="link-contato">0800 123 4567</a>
+        </div>
+
+        <div class="card-contato reveal">
+          <div class="icone-contato">✉️</div>
+          <div class="subtitulo-contato">E-mail</div>
+          <a href="mailto:contato@instituto.org" class="link-contato">contato@instituto.org</a>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO -->
+      <div class="formulario-container reveal">
+        <h3>Envie uma Mensagem</h3>
+        <p class="form-descricao">Preencha o formulário abaixo para iniciar um atendimento.</p>
+
+        <form>
+          <div class="campo-grupo">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" required placeholder="Digite seu nome">
+          </div>
+
+          <div class="campo-grupo">
+            <label for="email">E-mail de Contato</label>
+            <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+          </div>
+
+          <div class="campo-grupo">
+            <label for="mensagem">Mensagem / Consulta</label>
+            <textarea id="mensagem" rows="4" required placeholder="Como podemos ajudar?"></textarea>
+          </div>
+
+          <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     RODAPÉ / FOOTER
+     ========================================================================== -->
+  <footer class="rodape-principal reveal">
+    <div class="caixa">
+      <div class="redes-sociais">
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.84a1.6 1.6 0 0 0-1.6 1.6c0 .88.71 1.6 1.6 1.6s1.6-.72 1.6-1.6a1.6 1.6 0 0 0-1.6-1.6z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+
+      <p>&copy; Todos os direitos reservados. Instituto de Tradição & Justiça.</p>
     </div>
   </footer>
 
-  <!-- Arquivo JS -->
+  <!-- Script JS Principal -->
   <script src="js/script.js"></script>
 </body>
 </html>

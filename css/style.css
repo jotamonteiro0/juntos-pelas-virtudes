@@ -647,24 +647,8 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
 
 
 /* ==========================================================================
-   9. ANIMAÇÃO DE REVELAÇÃO (REVEAL) & FOOTER
+   9. SEÇÃO RODAPÉ / FOOTER
    ========================================================================== */
-.reveal, .revelar {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.is-visible, .revelar.visivel {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes surgimento {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 footer.rodape-principal {
   background: var(--azul-noite);
   border-top: 1px solid rgba(201, 168, 76, 0.2);
@@ -682,7 +666,8 @@ footer.rodape-principal {
 }
 
 .redes-sociais a {
-  width: 38px; height: 38px;
+  width: 38px; 
+  height: 38px;
   border: 1px solid var(--dourado);
   border-radius: 50%;
   display: flex;
@@ -698,3 +683,27 @@ footer.rodape-principal {
 }
 
 .redes-sociais svg { width: 17px; height: 17px; }
+
+
+/* ==========================================================================
+   10. ANIMAÇÃO DE REVELAÇÃO (SCROLL REVEAL / FIGMA)
+   ========================================================================== */
+/* Estado inicial (invisível e 30px abaixo) */
+.reveal, .revelar {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Estado final quando entra na tela ao rolar */
+.reveal.is-visible, .revelar.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes surgimento {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
