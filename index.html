@@ -234,9 +234,8 @@
   </div>
 </section>
 
-
 <!-- ==========================================================================
-     SEÇÃO DE CONTATO (HTML + CSS EMBUTIDO PARA GARANTIR O VISUAL)
+     SEÇÃO DE CONTATO (HTML + CSS + JS INTEGRADO)
      ========================================================================== -->
 <style>
   #contato.secao-contato {
@@ -244,7 +243,7 @@
     background-color: #071327 !important;
     position: relative;
     overflow: hidden;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Work Sans', 'Inter', sans-serif;
     color: #ffffff;
   }
 
@@ -404,6 +403,38 @@
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
   }
 
+  /* Estilo da Mensagem de Sucesso (Translúcida e Elegante) */
+  .secao-contato .msg-sucesso {
+    display: none;
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 10px;
+    color: #f3e5ab;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: aparecerSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes aparecerSuave {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   /* Cards da Direita */
   .secao-contato .coluna-cards {
     display: flex;
@@ -483,10 +514,11 @@
     </div>
 
     <div class="grid-contato">
-      <!-- FORMULÁRIO -->
+      <!-- FORMULÁRIO COM ENVIO EM SEGUNDO PLANO -->
       <div class="card-formulario">
         <h3 class="titulo-card">Envie uma Mensagem</h3>
-        <form action="#" method="POST" class="form-contato">
+        
+        <form id="form-contato" class="form-contato">
           <div class="campo-input">
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -502,7 +534,7 @@
             <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos como podemos ajudar..." required></textarea>
           </div>
 
-          <button type="submit" class="btn-enviar">
+          <button type="submit" id="btn-enviar" class="btn-enviar">
             Enviar Mensagem
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -510,6 +542,15 @@
             </svg>
           </button>
         </form>
+
+        <!-- MENSAGEM DE SUCESSO DO FORMULÁRIO -->
+        <div id="mensagem-sucesso" class="msg-sucesso">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span>Agradecemos pelo contato, responderemos assim que possível!</span>
+        </div>
       </div>
 
       <!-- CARDS DE CONTATO -->
@@ -522,7 +563,7 @@
           </div>
           <div>
             <div class="rotulo-card">João Guilherme (MCE)</div>
-            <a href="https://wa.me/5586999999999" target="_blank" rel="noopener noreferrer" class="link-dourado">Falar no WhatsApp</a>
+            <a href="https://wa.me/5586988351742" target="_blank" rel="noopener noreferrer" class="link-dourado">(86) 9 8835-1742</a>
           </div>
         </div>
 
@@ -561,13 +602,73 @@
           </div>
           <div>
             <div class="rotulo-card">Instagram da Chapa</div>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="link-dourado">@chapa.juntospelasvirtudes</a>
+            <a href="https://instagram.com/juntospelasvirtudes" target="_blank" rel="noopener noreferrer" class="link-dourado">@juntospelasvirtudes</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- SCRIPT JS PARA INTERCEPTAR O ENVIO -->
+<script>
+  document.getElementById('form-contato').addEventListener('submit', async function(e) {
+    e.preventDefault(); 
+    
+    const btn = document.getElementById('btn-enviar');
+    const msgSucesso = document.getElementById('mensagem-sucesso');
+    
+    if (msgSucesso) msgSucesso.style.display = 'none';
+
+    btn.disabled = true;
+    btn.innerText = 'ENVIANDO...';
+
+    // Captura os valores dos campos
+    const nomeInput = document.getElementById('nome').value;
+    const emailInput = document.getElementById('email').value;
+    const mensagemInput = document.getElementById('mensagem').value;
+
+    // Configuração com assunto dinâmico para evitar agrupamento no Gmail
+    const formData = {
+      nome: nomeInput,
+      email: emailInput,
+      mensagem: mensagemInput,
+      _replyto: emailInput,
+      _subject: `Contato: ${nomeInput} - Chapa Juntos pelas Virtudes`,
+      _captcha: 'false',
+      _template: 'table'
+    };
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/juntospelasvirtudes@gmail.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        if (msgSucesso) msgSucesso.style.display = 'flex';
+        this.reset();
+      } else {
+        alert('Ocorreu um erro ao enviar. Tente novamente.');
+      }
+    } catch (error) {
+      alert('Erro de conexão. Verifique sua internet e tente novamente.');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = `
+        Enviar Mensagem
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      `;
+    }
+  });
+</script>
   <!-- ==========================================================================
      RODAPÉ / FOOTER
      ========================================================================== -->

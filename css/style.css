@@ -707,3 +707,39 @@ footer.rodape-principal {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+
+/* Mensagem de Sucesso Integrada e Translúcida */
+  .secao-contato .msg-sucesso {
+    display: none;
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: rgba(212, 175, 55, 0.08); /* Dourado translúcido bem suave */
+    border: 1px solid rgba(212, 175, 55, 0.35); /* Borda refinada */
+    border-radius: 10px;
+    color: #f3e5ab; /* Texto dourado claro */
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    backdrop-filter: blur(8px); /* Efeito de vidro desfocado */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    
+    /* Layout com Ícone */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    /* Animação suave ao surgir */
+    animation: aparecerSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes aparecerSuave {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
