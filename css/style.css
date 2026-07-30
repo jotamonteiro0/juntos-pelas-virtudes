@@ -445,3 +445,145 @@
 
   .revelar{ opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
   .revelar.visivel{ opacity: 1; transform: translateY(0); }
+
+  /* SEÇÃO CONTATO */
+.contato {
+  padding: 80px 0;
+  background-color: #121212;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.card-contato {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 24px 16px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-contato:hover {
+  transform: translateY(-5px);
+  border-color: #d4af37;
+}
+
+.icone-contato {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitulo-contato {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.link-contato {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+/* FORMULÁRIO DE CONTATO */
+.formulario-container {
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.formulario-container h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.form-descricao {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 24px;
+}
+
+.campo-grupo {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.campo-grupo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.campo-grupo input,
+.campo-grupo textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #111;
+  border: 1px solid #444;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.campo-grupo input:focus,
+.campo-grupo textarea:focus {
+  border-color: #d4af37;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 14px;
+  background-color: #d4af37;
+  color: #121212;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-enviar:hover {
+  background-color: #f1c40f;
+}
+
+/* CAIXA DE CONFIRMAÇÃO / SUCESSO */
+.mensagem-sucesso {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: rgba(212, 175, 55, 0.1);
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+  animation: fadeIn 0.4s ease;
+}
+
+.icone-sucesso {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.mensagem-sucesso p {
+  color: #d4af37;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
