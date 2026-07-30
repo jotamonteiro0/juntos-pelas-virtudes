@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propostas & Projetos | Juntos pelas Virtudes, Unidos pelo Piauí</title>
+
+  <!-- FONTES OFICIAIS DO GOOGLE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS da Index -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* FAIXA TRICOLOR LOGO ABAIXO DO CABEÇALHO */
+    .faixa-tricolor {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #10b981 0%, #10b981 33.33%, #d4af37 33.33%, #d4af37 66.66%, #be123c 66.66%, #be123c 100%);
+      display: block;
+    }
+
+    /* ESTILOS EXCLUSIVOS DO CONTEÚDO DOS PROJETOS */
+    .cabecalho-projetos {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+    }
+
+    .subtitulo-tag {
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .titulo-principal {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      color: #ffffff;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .descricao-principal {
+      color: #cbd5e1;
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .container-projetos {
+      max-width: 1050px;
+      margin: 0 auto 100px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .linha-projeto {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .linha-projeto.invertida {
+      flex-direction: row-reverse;
+    }
+
+    .bloco-emblema {
+      flex: 0 0 140px;
+      min-height: 110px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bloco-emblema img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .bloco-conteudo {
+      flex: 1;
+      background: #09152a;
+      border: 1.5px solid rgba(212, 175, 55, 0.3);
+      border-radius: 12px;
+      padding: 28px 32px;
+    }
+
+    .titulo-projeto-amarelo {
+      color: #d4af37;
+      font-size: 0.92rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .texto-projeto {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .lista-campanhas {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: #e2e8f0;
+      font-size: 0.9rem;
+    }
+
+    .lista-campanhas li {
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .linha-projeto, 
+      .linha-projeto.invertida {
+        flex-direction: column;
+      }
+      .bloco-emblema {
+        flex: auto;
+      }
+      .titulo-principal {
+        font-size: 2.2rem;
+      }
+      .bloco-conteudo {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==========================================================================
+     CABECALHO E NAVEGAÇÃO (ESTRUTURA DA INDEX)
+     ========================================================================== -->
+  <header class="cabecalho-principal">
+    <div class="conteudo-navegacao">
+      <a href="index.html" class="marca">
+        
+        <!-- EMBLEMA NO LUGAR DO ÍCONE -->
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema da Chapa" style="height: 40px; width: auto; object-fit: contain;">
+        
+        <div>
+          JUNTOS PELAS VIRTUDES, UNIDOS PELO PIAUÍ
+          <small>CHAPA PRÉ-CANDIDATA AO GABINETE ESTADUAL 2026/2027</small>
+        </div>
+      </a>
+
+      <button id="botao-menu-mobile" aria-label="Abrir Menu">☰</button>
+
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="index.html#sobre">Sobre a Chapa</a></li>
+          <li><a href="index.html#pilares">Nossas Virtudes</a></li>
+          <li><a href="index.html#diretoria">Nosso Gabinete</a></li>
+          <li><a href="index.html#jornada">Propostas</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FAIXA TRICOLOR -->
+  <div class="faixa-tricolor"></div>
+
+  <!-- CABEÇALHO DA PÁGINA DE PROJETOS -->
+  <section class="cabecalho-projetos">
+    <span class="subtitulo-tag">PLANO DE GESTÃO 2026 / 2027</span>
+    <h1 class="titulo-principal">Nossas Propostas & Projetos</h1>
+    <p class="descricao-principal">
+      Ações estruturadas, objetivas e práticas para capacitar lideranças, fortalecer os Capítulos e unir a Ordem DeMolay em todo o Piauí.
+    </p>
+  </section>
+
+  <!-- CONTAINER DOS PROJETOS -->
+  <main class="container-projetos">
+
+    <!-- PROJETO 1 -->
+    <article class="linha-projeto">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">CAPÍTULO EM ORDEM — NENHUM CAPÍTULO VAI SER DEIXADO PARA TRÁS</h2>
+        <p class="texto-projeto">
+          A ideia é simples: vamos fazer um levantamento completo da situação de cada capítulo do estado, documentação, quadro de membros, regularidade, regimento interno e comunicação com o Grande Conselho. Cada Capítulo vai receber um diagnóstico individual e personalizado, e se precisar, um plano de regularização. Nosso gabinete vai frequentar todos os Capítulos e Castelos ao longo da gestão. Isso não é meta, é compromisso.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 2 -->
+    <article class="linha-projeto invertida">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">PIAUÍ INICIANDO — CADA NOVO DEMOLAY É UMA HISTÓRIA QUE COMEÇA</h2>
+        <p class="texto-projeto">
+          Em parceria com o Grande Conselho Estadual, projetamos uma campanha estadual de incentivo às iniciações, com metas semestrais por capítulo, além de orientação para mapear possíveis candidatos. Os capítulos que mais iniciarem, proporcionalmente ao seu quadro, serão reconhecidos ao final da gestão.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 3 -->
+    <article class="linha-projeto">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">MENTORIA DE MCS — SUPORTE DIRETO À LIDERANÇA CAPITULAR</h2>
+        <p class="texto-projeto">
+          Ser Mestre Conselheiro é uma das maiores responsabilidades na Ordem DeMolay. E ninguém deve encarar isso sozinho. Pretendemos criar um programa de acompanhamento mensal para todos os MCs eleitos, com suporte direto do MCE, MCEA e MCRs. Cada encontro abordará temáticas capitulares, como: secretaria, tesouraria, comissões capitulares, relação com o Conselho Consultivo e os desafios do day-to-day.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 4 -->
+    <article class="linha-projeto invertida">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">TREINAMENTOS MENSAIS — CAPACITAÇÃO CONTÍNUA E EFICAZ</h2>
+        <p class="texto-projeto">
+          Nenhum capítulo deveria chegar no seu primeiro dia de gestão sem saber o que fazer. Todo mês, nosso gabinete realizará um encontro temático, ao vivo, para todos os DeMolays do Piauí. Temas capitulares e espaço aberto para trocar experiências de capítulo para capítulo.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 5 -->
+    <article class="linha-projeto">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">ENCONTRO DE LIDERANÇAS — SABER ONDE ENCONTRAR AS RESPOSTAS</h2>
+        <p class="texto-projeto">
+          Dois grandes encontros por ano reunindo Mestres Conselheiros eleitos, secretários, tesoureiros, candidatos a cargos capitulares e membros do Conselho Consultivo para uma imersão em gestão, administração capitular, comunicação, ritual e conselho.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 6 -->
+    <article class="linha-projeto invertida">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">LOUIS GORDON LOWER — O RITUAL É A ALMA DA ORDEM</h2>
+        <p class="texto-projeto">
+          Quando o ritual é bem feito, todo mundo sente. Pretendemos criar um programa estadual de avaliação e incentivo à qualidade ritualística dos Capítulos, com materiais de apoio e orientações sobre os Graus Iniciático, DeMolay e cerimônias públicas, além de vídeos e guias.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 7 -->
+    <article class="linha-projeto">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">PIAUÍ FILANTRÓPICO — A FILANTROPIA É QUEM A GENTE É</h2>
+        <p class="texto-projeto">
+          Vamos reconhecer e valorizar os Capítulos e Castelos que mais transformarem suas comunidades por meio da filantropia. Critérios claros de pontuação e reconhecimento no Congresso Estadual.
+        </p>
+        <ul class="lista-campanhas">
+          <li><strong>Campanha 1:</strong> Desafio Estadual de Doação de Sangue</li>
+          <li><strong>Campanha 2:</strong> Campanha do Brinquedo / Natal Solidário</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- PROJETO 8 -->
+    <article class="linha-projeto invertida">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">ESCOLA DE DESIGN — COMUNICAÇÃO COM CLAREZA E IDENTIDADE</h2>
+        <p class="texto-projeto">
+          Capacitação prática para DeMolays do estado em criação de posts e artes organizadas, atrativas e alinhadas. O objetivo é ensinar o "como fazer" para que cada Capítulo se comunique melhor e com identidade própria.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 9 -->
+    <article class="linha-projeto">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">CERIMÔNIA DE EXCELÊNCIA — EXEMPLO E VALORIZAÇÃO PÚBLICA</h2>
+        <p class="texto-projeto">
+          Reconhecimento dos DeMolays que se destacam na condução das Cerimônias Públicas em seus próprios Capítulos, valorizando aqueles que representam a Ordem com excelência perante a sociedade e inspiram pelo exemplo.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 10 -->
+    <article class="linha-projeto invertida">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">ENCONTROS REGIONAIS — A ORDEM PULSANDO EM CADA CANTO</h2>
+        <p class="texto-projeto">
+          Realização de 5 Encontros Regionais ao longo da gestão, reunindo Capítulos para momentos de ritual, capacitação, integração e planejamento conjunto, alternando os locais para integrar todo o Piauí.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 11 -->
+    <article class="linha-projeto">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">CASTELO ILUSTRADO — A IMAGINAÇÃO TAMBÉM É UMA FORMA DE HONRAR AS VIRTUDES</h2>
+        <p class="texto-projeto">
+          Oportunidade para os Escudeiros expressarem a doutrina e os valores por meio da arte, estimulando a criatividade, a imaginação e o orgulho de pertencer à Ordem dos Escudeiros.
+        </p>
+      </div>
+    </article>
+
+    <!-- PROJETO 12 -->
+    <article class="linha-projeto invertida">
+      <div class="bloco-emblema">
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema DeMolay">
+      </div>
+      <div class="bloco-conteudo">
+        <h2 class="titulo-projeto-amarelo">COPA PIAUÍ DE FUTSAL — A UNIÃO TAMBÉM ACONTECE EM CAMPO</h2>
+        <p class="texto-projeto">
+          Competição estadual de futsal entre os Capítulos para integrar, fortalecer laços de fraternidade e demonstrar que ser DeMolay vai além das Sessões, com respeito e energia.
+        </p>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>

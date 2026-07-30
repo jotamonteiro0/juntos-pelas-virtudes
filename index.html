@@ -1,239 +1,589 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juntos pelas Virtudes | Chapa GE-PI 2026/2027</title>
-  
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <title>Chapa Juntos pelas Virtudes</title>
   
   <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ================= CABEÇALHO PRINCIPAL ================= -->
+<!-- ==========================================================================
+     CABECALHO E NAVEGAÇÃO
+     ========================================================================== -->
   <header class="cabecalho-principal">
     <div class="conteudo-navegacao">
-      <a href="#inicio" class="marca">
-        <svg class="icone-marca" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="24" cy="24" r="22" stroke="#C9A84C" stroke-width="1.4"/>
-          <path d="M24 6v14M24 6l-4 4M24 6l4 4" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M14 30c4 4 6 6 10 6s6-2 10-6" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <span>Chapa JG<small>GE‑PI 2026 / 2027</small></span>
+      <a href="index.html" class="marca">
+        
+        <!-- EMBLEMA NO LUGAR DO ÍCONE -->
+        <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema da Chapa" style="height: 40px; width: auto; object-fit: contain;">
+        
+        <div>
+          JUNTOS PELAS VIRTUDES, UNIDOS PELO PIAUÍ
+          <small>CHAPA PRÉ-CANDIDATA AO GABINETE ESTADUAL 2026/2027</small>
+        </div>
       </a>
 
-      <button id="botao-menu-mobile" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-navegacao">☰</button>
+      <button id="botao-menu-mobile" aria-label="Abrir Menu">☰</button>
 
-      <nav class="menu-principal" id="menu-navegacao">
+      <nav class="menu-principal">
         <ul>
-          <li><a href="#sobre">Quem somos</a></li>
-          <li><a href="#pilares">Pilares</a></li>
-          <li><a href="#diretoria">Time</a></li>
-          <li><a href="#contato">Conectar</a></li>
+          <li><a href="index.html#sobre">Sobre a Chapa</a></li>
+          <li><a href="index.html#pilares">Nossas Virtudes</a></li>
+          <li><a href="index.html#diretoria">Nosso Gabinete</a></li>
+          <li><a href="projetos.html">Propostas</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- ================= SEÇÃO DIRETORIA / TIME ================= -->
-    <section class="diretoria" id="diretoria">
-      <div class="caixa">
-        
-        <header class="cabecalho-secao reveal">
-          <span class="chapeu">Nossa Liderança</span>
-          <h2>Liderança Executiva & Diretoria</h2>
-          <p>Irmãos comprometidos com o fortalecimento e o futuro da Ordem DeMolay no Piauí.</p>
-        </header>
-
-        <div class="diretoria-grid">
-
-          <!-- CARD 1: JOÃO GUILHERME (MCE) -->
-          <article class="cartao-membro reveal">
-            <div class="foto-membro">
-              <img src="WhatsApp Image 2026-07-28 at 19.33.23.jpeg" alt="Foto de João Guilherme Martins Lopes Monteiro">
-            </div>
-
-            <span class="cargo">Candidato a MCE</span>
-            <h3>João Guilherme M. L. Monteiro</h3>
-
-            <details class="info-expansivel">
-              <summary class="btn-saber-mais">CONHEÇA O HISTÓRICO</summary>
-              <div class="detalhes-conteudo">
-                <p class="afiliacao">
-                  <strong>Capítulos:</strong> Prof. Carvalho Neves N° 500 & Luiz Ribeiro Gonçalves Neto N° 408<br>
-                  <strong>Priorado:</strong> Cavaleiros de Argonath N° 247
-                </p>
-                <hr class="divisor">
-                <h4>Histórico DeMolay</h4>
-                <ul>
-                  <li><strong>Iniciação:</strong> 26/08/2023</li>
-                  <li><strong>Elevação:</strong> 10/12/2023</li>
-                  <li><strong>Investidura (Nobre Cavaleiro):</strong> 25/05/2024</li>
-                  <li><strong>Cavaleiro da Capela:</strong> 05/10/2025</li>
-                  <li><strong>Cavaleiro da Cruz de Salém:</strong> 21/06/2026</li>
-                </ul>
-              </div>
-            </details>
-          </article>
-
-          <!-- CARD 2: CANDIDATO A MCEA -->
-          <article class="cartao-membro reveal">
-            <div class="foto-membro">
-              <img src="NOME_DA_FOTO_DO_MCEA.jpg" alt="Foto do Candidato a MCEA">
-            </div>
-
-            <span class="cargo">Candidato a MCEA</span>
-            <h3>Nome do Candidato a MCEA</h3>
-
-            <details class="info-expansivel">
-              <summary class="btn-saber-mais">CONHEÇA O HISTÓRICO</summary>
-              <div class="detalhes-conteudo">
-                <p class="afiliacao">
-                  <strong>Capítulo:</strong> Nome do Capítulo N° 000<br>
-                  <strong>Priorado:</strong> Nome do Priorado N° 000
-                </p>
-                <hr class="divisor">
-                <h4>Histórico DeMolay</h4>
-                <ul>
-                  <li><strong>Iniciação:</strong> DD/MM/AAAA</li>
-                  <li><strong>Elevação:</strong> DD/MM/AAAA</li>
-                  <li><strong>Investidura:</strong> DD/MM/AAAA</li>
-                </ul>
-              </div>
-            </details>
-          </article>
-
-          <!-- CARD 3: INTEGRANTE DA DIRETORIA -->
-          <article class="cartao-membro reveal">
-            <div class="foto-membro">
-              <img src="NOME_DA_FOTO_DO_MEMBRO.jpg" alt="Foto do Membro da Diretoria">
-            </div>
-
-            <span class="cargo">Cargo / Função</span>
-            <h3>Nome do Membro</h3>
-
-            <details class="info-expansivel">
-              <summary class="btn-saber-mais">CONHEÇA O HISTÓRICO</summary>
-              <div class="detalhes-conteudo">
-                <p class="afiliacao">
-                  <strong>Capítulo:</strong> Nome do Capítulo N° 000<br>
-                  <strong>Priorado:</strong> Nome do Priorado N° 000
-                </p>
-                <hr class="divisor">
-                <h4>Histórico DeMolay</h4>
-                <ul>
-                  <li><strong>Iniciação:</strong> DD/MM/AAAA</li>
-                  <li><strong>Elevação:</strong> DD/MM/AAAA</li>
-                </ul>
-              </div>
-            </details>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= SEÇÃO CONTATO ================= -->
-    <section class="contato" id="contato">
-      <div class="caixa">
-        
-        <header class="cabecalho-secao reveal">
-          <span class="chapeu">Fale Conosco</span>
-          <h2>Conecte-se com a Nossa Chapa</h2>
-          <p>Estamos à disposição para ouvir capítulos, lideranças e irmãos de todo o Piauí.</p>
-        </header>
-
-        <!-- CARDS DE CONTATO RÁPIDO -->
-        <div class="contato-grid">
-          
-          <div class="card-contato reveal">
-            <div class="icone-contato">📱</div>
-            <h3>Candidato a MCE</h3>
-            <p class="subtitulo-contato">João Guilherme Monteiro</p>
-            <a href="https://wa.me/5586988351742" target="_blank" rel="noopener noreferrer" class="link-contato">
-              (86) 98835-1742
-            </a>
-          </div>
-
-          <div class="card-contato reveal">
-            <div class="icone-contato">📱</div>
-            <h3>Candidato a MCEA</h3>
-            <p class="subtitulo-contato">Candidato Adjunto</p>
-            <a href="https://wa.me/5589999297467" target="_blank" rel="noopener noreferrer" class="link-contato">
-              (89) 99929-7467
-            </a>
-          </div>
-
-          <div class="card-contato reveal">
-            <div class="icone-contato">📷</div>
-            <h3>Instagram</h3>
-            <p class="subtitulo-contato">Siga nossa jornada</p>
-            <a href="https://instagram.com/juntospelasvirtudes" target="_blank" rel="noopener noreferrer" class="link-contato">
-              @juntospelasvirtudes
-            </a>
-          </div>
-
-          <div class="card-contato reveal">
-            <div class="icone-contato">✉️</div>
-            <h3>E-mail Oficial</h3>
-            <p class="subtitulo-contato">Atendimento direto</p>
-            <a href="mailto:juntospelasvirtudes@gmail.com" class="link-contato">
-              juntospelasvirtudes@gmail.com
-            </a>
-          </div>
-
-        </div>
-
-        <!-- FORMULÁRIO DE MENSAGEM -->
-        <div class="formulario-container reveal">
-          <h3>Envie uma mensagem para a Chapa</h3>
-          <p class="form-descricao">Preencha os campos abaixo para nos enviar sua proposta, dúvida ou mensagem.</p>
-          
-          <form id="form-contato">
-            <div class="campo-grupo">
-              <label for="nome">Seu Nome / Capítulo</label>
-              <input type="text" id="nome" name="nome" placeholder="Ex: Irmão Pedro - Capítulo N° 00" required>
-            </div>
-
-            <div class="campo-grupo">
-              <label for="email">Seu E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-            </div>
-
-            <div class="campo-grupo">
-              <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-          </form>
-
-          <!-- MENSAGEM DE AGRADECIMENTO -->
-          <div id="mensagem-sucesso" class="mensagem-sucesso" style="display: none;">
-            <span class="icone-sucesso">✨</span>
-            <p>Agradecemos seu contato, responderemos assim que possível!</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- RODAPÉ PRINCIPAL -->
-  <footer class="rodape-principal">
+  
+<!-- ==========================================================================
+     SEÇÃO HERO / CAPA
+     ========================================================================== -->
+  <section class="capa reveal">
+    <div class="faixa-bandeira"></div>
     <div class="caixa">
-      <p>&copy; 2026 Chapa Juntos pelas Virtudes — Todos os direitos reservados.</p>
+      
+    <div class="brasao" style="display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 20px;">
+  <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema Chapa Juntos pelas Virtudes" class="emblema-chapa" style="max-width: 280px; height: auto;">
+</div>
+
+      <span class="chapeu">Chapa Juntos pelas Virtudes, Unidos pelo Piauí</span>
+      <h1>Compromisso, ética e <em>renovação</em> para o nosso futuro</h1>
+      <p class="chamada">Uma gestão pautada na transparência, na valorização de todos e na busca constante pelas virtudes que nos unem.</p>
+      
+      <div class="botoes-acao">
+        <a href="#jornada" class="btn btn-destaque">Conheça Nossas Propostas</a>
+        <a href="#sobre" class="btn btn-suave">Nossa História</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divisor-brasao reveal">
+    <svg viewBox="0 0 24 24" fill="var(--dourado)">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>
+  </div>
+
+  <!-- ==========================================================================
+     SEÇÃO SOBRE
+     ========================================================================== -->
+  <section id="sobre" class="sobre reveal">
+    <div class="caixa">
+      <div class="sobre-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="Integrantes da Chapa Juntos pelas Virtudes">
+          <figcaption>Chapa Juntos pelas Virtudes — Trabalho em equipe e dedicação.</figcaption>
+        </figure>
+
+        <div>
+          <span class="chapeu">Nossa Identidade</span>
+          <h2>Por que criar a Chapa Juntos pelas Virtudes?</h2>
+          <p>A Chapa <strong>Juntos pelas Virtudes</strong> nasceu do desejo de promover uma representação autêntica, ética e eficiente.</p>
+          <p>Acreditamos que a verdadeira liderança se faz com diálogo aberto, responsabilidade e ações concretas que impactam positivamente a nossa comunidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SEÇÃO PILARES / VIRTUDES
+     ========================================================================== -->
+  <section id="pilares" class="pilares reveal">
+    <div class="caixa">
+      <div class="cabecalho-secao">
+        <h2>Nossos Pilares Virtuosos</h2>
+        <p>Os valores fundamentais que guiam todas as nossas propostas e ações.</p>
+      </div>
+
+      <div class="pilares-grid">
+        <div class="cartao-pilar reveal">
+          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <h3>Integridade</h3>
+          <p>Transparência total na gestão e compromisso inabalável com a verdade e a ética.</p>
+        </div>
+
+        <div class="cartao-pilar reveal">
+          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+          </svg>
+          <h3>União</h3>
+          <p>Ouvir cada voz e construir soluções coletivas onde todos têm espaço e representatividade.</p>
+        </div>
+
+        <div class="cartao-pilar reveal">
+          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+          </svg>
+          <h3>Coragem & Ação</h3>
+          <p>Proatividade para propor mudanças reais e enfrentar os desafios com determinação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+   SEÇÃO GABINETE ESTADUAL (INDEX.HTML)
+   ========================================================================== -->
+<section id="diretoria" class="diretoria reveal" style="padding: 60px 0;">
+  <div class="caixa" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
+    
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #ffffff; margin-bottom: 8px;">Candidatos ao Gabinete Estadual</h2>
+      <p style="color: #a0aec0; font-size: 1rem;">Pessoas comprometidas com o trabalho e a transformação.</p>
+    </div>
+
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+      
+   <!-- CARTÃO 1: JOÃO GUILHERME -->
+<div style="background: rgba(13, 31, 61, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 35px 25px; text-align: center; flex: 1; min-width: 300px; max-width: 480px; display: flex; flex-direction: column; justify-content: space-between;">
+  <div>
+    <div style="width: 140px; height: 140px; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--dourado, #d4af37); overflow: hidden; background: #071327;">
+      <!-- CAMINHO COM O NOVO NOME DA IMAGEM -->
+      <img src="assets/images/MCE-JG/joaopi.jpeg" alt="João Guilherme Monteiro" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #ffffff; margin-bottom: 6px;">João Guilherme Monteiro</h3>
+    <span style="display: block; color: var(--dourado, #d4af37); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px;">CANDIDATO A MESTRE CONSELHEIRO ESTADUAL</span>
+  </div>
+  <a href="joaomce.html" style="display: block; width: 100%; padding: 12px; border: 1px solid var(--dourado, #d4af37); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s;">
+    Ver Biografia
+  </a>
+</div>
+
+      <!-- CARTÃO 2: PEDRO HENRIQUE -->
+      <div style="background: rgba(13, 31, 61, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 35px 25px; text-align: center; flex: 1; min-width: 300px; max-width: 480px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="width: 140px; height: 140px; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--dourado, #d4af37); overflow: hidden; background: #071327;">
+            <img src="assets/images/MCEA - PH/pedro.jpg" alt="Pedro Henrique" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #ffffff; margin-bottom: 6px;">Pedro Henrique</h3>
+          <span style="display: block; color: var(--dourado, #d4af37); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px;">CANDIDATO A MESTRE CONSELHEIRO ESTADUAL ADJUNTO</span>
+        </div>
+        <a href="pedromcea.html" style="display: block; width: 100%; padding: 12px; border: 1px solid var(--dourado, #d4af37); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s;">
+          Ver Biografia
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- ==========================================================================
+   SEÇÃO: PLANO DE GESTÃO & NOSSOS PROJETOS (CARDS PADRONIZADOS)
+   ========================================================================== -->
+<section style="padding: 60px 20px; background: transparent;">
+  <div style="max-width: 1050px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; align-items: stretch;">
+    
+    <!-- CARD 1: PLANO DE GESTÃO -->
+    <div style="background: rgba(8, 18, 38, 0.75); border: 1.5px solid #d4af37; border-radius: 16px; padding: 35px 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: space-between; backdrop-filter: blur(10px); text-align: left;">
+      <div>
+        <span style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; font-weight: 700; display: block; margin-bottom: 10px;">
+          DOCUMENTO OFICIAL
+        </span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; color: #ffffff; margin: 0 0 14px 0; font-weight: 700;">
+          Conheça nosso <br>
+          <span style="color: #d4af37;">Plano de Gestão!</span>
+        </h2>
+        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0 0 24px 0;">
+          Confira em detalhes todas as nossas diretrizes, metas e compromissos estruturados em documento para guiar o nosso trabalho.
+        </p>
+      </div>
+      <div>
+        <!-- Coloque aqui o link do seu PDF ou documento -->
+        <a href="plano.pdf" target="_blank" style="display: inline-block; width: 100%; text-align: center; padding: 12px 20px; background: #d4af37; color: #060d19; font-weight: 700; text-decoration: none; border-radius: 6px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
+          BAIXAR DOCUMENTO
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 2: NOSSOS PROJETOS -->
+    <div style="background: rgba(8, 18, 38, 0.75); border: 1.5px solid #d4af37; border-radius: 16px; padding: 35px 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: space-between; backdrop-filter: blur(10px); text-align: left;">
+      <div>
+        <span style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; font-weight: 700; display: block; margin-bottom: 10px;">
+          PROPOSTAS DA CHAPA
+        </span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; color: #ffffff; margin: 0 0 14px 0; font-weight: 700;">
+          Explore nossos <br>
+          <span style="color: #d4af37;">Projetos & Ações!</span>
+        </h2>
+        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0 0 24px 0;">
+          Veja as 12 iniciativas práticas desenvolvidas para capacitar lideranças, apoiar os Capítulos e fortalecer o Piauí.
+        </p>
+      </div>
+      <div>
+        <!-- Link para a página externa projetos.html -->
+        <a href="projetos.html" style="display: inline-block; width: 100%; text-align: center; padding: 12px 20px; background: #d4af37; color: #060d19; font-weight: 700; text-decoration: none; border-radius: 6px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
+          VER PROJETOS
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     SEÇÃO DE CONTATO (HTML + CSS EMBUTIDO PARA GARANTIR O VISUAL)
+     ========================================================================== -->
+<style>
+  #contato.secao-contato {
+    padding: 80px 20px;
+    background-color: #071327 !important;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+  }
+
+  /* Elementos Decorativos de Fundo */
+  .secao-contato .brilho-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .secao-contato .brilho-top-right { top: 0; right: 0; }
+  .secao-contato .brilho-bottom-left { bottom: 0; left: 0; }
+
+  .secao-contato .container-contato {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Cabeçalho */
+  .secao-contato .header-contato {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 48px;
+  }
+
+  .secao-contato .subtitulo-dourado {
+    color: #d4af37;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .secao-contato .titulo-secao {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #ffffff;
+    margin: 0 0 16px;
+    line-height: 1.1;
+  }
+
+  .secao-contato .linha-decorativa {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, #f3e5ab);
+    margin: 0 auto 20px;
+    border-radius: 2px;
+  }
+
+  .secao-contato .descricao-contato {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Grid Layout (Formulário + Cards) */
+  .secao-contato .grid-contato {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  @media (min-width: 900px) {
+    .secao-contato .grid-contato {
+      grid-template-columns: 1.6fr 1.2fr;
+    }
+  }
+
+  /* Card do Formulário (Esquerda) */
+  .secao-contato .card-formulario {
+    background: rgba(9, 21, 42, 0.85);
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .secao-contato .titulo-card {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+  }
+
+  .secao-contato .form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .secao-contato .campo-input label {
+    display: block;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .secao-contato .campo-input input,
+  .secao-contato .campo-input textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .secao-contato .campo-input input:focus,
+  .secao-contato .campo-input textarea:focus {
+    border-color: #d4af37;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+  }
+
+  .secao-contato .campo-input input::placeholder,
+  .secao-contato .campo-input textarea::placeholder {
+    color: #64748b;
+  }
+
+  .secao-contato .btn-enviar {
+    width: 100%;
+    padding: 14px;
+    background: #d4af37;
+    color: #071327;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .secao-contato .btn-enviar:hover {
+    background: #f3e5ab;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+  }
+
+  /* Cards da Direita */
+  .secao-contato .coluna-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .secao-contato .card-info {
+    background: rgba(9, 21, 42, 0.85);
+    border: 1.5px solid rgba(212, 175, 55, 0.25);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .secao-contato .card-info:hover {
+    border-color: #d4af37;
+    transform: translateX(4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+
+  .secao-contato .icone-box {
+    width: 48px;
+    height: 48px;
+    background: #d4af37;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .secao-contato .rotulo-card {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2px;
+    text-align: left;
+  }
+
+  .secao-contato .link-dourado {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+  }
+
+  .secao-contato .link-dourado:hover {
+    text-decoration: underline;
+  }
+
+  .secao-contato .texto-card {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.4;
+    text-align: left;
+  }
+</style>
+
+<section id="contato" class="secao-contato">
+  <div class="brilho-bg brilho-top-right"></div>
+  <div class="brilho-bg brilho-bottom-left"></div>
+
+  <div class="container-contato">
+    <div class="header-contato">
+      <span class="subtitulo-dourado">ENTRE EM CONTATO</span>
+      <h2 class="titulo-secao">Fale Conosco</h2>
+      <div class="linha-decorativa"></div>
+      <p class="descricao-contato">
+        Quer saber mais sobre as propostas da nossa Chapa ao Gabinete Estadual ou tirar dúvidas com os pré-candidatos?<br>
+        Entre em contato conosco através das redes sociais ou envie uma mensagem.
+      </p>
+    </div>
+
+    <div class="grid-contato">
+      <!-- FORMULÁRIO -->
+      <div class="card-formulario">
+        <h3 class="titulo-card">Envie uma Mensagem</h3>
+        <form action="#" method="POST" class="form-contato">
+          <div class="campo-input">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+          </div>
+
+          <div class="campo-input">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+
+          <div class="campo-input">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos como podemos ajudar..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-enviar">
+            Enviar Mensagem
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- CARDS DE CONTATO -->
+      <div class="coluna-cards">
+        <div class="card-info">
+          <div class="icone-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#071327" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="rotulo-card">João Guilherme (MCE)</div>
+            <a href="https://wa.me/5586999999999" target="_blank" rel="noopener noreferrer" class="link-dourado">Falar no WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card-info">
+          <div class="icone-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#071327" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="rotulo-card">Pedro Henrique (MCEA)</div>
+            <a href="https://wa.me/558999297467" target="_blank" rel="noopener noreferrer" class="link-dourado">(89) 9 9297-467</a>
+          </div>
+        </div>
+
+        <div class="card-info">
+          <div class="icone-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#071327" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div>
+            <div class="rotulo-card">Jurisdição</div>
+            <p class="texto-card">Gabinete Estadual da Ordem DeMolay do Piauí<br>Gestão 2026/2027</p>
+          </div>
+        </div>
+
+        <div class="card-info">
+          <div class="icone-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#071327" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <div>
+            <div class="rotulo-card">Instagram da Chapa</div>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="link-dourado">@chapa.juntospelasvirtudes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ==========================================================================
+     RODAPÉ / FOOTER
+     ========================================================================== -->
+  <footer class="rodape-principal reveal">
+    <div class="caixa">
+      <div class="redes-sociais">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+
+      <p>&copy; Chapa Juntos pelas Virtudes. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- Arquivo JS -->
-  <script src="js/script.js"></script>
+  <!-- Script JS Principal -->
+  <script src="js/main.js"></script>
 </body>
 </html>
