@@ -10,11 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos CSS -->
+  <!-- Estilos CSS Principais -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* FAIXA TRICOLOR */
+    /* FAIXA TRICOLOR DECORATIVA DO TOPO */
     .faixa-tricolor {
       width: 100%;
       height: 4px;
@@ -26,11 +26,21 @@
     .container-perfil {
       display: flex;
       gap: 40px;
-      align-items: center; /* Centralização vertical perfeita entre foto/botão e texto */
+      align-items: center;
       flex-wrap: wrap;
       justify-content: center;
     }
 
+    /* BLOCO DA FOTO E BOTÃO */
+    .coluna-foto-perfil {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    /* CAIXA DE TEXTO DESCRITIVO */
     .caixa-texto-perfil {
       flex: 1;
       min-width: 300px;
@@ -41,7 +51,7 @@
       color: #cbd5e1;
       font-size: 0.98rem;
       line-height: 1.8;
-      text-align: justify; /* Alinhamento justificado elegante para o texto */
+      text-align: justify;
     }
 
     .caixa-texto-perfil p {
@@ -52,26 +62,196 @@
       margin-bottom: 0;
     }
 
-    @media (max-width: 768px) {
+    /* ==========================================================================
+       DIVISOR DE SEÇÃO (LINHA SUAVE DOURADA)
+       ========================================================================== */
+    .divisor-secao {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+      margin: 55px 0 45px 0;
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS
+       ========================================================================== */
+    .secao-cargos {
+      width: 100%;
+    }
+
+    .grid-cargos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card-cargo {
+      background: #09152a;
+      border: 1.5px solid rgba(212, 175, 55, 0.25);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-cargo:hover {
+      transform: translateY(-4px);
+      border-color: #d4af37;
+      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.25);
+    }
+
+    .tag-nivel-cargo {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #d4af37;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .titulo-cargo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .periodo-cargo {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       SEÇÃO: TRAJETÓRIA E CONQUISTAS
+       ========================================================================== */
+    .secao-curriculo {
+      width: 100%;
+    }
+
+    .cabecalho-secao-curriculo {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .tag-secao {
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .titulo-secao {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin: 0 0 8px 0;
+    }
+
+    .descricao-secao {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Grid com 4 colunas (12 itens = 3 linhas) */
+    .grid-curriculo {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card-conquista {
+      background: #09152a;
+      border: 1.5px solid rgba(212, 175, 55, 0.25);
+      border-radius: 12px;
+      padding: 22px 12px 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 185px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-conquista:hover {
+      transform: translateY(-6px);
+      border-color: #d4af37;
+      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.3);
+    }
+
+    .card-conquista .icone-container {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .card-conquista img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .card-conquista .titulo-item {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .card-conquista .data-item {
+      font-size: 0.75rem;
+      color: #d4af37;
+      font-weight: 500;
+    }
+
+    /* ADAPTATIVO PARA DISPOSITIVOS MÓVEIS */
+    @media (max-width: 850px) {
       .caixa-texto-perfil {
         padding: 24px;
-        text-align: left; /* No mobile, o alinhamento à esquerda garante melhor leitura */
+        text-align: left;
+      }
+      .grid-curriculo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      .grid-cargos {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   </style>
 </head>
 <body>
 
-<!-- ==========================================================================
-     CABECALHO E NAVEGAÇÃO
-     ========================================================================== -->
+  <!-- CABECALHO E NAVEGAÇÃO -->
   <header class="cabecalho-principal">
     <div class="conteudo-navegacao">
       <a href="index.html" class="marca">
-        
-        <!-- EMBLEMA NO LUGAR DO ÍCONE -->
         <img src="assets/images/Material Gráfico/emblemasemfundo.png" alt="Emblema da Chapa" style="height: 40px; width: auto; object-fit: contain;">
-        
         <div>
           JUNTOS PELAS VIRTUDES, UNIDOS PELO PIAUÍ
           <small>CHAPA PRÉ-CANDIDATA AO GABINETE ESTADUAL 2026/2027</small>
@@ -85,7 +265,7 @@
           <li><a href="index.html#sobre">Sobre a Chapa</a></li>
           <li><a href="index.html#pilares">Nossas Virtudes</a></li>
           <li><a href="index.html#diretoria">Nosso Gabinete</a></li>
-          <li><a href="projetos.html">Propostas</a></li>
+          <li><a href="index.html#propostas">Propostas</a></li>
           <li><a href="index.html#contato">Contato</a></li>
         </ul>
       </nav>
@@ -95,9 +275,7 @@
   <!-- FAIXA TRICOLOR -->
   <div class="faixa-tricolor"></div>
 
-<!-- ==========================================================================
-     CONTEÚDO DA PÁGINA DO JOÃO GUILHERME MONTEIRO
-     ========================================================================== -->
+  <!-- CONTEÚDO PRINCIPAL DO JOÃO GUILHERME MONTEIRO -->
   <main style="padding: 60px 20px; max-width: 1100px; margin: 0 auto;">
     
     <!-- TÍTULO DA PÁGINA -->
@@ -113,17 +291,19 @@
       </p>
     </div>
 
-    <!-- ESTRUTURA ALINHADA DO PERFIL -->
+    <!-- ESTRUTURA DO PERFIL -->
     <div class="container-perfil">
       
       <!-- FOTO E BOTÃO DE WHATSAPP -->
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-        <div style="width: 220px; height: 220px; border-radius: 50%; border: 2px solid #d4af37; overflow: hidden; background: #09152a; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-          <img src="assets/images/MCE-JG/joaopi.jpeg" alt="João Guilherme Monteiro" style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="coluna-foto-perfil">
+        <div style="width: 220px; height: 220px; min-width: 220px; min-height: 220px; aspect-ratio: 1 / 1; border-radius: 50%; border: 2px solid #d4af37; overflow: hidden; background: #09152a; box-shadow: 0 4px 20px rgba(0,0,0,0.3); flex-shrink: 0;">
+          <img 
+            src="assets/images/MCE-JG/joaopi.jpeg" 
+            alt="João Guilherme Monteiro" 
+            style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;"
+          >
         </div>
 
-        <!-- BOTÃO DE CONTATO COM LINK DIRETO PARA O WHATSAPP -->
-        <!-- Substitua '5586999999999' pelo número com DDD do João -->
         <a href="https://wa.me/5586999999999?text=Ol%C3%A1%2C%20Jo%C3%A3o!%20Vim%20pelo%20site%20da%20Chapa%20e%20gostaria%20de%20conversar." 
            target="_blank" 
            rel="noopener noreferrer" 
@@ -132,7 +312,7 @@
         </a>
       </div>
 
-      <!-- TEXTO DESCRITIVO COM ALINHAMENTO JUSTIFICADO -->
+      <!-- TEXTO DESCRITIVO -->
       <div class="caixa-texto-perfil">
         <p>
           O Mestre Conselheiro Estadual representa a liderança jovem da Ordem DeMolay em seu estado. Atua como elo entre os Capítulos e a liderança adulta, coordenando, orientando e inspirando os trabalhos da juventude. Vai além da representatividade: executa projetos que fortalecem os princípios da Ordem e incentivam a formação de líderes comprometidos com a sociedade.
@@ -146,6 +326,159 @@
       </div>
 
     </div>
+
+    <!-- LINHA DE DIVISÃO ELEGANTE -->
+    <hr class="divisor-secao">
+
+    <!-- ==========================================================================
+         SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS (LIDERANÇA)
+         ========================================================================== -->
+    <section class="secao-cargos">
+      <div class="cabecalho-secao-curriculo">
+        <span class="tag-secao">SERVIÇO & LIDERANÇA</span>
+        <h2 class="titulo-secao">Histórico de Cargos</h2>
+        <p class="descricao-secao">Principais funções administrativas e de liderança assumidas na Ordem DeMolay.</p>
+      </div>
+
+      <div class="grid-cargos">
+        
+        <!-- Cargo 1: Mestre Conselheiro no Capítulo -->
+        <div class="card-cargo">
+          <span class="tag-nivel-cargo">Capítulo</span>
+          <h3 class="titulo-cargo">Mestre Conselheiro</h3>
+          <span class="periodo-cargo">Gestão 2025.2</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LINHA DE DIVISÃO ELEGANTE -->
+    <hr class="divisor-secao">
+
+    <!-- ==========================================================================
+         SEÇÃO: TRAJETÓRIA E CONQUISTAS (INSÍGNIAS E PRÊMIOS)
+         ========================================================================== -->
+    <section class="secao-curriculo">
+      
+      <div class="cabecalho-secao-curriculo">
+        <span class="tag-secao">HONRARIAS & CONQUISTAS</span>
+        <h2 class="titulo-secao">Trajetória DeMolay</h2>
+        <p class="descricao-secao">Graus, comendas, prêmios e trabalhos prestados na Ordem DeMolay.</p>
+      </div>
+
+      <div class="grid-curriculo">
+
+        <!-- 1. Grau Iniciático -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/iniciacao.png" alt="Grau Iniciático">
+          </div>
+          <span class="titulo-item">Grau Iniciático</span>
+          <span class="data-item">26/08/2023</span>
+        </div>
+
+        <!-- 2. 1 Ano de Iniciação -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/1_ano_iniciacao.png" alt="1 Ano de Iniciação">
+          </div>
+          <span class="titulo-item">1 Ano de Iniciação</span>
+          <span class="data-item">26/08/2024</span>
+        </div>
+
+        <!-- 3. Grau DeMolay -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/demolay.png" alt="Grau DeMolay">
+          </div>
+          <span class="titulo-item">Grau DeMolay</span>
+          <span class="data-item">10/12/2023</span>
+        </div>
+
+        <!-- 4. Nobre Cavaleiro -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/nobre_cavaleiro.png" alt="Nobre Cavaleiro">
+          </div>
+          <span class="titulo-item">Nobre Cavaleiro</span>
+          <span class="data-item">25/05/2024</span>
+        </div>
+
+        <!-- 5. Cavaleiro da Capela -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/capela.png" alt="Cavaleiro da Capela">
+          </div>
+          <span class="titulo-item">Cavaleiro da Capela</span>
+          <span class="data-item">05/10/2025</span>
+        </div>
+
+        <!-- 6. Cruz de Salém -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/salem.png" alt="Cavaleiro da Cruz de Salém">
+          </div>
+          <span class="titulo-item">Cavaleiro da Cruz de Salém</span>
+          <span class="data-item">21/05/2026</span>
+        </div>
+
+        <!-- 7. PMC - PSM -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/pmc.png" alt="PMC - PSM">
+          </div>
+          <span class="titulo-item">PMC - PSM</span>
+          <span class="data-item">20/12/2025</span>
+        </div>
+
+        <!-- 8. CNIE Capítulos -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/cnie.png" alt="CNIE Capítulos">
+          </div>
+          <span class="titulo-item">CNIE Capítulos</span>
+          <span class="data-item">20/12/2025</span>
+        </div>
+
+        <!-- 9. Oficial do Capítulo -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/oficial_capitulo.png" alt="Trabalho como Oficial do Capítulo">
+          </div>
+          <span class="titulo-item">Trabalho como Oficial do Capítulo</span>
+          <span class="data-item">27/05/2026</span>
+        </div>
+
+        <!-- 10. Oficial do Priorado -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/oficial_priorado.png" alt="Trabalho como Oficial do Priorado">
+          </div>
+          <span class="titulo-item">Trabalho como Oficial do Priorado</span>
+          <span class="data-item">28/05/2026</span>
+        </div>
+
+        <!-- 11. Prêmio Tirando o Chapéu -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/chapeu.png" alt="Prêmio Tirando o Chapéu">
+          </div>
+          <span class="titulo-item">Prêmio Tirando o Chapéu</span>
+          <span class="data-item">27/05/2026</span>
+        </div>
+
+        <!-- 12. Medalha do Fundador -->
+        <div class="card-conquista">
+          <div class="icone-container">
+            <img src="assets/images/insignias/fundador.png" alt="Medalha do Fundador">
+          </div>
+          <span class="titulo-item">Medalha do Fundador</span>
+          <span class="data-item">10/06/2026</span>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
 </body>
