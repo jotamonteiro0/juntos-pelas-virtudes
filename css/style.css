@@ -1107,3 +1107,122 @@ footer.rodape-principal {
         gap: 15px;
       }
     }
+
+    /* ==========================================================================
+   ORGANIZAÇÃO PADRÃO PARA CELULARES (MOBILE)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  
+  /* 1. SEÇÃO HERO / CAPA */
+  .capa {
+    padding: 40px 15px !important;
+  }
+
+  .emblema-chapa {
+    max-width: 200px !important; /* Ajusta a imagem para não ocupar a tela inteira */
+  }
+
+  .capa h1 {
+    font-size: 1.8rem !important; /* Reduz o título principal para caber confortavelmente */
+    line-height: 1.3 !important;
+    margin-bottom: 25px !important;
+  }
+
+  .botoes-acao {
+    flex-direction: column !important; /* Empilha os botões um sobre o outro */
+    width: 100%;
+    gap: 12px !important;
+  }
+
+  .botoes-acao .btn {
+    width: 100% !important; /* Botões ocupam a largura completa no celular */
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* 2. NAVEGAÇÃO E CABEÇALHO */
+  .conteudo-navegacao {
+    padding: 12px 15px !important;
+  }
+
+  .marca small {
+    display: none; /* Oculta o subtítulo muito longo no topo para limpar o visual */
+  }
+
+  .marca {
+    font-size: 0.85rem !important;
+  }
+
+  /* 3. PÁGINA / SEÇÃO DO PERFIL DO CANDIDATO */
+  main {
+    padding: 30px 15px !important;
+  }
+
+  .container-perfil {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 25px !important;
+  }
+
+  .coluna-foto-perfil {
+    width: 100%;
+  }
+
+  .coluna-foto-perfil a {
+    width: 100%; /* Botão do WhatsApp em largura total no celular */
+    box-sizing: border-box;
+  }
+
+  .caixa-texto-perfil {
+    padding: 20px 16px !important; /* Aproveita melhor as bordas da tela */
+    font-size: 0.93rem !important;
+    line-height: 1.7 !important;
+    text-align: left !important; /* Texto alinhado à esquerda evita espaços gigantes entre palavras no celular */
+  }
+
+  /* 4. TÍTULOS DAS SEÇÕES */
+  .titulo-secao {
+    font-size: 2rem !important;
+  }
+
+  .descricao-secao {
+    font-size: 0.88rem !important;
+  }
+
+  /* 5. CARGOS E CONQUISTAS (GRIDS) */
+  .grid-cargos {
+    grid-template-columns: 1fr !important; /* 1 card de cargo por linha */
+    gap: 12px !important;
+  }
+
+  .grid-curriculo {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 medalhas por linha */
+    gap: 12px !important;
+  }
+
+  .card-conquista {
+    padding: 16px 8px 14px !important;
+    min-height: 160px !important;
+  }
+
+  .card-conquista .icone-container {
+    width: 55px !important;
+    height: 55px !important;
+  }
+
+  .card-conquista .titulo-item {
+    font-size: 0.78rem !important;
+  }
+}
+
+/* AJUSTES EXTRA PARA CELULARES MUITO PEQUENOS (Até 400px de largura) */
+@media (max-width: 400px) {
+  .capa h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .grid-curriculo {
+    grid-template-columns: 1fr !important; /* 1 medalha por linha em telas muito pequenas */
+  }
+}
