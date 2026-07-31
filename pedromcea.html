@@ -22,11 +22,11 @@
       display: block;
     }
 
-    /* ESTILOS DE ALINHAMENTO DO PERFIL */
+    /* ESTILOS DE ALINHAMENTO DO PERFIL (ALINHADO AO TOPO) */
     .container-perfil {
       display: flex;
       gap: 40px;
-      align-items: center;
+      align-items: flex-start; /* Alinha o topo da foto com o topo da caixa de texto */
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -63,7 +63,7 @@
     }
 
     /* ==========================================================================
-       DIVISOR DE SEÇÃO
+       DIVISOR DE SEÇÃO (LINHA SUAVE DOURADA)
        ========================================================================== */
     .divisor-secao {
       border: none;
@@ -74,7 +74,7 @@
     }
 
     /* ==========================================================================
-       NOVA SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS
+       SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS
        ========================================================================== */
     .secao-cargos {
       width: 100%;
@@ -291,12 +291,12 @@
       </p>
     </div>
 
-    <!-- ESTRUTURA DO PERFIL -->
+    <!-- ESTRUTURA DO PERFIL (FOTO ALINHADA AO TOPO DO TEXTO) -->
     <div class="container-perfil">
       
       <!-- FOTO E BOTÃO DE WHATSAPP -->
       <div class="coluna-foto-perfil">
-        <div style="width: 220px; height: 220px; min-width: 220px; min-height: 220px; aspect-ratio: 1 / 1; border-radius: 50%; border: 2px solid #d4af37; overflow: hidden; background: #09152a; box-shadow: 0 4px 20px rgba(0,0,0,0.3); flex-shrink: 0; margin: 0 auto 20px;">
+        <div style="width: 220px; height: 220px; min-width: 220px; min-height: 220px; aspect-ratio: 1 / 1; border-radius: 50%; border: 2px solid #d4af37; overflow: hidden; background: #09152a; box-shadow: 0 4px 20px rgba(0,0,0,0.3); flex-shrink: 0;">
           <img 
             src="assets/images/pedro.jpg" 
             alt="Pedro Henrique Fontes" 
@@ -312,16 +312,19 @@
         </a>
       </div>
 
-      <!-- TEXTO DESCRITIVO -->
+      <!-- TEXTO DESCRITIVO PERSONALIZADO -->
       <div class="caixa-texto-perfil">
         <p>
-          O Mestre Conselheiro Estadual Adjunto atua em direta colaboração com a liderança jovem estadual, fortalecendo as ações junto aos Capítulos e auxiliando na gestão dos projetos da Ordem DeMolay. Sua atuação é fundamental para garantir a eficiência das atividades e o apoio contínuo aos jovens do estado.
+          Meu nome é <strong style="color: #ffffff;">Pedro Henrique Sobral Fontes</strong>, sou membro ativo do Capítulo Antônio Cardoso de Albuquerque nº 466, de Picos. Iniciei minha caminhada na Ordem DeMolay em 13 de abril de 2024.
         </p>
         <p>
-          Suas atribuições incluem auxiliar no acompanhamento dos Capítulos, colaborar na organização dos eventos estaduais e dar suporte técnico e institucional às lideranças locais na aplicação dos regulamentos e diretrizes da Ordem.
+          Em meu Capítulo, tive a oportunidade de atuar como Segundo Conselheiro, Mestre Conselheiro, Tesoureiro e Protocolista. Como Mestre Conselheiro, procurei conduzir uma gestão baseada no <strong style="color: #d4af37;">trabalho, no diálogo, na união entre os irmãos e no fortalecimento das atividades capitulares</strong>.
         </p>
         <p>
-          Comprometido com a juventude piauiense, busca promover uma gestão pautada na <strong style="color: #d4af37;">proximidade, trabalho em equipe, inovação e fortalecimento das virtudes DeMolay</strong>.
+          Minha atuação também ultrapassou os limites do Capítulo. Exerci a função de Corretor do CRE no Gabinete Estadual do Piauí e de Corretor do Programa Mais DeMolay no Gabinete Nacional da Liderança Juvenil. Atualmente, atuo como Secretário de Análise e Desenvolvimento do Gabinete Estadual, experiência que tem ampliado minha visão sobre as diferentes realidades da Ordem DeMolay em nosso estado e reforçado a importância de uma <strong style="color: #d4af37;">liderança estadual próxima, organizada e acessível</strong>.
+        </p>
+        <p>
+          Hoje, coloco meu nome à disposição dos DeMolays piauienses como candidato ao cargo de <strong style="color: #ffffff;">Mestre Conselheiro Estadual Adjunto</strong>. Ao lado de João Guilherme, compartilho o propósito de servir com responsabilidade, dedicação e diálogo. Nossas trajetórias são diferentes, mas estão unidas pela mesma convicção: a Ordem DeMolay do Piauí pode avançar ainda mais quando seus Capítulos caminham juntos, suas lideranças são valorizadas e cada irmão reconhece a importância de sua participação.
         </p>
       </div>
 
@@ -331,7 +334,7 @@
     <hr class="divisor-secao">
 
     <!-- ==========================================================================
-         NOVA SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS (LIDERANÇAS)
+         SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS (LIDERANÇAS)
          ========================================================================== -->
     <section class="secao-cargos">
       <div class="cabecalho-secao-curriculo">
@@ -346,7 +349,7 @@
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Capítulo</span>
           <h3 class="titulo-cargo">Mestre Conselheiro</h3>
-          <span class="periodo-cargo">Gestão 2025.2</span>
+          <span class="periodo-cargo">Capítulo Antônio Cardoso de Albuquerque nº 466 (2025.2)</span>
         </div>
 
         <!-- Cargo 2: Secretário de Análises e Desenvolvimento GE -->
@@ -392,7 +395,7 @@
         <!-- 1. 1 Ano de Iniciação -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/1_ano_iniciacao.png" alt="1 Ano de Iniciação">
+            <img src="assets/images/Material Gráfico/1_ano_iniciacao.png" alt="1 Ano de Iniciação">
           </div>
           <span class="titulo-item">1 Ano de Iniciação</span>
           <span class="data-item">13/04/2025</span>
@@ -401,7 +404,7 @@
         <!-- 2. Grau Iniciático -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/iniciacao.png" alt="Grau Iniciático">
+            <img src="assets/images/Material Gráfico/iniciatico.png" alt="Grau Iniciático">
           </div>
           <span class="titulo-item">Grau Iniciático</span>
           <span class="data-item">13/04/2024</span>
@@ -410,7 +413,7 @@
         <!-- 3. Grau DeMolay -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/demolay.png" alt="Grau DeMolay">
+            <img src="assets/images/Material Gráfico/demolay.png" alt="Grau DeMolay">
           </div>
           <span class="titulo-item">Grau DeMolay</span>
           <span class="data-item">26/10/2024</span>
@@ -419,7 +422,7 @@
         <!-- 4. Nobre Cavaleiro -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/nobre_cavaleiro.png" alt="Nobre Cavaleiro">
+            <img src="assets/images/Material Gráfico/cavaleiro.png" alt="Nobre Cavaleiro">
           </div>
           <span class="titulo-item">Nobre Cavaleiro</span>
           <span class="data-item">13/11/2024</span>
@@ -428,7 +431,7 @@
         <!-- 5. Cavaleiro da Capela -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/capela.png" alt="Cavaleiro da Capela">
+            <img src="assets/images/Material Gráfico/capela.png" alt="Cavaleiro da Capela">
           </div>
           <span class="titulo-item">Cavaleiro da Capela</span>
           <span class="data-item">05/06/2025</span>
@@ -437,7 +440,7 @@
         <!-- 6. Barra de Mérito - Curso -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/barra_curso.png" alt="Barra de Mérito - Curso">
+            <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Curso">
           </div>
           <span class="titulo-item">Barra de Mérito - Curso</span>
           <span class="data-item">28/10/2024</span>
@@ -446,7 +449,7 @@
         <!-- 7. Trabalho como Oficial do Capítulo -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/oficial_capitulo.png" alt="Trabalho como Oficial do Capítulo">
+            <img src="assets/images/Material Gráfico/traoficial.png" alt="Trabalho como Oficial do Capítulo">
           </div>
           <span class="titulo-item">Trabalho como Oficial do Capítulo</span>
           <span class="data-item">30/05/2025</span>
@@ -455,7 +458,7 @@
         <!-- 8. Barra de Mérito - Curso -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/barra_curso.png" alt="Barra de Mérito - Curso">
+            <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Curso">
           </div>
           <span class="titulo-item">Barra de Mérito - Curso</span>
           <span class="data-item">30/05/2025</span>
@@ -464,7 +467,7 @@
         <!-- 9. Barra de Mérito - Escolar -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/barra_escolar.png" alt="Barra de Mérito - Escolar">
+            <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Escolar">
           </div>
           <span class="titulo-item">Barra de Mérito - Escolar</span>
           <span class="data-item">30/05/2025</span>
@@ -473,7 +476,7 @@
         <!-- 10. Barra de Mérito - Frequência -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/barra_frequencia.png" alt="Barra de Mérito - Frequência">
+            <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Frequência">
           </div>
           <span class="titulo-item">Barra de Mérito - Frequência</span>
           <span class="data-item">30/05/2025</span>
@@ -482,25 +485,25 @@
         <!-- 11. Barra de Mérito - Frequência Maçônica -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/barra_frequencia_maconica.png" alt="Barra de Mérito - Frequência Maçônica">
+            <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Frequência Maçônica">
           </div>
           <span class="titulo-item">Barra de Mérito - Freq. Maçônica</span>
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 12. Barra de Mérito - Mérito -->
+        <!-- 12. Barra de Mérito - Mérido -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/barra_merito.png" alt="Barra de Mérito - Mérito">
+            <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Mérito">
           </div>
-          <span class="titulo-item">Barra de Mérito - Mérito</span>
+          <span class="titulo-item">Barra de Mérito - Mérido</span>
           <span class="data-item">30/05/2025</span>
         </div>
 
         <!-- 13. Prêmio Tirando o Chapéu -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/chapeu.png" alt="Prêmio Tirando o Chapéu">
+            <img src="assets/images/Material Gráfico/chapeu.png" alt="Prêmio Tirando o Chapéu">
           </div>
           <span class="titulo-item">Prêmio Tirando o Chapéu</span>
           <span class="data-item">30/05/2025</span>
@@ -509,7 +512,7 @@
         <!-- 14. PMC - PSM -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/pmc.png" alt="PMC - PSM">
+            <img src="assets/images/Material Gráfico/porservico.png" alt="PMC - PSM">
           </div>
           <span class="titulo-item">PMC - PSM</span>
           <span class="data-item">20/12/2025</span>
@@ -518,7 +521,7 @@
         <!-- 15. CNIE Capítulos -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/cnie.png" alt="CNIE Capítulos">
+            <img src="assets/images/Material Gráfico/cnie.png" alt="CNIE Capítulos">
           </div>
           <span class="titulo-item">CNIE Capítulos</span>
           <span class="data-item">20/12/2025</span>
@@ -527,7 +530,7 @@
         <!-- 16. Barra de Mérito - Arrecadação -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/barra_arrecadacao.png" alt="Barra de Mérito - Arrecadação">
+            <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Arrecadação">
           </div>
           <span class="titulo-item">Barra de Mérito - Arrecadação</span>
           <span class="data-item">18/05/2026</span>

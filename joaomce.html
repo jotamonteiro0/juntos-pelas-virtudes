@@ -22,11 +22,11 @@
       display: block;
     }
 
-    /* ESTILOS DE ALINHAMENTO DO PERFIL */
+    /* ESTILOS DE ALINHAMENTO DO PERFIL (ALINHADO AO TOPO) */
     .container-perfil {
       display: flex;
       gap: 40px;
-      align-items: center;
+      align-items: flex-start; /* Alinha o topo da foto com o topo da caixa de texto */
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -170,7 +170,7 @@
       margin: 0;
     }
 
-    /* Grid com 4 colunas (12 itens = 3 linhas) */
+    /* Grid com 4 colunas */
     .grid-curriculo {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -312,16 +312,19 @@
         </a>
       </div>
 
-      <!-- TEXTO DESCRITIVO -->
+      <!-- TEXTO DESCRITIVO PERSONALIZADO -->
       <div class="caixa-texto-perfil">
         <p>
-          O Mestre Conselheiro Estadual representa a liderança jovem da Ordem DeMolay em seu estado. Atua como elo entre os Capítulos e a liderança adulta, coordenando, orientando e inspirando os trabalhos da juventude. Vai além da representatividade: executa projetos que fortalecem os princípios da Ordem e incentivam a formação de líderes comprometidos com a sociedade.
+          Meu nome é <strong style="color: #ffffff;">João Guilherme Martins Lopes Monteiro</strong>. Sou membro do Capítulo Professor Carvalho Neves nº 500 e filiado ao Capítulo Luiz Ribeiro Gonçalves Neto nº 408, ambos de Teresina. Iniciei minha trajetória na Ordem DeMolay em 26 de agosto de 2023 e, desde o momento em que atravessei as portas do meu Capítulo, compreendi que estava entrando em algo muito maior do que uma organização: encontrei uma família, um propósito e uma oportunidade permanente de aprender, servir e crescer ao lado dos meus irmãos.
         </p>
         <p>
-          Suas funções incluem: cumprir as normas do Grande Conselho Estadual, atuar como interlocutor entre os Capítulos e o Conselho, orientar a prática ritualística, promover a integração entre os Capítulos e nomear assessores com aprovação do Grande Mestre Estadual.
+          A Ordem DeMolay transformou a minha forma de entender a liderança. Aprendi que <strong style="color: #d4af37;">liderar não é ocupar uma posição acima dos demais, mas estar disposto a caminhar ao lado de cada irmão</strong>. É ouvir antes de decidir, servir antes de exigir e assumir responsabilidades mesmo quando o caminho se torna desafiador.
         </p>
         <p>
-          Mais do que cumprir funções, o Mestre Conselheiro Estadual é ponte, exemplo e inspiração. Sua gestão deve refletir <strong style="color: #d4af37;">continuidade e inovação, inclusão e pertencimento e proximidade e transparência</strong>.
+          Como estudante de <strong style="color: #ffffff;">Engenharia de Software</strong>, aprendi a importância de planejar, analisar diferentes perspectivas e desenvolver soluções de maneira organizada e colaborativa. Acredito que uma liderança estadual também precisa dessas características: conhecer a realidade de cada Capítulo, escutar quem vive os desafios diariamente, estabelecer objetivos claros e transformar boas ideias em ações possíveis, responsáveis e duradouras.
+        </p>
+        <p>
+          É por acreditar no enorme potencial da Ordem DeMolay Piauiense que coloco meu nome à disposição para o cargo de Mestre Conselheiro Estadual. Não acredito em uma liderança distante, limitada a discursos ou presente apenas nos grandes eventos. Acredito em uma liderança que visita, escuta, orienta, acompanha e trabalha verdadeiramente ao lado dos Capítulos, dos Castelos, dos Priorados e de cada irmão do nosso estado.
         </p>
       </div>
 
@@ -330,7 +333,7 @@
     <!-- LINHA DE DIVISÃO ELEGANTE -->
     <hr class="divisor-secao">
 
-    <!-- ==========================================================================
+   <!-- ==========================================================================
          SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS (LIDERANÇA)
          ========================================================================== -->
     <section class="secao-cargos">
@@ -342,11 +345,39 @@
 
       <div class="grid-cargos">
         
-        <!-- Cargo 1: Mestre Conselheiro no Capítulo -->
+        <!-- Cargo 1: Mestre Conselheiro -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Capítulo</span>
           <h3 class="titulo-cargo">Mestre Conselheiro</h3>
-          <span class="periodo-cargo">Gestão 2025.2</span>
+          <span class="periodo-cargo">Capítulo Prof. Carvalho Neves nº 500 (2025.2)</span>
+        </div>
+
+        <!-- Cargo 2: Primeiro Conselheiro Estadual -->
+        <div class="card-cargo">
+          <span class="tag-nivel-cargo">Grande Capítulo</span>
+          <h3 class="titulo-cargo">Primeiro Conselheiro Estadual</h3>
+          <span class="periodo-cargo">Grande Capítulo Estadual 2025/2026</span>
+        </div>
+
+        <!-- Cargo 3: Primeiro Conselheiro -->
+        <div class="card-cargo">
+          <span class="tag-nivel-cargo">Capítulo</span>
+          <h3 class="titulo-cargo">Primeiro Conselheiro</h3>
+          <span class="periodo-cargo">Capítulo Prof. Carvalho Neves nº 500</span>
+        </div>
+
+        <!-- Cargo 4: Protocolista -->
+        <div class="card-cargo">
+          <span class="tag-nivel-cargo">Priorado</span>
+          <h3 class="titulo-cargo">Protocolista</h3>
+          <span class="periodo-cargo">Priorado de Cavaleiros de Argonath n° 247</span>
+        </div>
+
+        <!-- Cargo 5: Tesoureiro -->
+        <div class="card-cargo">
+          <span class="tag-nivel-cargo">Capítulo</span>
+          <h3 class="titulo-cargo">Tesoureiro</h3>
+          <span class="periodo-cargo">Capítulo Prof. Carvalho Neves nº 500</span>
         </div>
 
       </div>
@@ -371,7 +402,7 @@
         <!-- 1. Grau Iniciático -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/iniciacao.png" alt="Grau Iniciático">
+            <img src="assets/images/Material Gráfico/iniciatico.png" alt="Grau Iniciático">
           </div>
           <span class="titulo-item">Grau Iniciático</span>
           <span class="data-item">26/08/2023</span>
@@ -380,7 +411,7 @@
         <!-- 2. 1 Ano de Iniciação -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/1_ano_iniciacao.png" alt="1 Ano de Iniciação">
+            <img src="assets/images/Material Gráfico/1_ano_iniciacao.png" alt="1 Ano de Iniciação">
           </div>
           <span class="titulo-item">1 Ano de Iniciação</span>
           <span class="data-item">26/08/2024</span>
@@ -389,7 +420,7 @@
         <!-- 3. Grau DeMolay -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/demolay.png" alt="Grau DeMolay">
+            <img src="assets/images/Material Gráfico/demolay.png" alt="Grau DeMolay">
           </div>
           <span class="titulo-item">Grau DeMolay</span>
           <span class="data-item">10/12/2023</span>
@@ -398,7 +429,7 @@
         <!-- 4. Nobre Cavaleiro -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/nobre_cavaleiro.png" alt="Nobre Cavaleiro">
+            <img src="assets/images/Material Gráfico/cavaleiro.png" alt="Nobre Cavaleiro">
           </div>
           <span class="titulo-item">Nobre Cavaleiro</span>
           <span class="data-item">25/05/2024</span>
@@ -407,7 +438,7 @@
         <!-- 5. Cavaleiro da Capela -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/capela.png" alt="Cavaleiro da Capela">
+            <img src="assets/images/Material Gráfico/capela.png" alt="Cavaleiro da Capela">
           </div>
           <span class="titulo-item">Cavaleiro da Capela</span>
           <span class="data-item">05/10/2025</span>
@@ -416,7 +447,7 @@
         <!-- 6. Cruz de Salém -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/salem.png" alt="Cavaleiro da Cruz de Salém">
+            <img src="assets/images/Material Gráfico/salem.png" alt="Cavaleiro da Cruz de Salém">
           </div>
           <span class="titulo-item">Cavaleiro da Cruz de Salém</span>
           <span class="data-item">21/05/2026</span>
@@ -425,7 +456,7 @@
         <!-- 7. PMC - PSM -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/pmc.png" alt="PMC - PSM">
+            <img src="assets/images/Material Gráfico/porservico.png" alt="PMC - PSM">
           </div>
           <span class="titulo-item">PMC - PSM</span>
           <span class="data-item">20/12/2025</span>
@@ -434,16 +465,16 @@
         <!-- 8. CNIE Capítulos -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/cnie.png" alt="CNIE Capítulos">
+            <img src="assets/images/Material Gráfico/cnie.png" alt="CNIE Capítulos">
           </div>
-          <span class="titulo-item">CNIE Capítulos</span>
+          <span class="titulo-item">CNIE Capítulos - Nível Ouro</span>
           <span class="data-item">20/12/2025</span>
         </div>
 
         <!-- 9. Oficial do Capítulo -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/oficial_capitulo.png" alt="Trabalho como Oficial do Capítulo">
+            <img src="assets/images/Material Gráfico/traoficial.png" alt="Trabalho como Oficial do Capítulo">
           </div>
           <span class="titulo-item">Trabalho como Oficial do Capítulo</span>
           <span class="data-item">27/05/2026</span>
@@ -452,7 +483,7 @@
         <!-- 10. Oficial do Priorado -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/oficial_priorado.png" alt="Trabalho como Oficial do Priorado">
+            <img src="assets/images/Material Gráfico/trapri.png" alt="Trabalho como Oficial do Priorado">
           </div>
           <span class="titulo-item">Trabalho como Oficial do Priorado</span>
           <span class="data-item">28/05/2026</span>
@@ -461,7 +492,7 @@
         <!-- 11. Prêmio Tirando o Chapéu -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/chapeu.png" alt="Prêmio Tirando o Chapéu">
+            <img src="assets/images/Material Gráfico/chapeu.png" alt="Prêmio Tirando o Chapéu">
           </div>
           <span class="titulo-item">Prêmio Tirando o Chapéu</span>
           <span class="data-item">27/05/2026</span>
@@ -470,7 +501,7 @@
         <!-- 12. Medalha do Fundador -->
         <div class="card-conquista">
           <div class="icone-container">
-            <img src="assets/images/insignias/fundador.png" alt="Medalha do Fundador">
+            <img src="assets/images/Material Gráfico/fundador.png" alt="Medalha do Fundador">
           </div>
           <span class="titulo-item">Medalha do Fundador</span>
           <span class="data-item">10/06/2026</span>
