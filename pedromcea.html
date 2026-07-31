@@ -22,11 +22,11 @@
       display: block;
     }
 
-    /* ESTILOS DE ALINHAMENTO DO PERFIL (ALINHADO AO TOPO) */
+    /* ESTILOS DE ALINHAMENTO DO PERFIL */
     .container-perfil {
       display: flex;
       gap: 40px;
-      align-items: flex-start; /* Alinha o topo da foto com o topo da caixa de texto */
+      align-items: flex-start;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -62,9 +62,7 @@
       margin-bottom: 0;
     }
 
-    /* ==========================================================================
-       DIVISOR DE SEÇÃO (LINHA SUAVE DOURADA)
-       ========================================================================== */
+    /* DIVISOR DE SEÇÃO (LINHA SUAVE DOURADA) */
     .divisor-secao {
       border: none;
       height: 1px;
@@ -73,9 +71,7 @@
       width: 100%;
     }
 
-    /* ==========================================================================
-       SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS
-       ========================================================================== */
+    /* SEÇÃO: HISTÓRICO DE CARGOS */
     .secao-cargos {
       width: 100%;
     }
@@ -135,9 +131,7 @@
       font-weight: 500;
     }
 
-    /* ==========================================================================
-       SEÇÃO: TRAJETÓRIA E CONQUISTAS
-       ========================================================================== */
+    /* SEÇÃO: TRAJETÓRIA E CONQUISTAS */
     .secao-curriculo {
       width: 100%;
     }
@@ -170,7 +164,6 @@
       margin: 0;
     }
 
-    /* Grid com 4 colunas */
     .grid-curriculo {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -229,7 +222,7 @@
       font-weight: 500;
     }
 
-    /* ADAPTATIVO PARA DISPOSITIVOS MÓVEIS */
+    /* ADAPTATIVO PARA CELULARES */
     @media (max-width: 850px) {
       .caixa-texto-perfil {
         padding: 24px;
@@ -262,8 +255,6 @@
 
       <nav class="menu-principal">
         <ul>
-          <li><a href="index.html#sobre">Sobre a Chapa</a></li>
-          <li><a href="index.html#pilares">Nossas Virtudes</a></li>
           <li><a href="index.html#diretoria">Nosso Gabinete</a></li>
           <li><a href="index.html#propostas">Propostas</a></li>
           <li><a href="index.html#contato">Contato</a></li>
@@ -291,7 +282,7 @@
       </p>
     </div>
 
-    <!-- ESTRUTURA DO PERFIL (FOTO ALINHADA AO TOPO DO TEXTO) -->
+    <!-- ESTRUTURA DO PERFIL -->
     <div class="container-perfil">
       
       <!-- FOTO E BOTÃO DE WHATSAPP -->
@@ -333,9 +324,7 @@
     <!-- LINHA DE DIVISÃO ELEGANTE -->
     <hr class="divisor-secao">
 
-    <!-- ==========================================================================
-         SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS (LIDERANÇAS)
-         ========================================================================== -->
+    <!-- SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS -->
     <section class="secao-cargos">
       <div class="cabecalho-secao-curriculo">
         <span class="tag-secao">SERVIÇO & LIDERANÇA</span>
@@ -379,9 +368,7 @@
     <!-- LINHA DE DIVISÃO ELEGANTE -->
     <hr class="divisor-secao">
 
-    <!-- ==========================================================================
-         SEÇÃO: TRAJETÓRIA E CONQUISTAS (INSÍGNIAS E PRÊMIOS)
-         ========================================================================== -->
+    <!-- SEÇÃO: TRAJETÓRIA E CONQUISTAS -->
     <section class="secao-curriculo">
       
       <div class="cabecalho-secao-curriculo">
@@ -491,12 +478,12 @@
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 12. Barra de Mérito - Mérido -->
+        <!-- 12. Barra de Mérito - Mérito -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Mérito">
           </div>
-          <span class="titulo-item">Barra de Mérito - Mérido</span>
+          <span class="titulo-item">Barra de Mérito - Mérito</span>
           <span class="data-item">30/05/2025</span>
         </div>
 
@@ -540,6 +527,18 @@
     </section>
 
   </main>
+
+  <!-- RODAPÉ PRINCIPAL -->
+  <footer class="rodape-principal" style="text-align: center; padding: 30px 20px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+    <div class="caixa">
+      <p style="color: #8a9bb0; font-size: 0.85rem; margin: 0;">
+        &copy; Chapa Juntos pelas Virtudes. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT JS PRINCIPAL -->
+  <script src="js/main.js"></script>
 
 </body>
 </html>
