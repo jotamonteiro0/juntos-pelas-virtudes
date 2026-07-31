@@ -114,15 +114,13 @@
       <button id="botao-menu-mobile" aria-label="Abrir Menu">☰</button>
 
       <nav class="menu-principal">
-        <ul>
-          <li><a href="index.html#sobre">Sobre a Chapa</a></li>
-          <li><a href="index.html#pilares">Nossas Virtudes</a></li>
-          <li><a href="index.html#diretoria">Nosso Gabinete</a></li>
-          <!-- ALTERADO: Agora aponta para a seção de propostas na página inicial -->
-          <li><a href="index.html#propostas">Propostas</a></li>
-          <li><a href="index.html#contato">Contato</a></li>
-        </ul>
-      </nav>
+  <ul>
+    <li><a href="index.html#diretoria">Nosso Gabinete</a></li>
+    <li><a href="index.html#propostas">Propostas</a></li>
+    <li><a href="index.html#contato">Contato</a></li>
+  </ul>
+</nav>
+
     </div>
   </header>
   
@@ -148,77 +146,13 @@
     </div>
   </section>
 
-  <div class="divisor-brasao reveal">
-    <svg viewBox="0 0 24 24" fill="var(--dourado)">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-    </svg>
-  </div>
+  <!-- LINHA DIVISÓRIA DOURADA -->
+  <hr class="divisor-secao">
 
   <!-- ==========================================================================
-     SEÇÃO SOBRE
+     SEÇÃO 1: GABINETE ESTADUAL (CANDIDATOS)
      ========================================================================== -->
-  <section id="sobre" class="sobre reveal">
-    <div class="caixa">
-      <div class="sobre-grid">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="Integrantes da Chapa Juntos pelas Virtudes">
-          <figcaption>Chapa Juntos pelas Virtudes — Trabalho em equipe e dedicação.</figcaption>
-        </figure>
-
-        <div>
-          <span class="chapeu">Nossa Identidade</span>
-          <h2>Por que criar a Chapa Juntos pelas Virtudes?</h2>
-          <p>A Chapa <strong>Juntos pelas Virtudes</strong> nasceu do desejo de promover uma representação autêntica, ética e eficiente.</p>
-          <p>Acreditamos que a verdadeira liderança se faz com diálogo aberto, responsabilidade e ações concretas que impactam positivamente a nossa comunidade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ==========================================================================
-     SEÇÃO PILARES / VIRTUDES
-     ========================================================================== -->
-  <section id="pilares" class="pilares reveal">
-    <div class="caixa">
-      <div class="cabecalho-secao">
-        <h2>Nossos Pilares Virtuosos</h2>
-        <p>Os valores fundamentais que guiam todas as nossas propostas e ações.</p>
-      </div>
-
-      <div class="pilares-grid">
-        <div class="cartao-pilar reveal">
-          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-          <h3>Integridade</h3>
-          <p>Transparência total na gestão e compromisso inabalável com a verdade e a ética.</p>
-        </div>
-
-        <div class="cartao-pilar reveal">
-          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-          </svg>
-          <h3>União</h3>
-          <p>Ouvir cada voz e construir soluções coletivas onde todos têm espaço e representatividade.</p>
-        </div>
-
-        <div class="cartao-pilar reveal">
-          <svg class="simbolo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-          </svg>
-          <h3>Coragem & Ação</h3>
-          <p>Proatividade para propor mudanças reais e enfrentar os desafios com determinação.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ==========================================================================
-   SEÇÃO 1: GABINETE ESTADUAL (CANDIDATOS) - CORRIGIDO
-   ========================================================================== -->
-<section id="diretoria" class="diretoria reveal" style="padding: 60px 0;">
+  <section id="diretoria" class="diretoria reveal" style="padding: 60px 0;">
   <div class="caixa" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
     
     <div style="text-align: center; margin-bottom: 40px;">
@@ -231,10 +165,6 @@
       <!-- CARTÃO 1: JOÃO GUILHERME -->
       <div style="background: rgba(13, 31, 61, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 35px 25px; text-align: center; flex: 1; min-width: 300px; max-width: 480px; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <!-- 
-            📌 FOTO DO JOÃO FIXADA:
-            Adicionados: min-width, min-height, aspect-ratio e flex-shrink para travar a elipse.
-          -->
           <div style="width: 140px; height: 140px; min-width: 140px; min-height: 140px; aspect-ratio: 1 / 1; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--dourado, #d4af37); overflow: hidden; background: #071327; flex-shrink: 0;">
             <img 
               src="assets/images/MCE-JG/joaopi.jpeg" 
@@ -253,7 +183,6 @@
       <!-- CARTÃO 2: PEDRO HENRIQUE -->
       <div style="background: rgba(13, 31, 61, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 35px 25px; text-align: center; flex: 1; min-width: 300px; max-width: 480px; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <!-- 📌 FOTO DO PEDRO FIXADA -->
           <div style="width: 140px; height: 140px; min-width: 140px; min-height: 140px; aspect-ratio: 1 / 1; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--dourado, #d4af37); overflow: hidden; background: #071327; flex-shrink: 0;">
             <img 
               src="assets/images/MCEA - PH/pedro.jpg" 
