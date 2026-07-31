@@ -743,3 +743,367 @@ footer.rodape-principal {
       transform: translateY(0);
     }
   }
+
+  .divisor-secao {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+  margin: 0;
+}
+
+#contato.secao-contato {
+  padding: 80px 20px;
+  /* Alterado para #0E1E3F para criar a alternância com a seção anterior */
+  background-color: #0E1E3F !important; 
+  position: relative;
+  overflow: hidden;
+  font-family: 'Work Sans', 'Inter', sans-serif;
+  color: #ffffff;
+  /* Adiciona uma linha sutil no topo da seção */
+  border-top: 1px solid rgba(212, 175, 55, 0.2); 
+}
+
+/* Estado inicial dos elementos escondidos */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Estado quando o elemento entra na tela */
+.reveal.is-visible,
+.reveal.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   ESTILOS DA ANIMAÇÃO DE REVELAÇÃO (SCROLL REVEAL)
+   ========================================================================== */
+
+/* 1. Estado Inicial: O elemento começa invisível e 30px abaixo da sua posição */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  
+  /* Transição suave de transparência e movimento */
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+              
+  /* Otimização para a placa de vídeo do navegador rodar a animação sem travar */
+  will-change: opacity, transform;
+}
+
+/* 2. Estado Ativo: Quando o JS adiciona a classe, o elemento fica 100% visível na posição final */
+.reveal.is-visible,
+.reveal.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   ESTILOS DO CURRÍCULO DEMOLAY (ESTILO SISDM)
+   ========================================================================== */
+.secao-curriculo {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.titulo-curriculo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.titulo-curriculo::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #d4af37;
+  margin: 10px auto 0;
+}
+
+/* Grid responsivo: organiza os cards lado a lado */
+.grid-curriculo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  justify-content: center;
+}
+
+/* Card individual da conquista */
+.card-conquista {
+  background: #09152a;
+  border: 1.5px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 18px 10px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito ao passar o mouse (levanta o card e acende a borda em ouro) */
+.card-conquista:hover {
+  transform: translateY(-6px);
+  border-color: #d4af37;
+  box-shadow: 0 8px 22px rgba(212, 175, 55, 0.25);
+}
+
+/* Container da imagem/insígnia */
+.card-conquista .icone-container {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.card-conquista img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Textos dentro do card */
+.card-conquista .titulo-item {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.card-conquista .data-item {
+  font-size: 0.75rem;
+  color: #d4af37;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+       DIVISOR DE SEÇÃO (IGUAL AO ESTILO DO INDEX.HTML)
+       ========================================================================== */
+    .divisor-secao {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+      margin: 65px 0 50px 0;
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       ESTILOS DA SEÇÃO TRAJETÓRIA DEMOLAY
+       ========================================================================== */
+    .secao-curriculo {
+      width: 100%;
+    }
+
+    /* Cabeçalho idêntico ao "Nossas Propostas" do index */
+    .cabecalho-secao {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .tag-secao {
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .titulo-secao {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin: 0 0 8px 0;
+    }
+
+    .descricao-secao {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* GRID PERFEITO: 4 COLUNAS (3 LINHAS DE 4 = 12 CONQUISTAS) */
+    .grid-curriculo {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Cartão individual */
+    .card-conquista {
+      background: #09152a;
+      border: 1.5px solid rgba(212, 175, 55, 0.25);
+      border-radius: 12px;
+      padding: 22px 12px 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 185px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-conquista:hover {
+      transform: translateY(-6px);
+      border-color: #d4af37;
+      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.3);
+    }
+
+    .card-conquista .icone-container {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .card-conquista img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .card-conquista .titulo-item {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .card-conquista .data-item {
+      font-size: 0.75rem;
+      color: #d4af37;
+      font-weight: 500;
+    }
+
+    /* RESPONSIVIDADE PARA TABLETS E CELULARES */
+    @media (max-width: 850px) {
+      .grid-curriculo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+    }
+
+/* ==========================================================================
+       ESTILOS DA SEÇÃO TRAJETÓRIA DEMOLAY (PADRÃO INDEX.HTML)
+       ========================================================================== */
+    .secao-curriculo {
+      margin-top: 80px;  /* Espaçamento natural que separa do perfil acima */
+      width: 100%;
+    }
+
+    /* Cabeçalho de seção idêntico ao "Nossas Propostas" do index.html */
+    .cabecalho-secao-curriculo {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .tag-secao {
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .titulo-secao {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+    }
+
+    .descricao-secao {
+      color: #a0aec0;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* GRID PERFEITO: 4 COLUNAS (3 LINHAS DE 4 CARDS = 12 ITENS) */
+    .grid-curriculo {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card-conquista {
+      background: #09152a;
+      border: 1.5px solid rgba(212, 175, 55, 0.25);
+      border-radius: 12px;
+      padding: 22px 12px 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 185px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-conquista:hover {
+      transform: translateY(-6px);
+      border-color: #d4af37;
+      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.3);
+    }
+
+    .card-conquista .icone-container {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .card-conquista img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .card-conquista .titulo-item {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .card-conquista .data-item {
+      font-size: 0.75rem;
+      color: #d4af37;
+      font-weight: 500;
+    }
+
+    /* RESPONSIVO PARA TABLET E CELULAR */
+    @media (max-width: 850px) {
+      .grid-curriculo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+    }

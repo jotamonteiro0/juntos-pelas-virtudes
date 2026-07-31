@@ -15,6 +15,86 @@
 </head>
 <body>
 
+
+  <!-- ==========================================================================
+     EXEMPLO DE ELEMENTO COM ANIMAÇÃO (Coloque a classe 'reveal' onde desejar)
+     ========================================================================== -->
+<div class="card-projeto reveal">
+  <!-- O conteúdo do seu card aqui -->
+</div>
+
+<!-- ==========================================================================
+     SCRIPT DE ANIMAÇÃO AUTOMÁTICA (AO CARREGAR E AO ROLAR A TELA)
+     ========================================================================== -->
+<script>
+  // Função responsável por calcular a posição dos elementos e aplicar a classe de animação
+  function verificarRevelacao() {
+    // Busca no HTML todos os elementos que possuem a classe 'reveal'
+    const elementos = document.querySelectorAll('.reveal');
+    
+    // Pega a altura total da tela visível do usuário
+    const alturaJanela = window.innerHeight;
+
+    // Passa por cada elemento marcado com '.reveal' para checar a posição dele na tela
+    elementos.forEach(elemento => {
+      // Pega a distância do topo do elemento até o topo da tela
+      const topoElemento = elemento.getBoundingClientRect().top;
+      
+      // Margem de segurança em pixels (o efeito ativa um pouco antes do elemento tocar o rodapé)
+      const pontoAtivacao = 80;
+
+      // Se a distância do elemento for menor que a altura visível da janela, ele já entrou na tela
+      if (topoElemento < alturaJanela - pontoAtivacao) {
+        // Adiciona as classes que disparam a transição do CSS
+        elemento.classList.add('is-visible', 'visivel');
+      }
+    });
+  }
+
+  // GATILHO 1: Dispara a função IMEDIATAMENTE assim que o HTML carregar na tela
+  // (Resolve o problema do efeito não rodar quando a pessoa entra direto na página 'projetos.html')
+  document.addEventListener('DOMContentLoaded', verificarRevelacao);
+
+  // GATILHO 2: Dispara a função toda vez que o usuário rolar o mouse/scroll para baixo ou para cima
+  window.addEventListener('scroll', verificarRevelacao);
+</script>
+
+<!-- ==========================================================================
+     SCRIPT DE ANIMAÇÃO AUTOMÁTICA (AO CARREGAR E AO ROLAR A TELA)
+     ========================================================================== -->
+<script>
+  // Função responsável por calcular a posição dos elementos e aplicar a classe de animação
+  function verificarRevelacao() {
+    // Busca no HTML todos os elementos que possuem a classe 'reveal'
+    const elementos = document.querySelectorAll('.reveal');
+    
+    // Pega a altura total da tela visível do usuário
+    const alturaJanela = window.innerHeight;
+
+    // Passa por cada elemento marcado com '.reveal' para checar a posição dele na tela
+    elementos.forEach(elemento => {
+      // Pega a distância do topo do elemento até o topo da tela
+      const topoElemento = elemento.getBoundingClientRect().top;
+      
+      // Margem de segurança em pixels (o efeito ativa um pouco antes do elemento tocar o rodapé)
+      const pontoAtivacao = 80;
+
+      // Se a distância do elemento for menor que a altura visível da janela, ele já entrou na tela
+      if (topoElemento < alturaJanela - pontoAtivacao) {
+        // Adiciona as classes que disparam a transição do CSS
+        elemento.classList.add('is-visible', 'visivel');
+      }
+    });
+  }
+
+  // GATILHO 1: Dispara a função IMEDIATAMENTE assim que o HTML carregar na tela
+  // (Resolve o problema do efeito não rodar quando a pessoa entra direto na página 'projetos.html')
+  document.addEventListener('DOMContentLoaded', verificarRevelacao);
+
+  // GATILHO 2: Dispara a função toda vez que o usuário rolar o mouse/scroll para baixo ou para cima
+  window.addEventListener('scroll', verificarRevelacao);
+</script>
+
 <!-- ==========================================================================
      CABECALHO E NAVEGAÇÃO
      ========================================================================== -->
@@ -38,13 +118,13 @@
           <li><a href="index.html#sobre">Sobre a Chapa</a></li>
           <li><a href="index.html#pilares">Nossas Virtudes</a></li>
           <li><a href="index.html#diretoria">Nosso Gabinete</a></li>
-          <li><a href="projetos.html">Propostas</a></li>
+          <!-- ALTERADO: Agora aponta para a seção de propostas na página inicial -->
+          <li><a href="index.html#propostas">Propostas</a></li>
           <li><a href="index.html#contato">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
   
 <!-- ==========================================================================
      SEÇÃO HERO / CAPA
@@ -136,7 +216,7 @@
 
 
   <!-- ==========================================================================
-   SEÇÃO GABINETE ESTADUAL (INDEX.HTML)
+   SEÇÃO 1: GABINETE ESTADUAL (CANDIDATOS) - CORRIGIDO
    ========================================================================== -->
 <section id="diretoria" class="diretoria reveal" style="padding: 60px 0;">
   <div class="caixa" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
@@ -148,26 +228,38 @@
 
     <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
       
-   <!-- CARTÃO 1: JOÃO GUILHERME -->
-<div style="background: rgba(13, 31, 61, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 35px 25px; text-align: center; flex: 1; min-width: 300px; max-width: 480px; display: flex; flex-direction: column; justify-content: space-between;">
-  <div>
-    <div style="width: 140px; height: 140px; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--dourado, #d4af37); overflow: hidden; background: #071327;">
-      <!-- CAMINHO COM O NOVO NOME DA IMAGEM -->
-      <img src="assets/images/MCE-JG/joaopi.jpeg" alt="João Guilherme Monteiro" style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #ffffff; margin-bottom: 6px;">João Guilherme Monteiro</h3>
-    <span style="display: block; color: var(--dourado, #d4af37); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px;">CANDIDATO A MESTRE CONSELHEIRO ESTADUAL</span>
-  </div>
-  <a href="joaomce.html" style="display: block; width: 100%; padding: 12px; border: 1px solid var(--dourado, #d4af37); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s;">
-    Ver Biografia
-  </a>
-</div>
+      <!-- CARTÃO 1: JOÃO GUILHERME -->
+      <div style="background: rgba(13, 31, 61, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 35px 25px; text-align: center; flex: 1; min-width: 300px; max-width: 480px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <!-- 
+            📌 FOTO DO JOÃO FIXADA:
+            Adicionados: min-width, min-height, aspect-ratio e flex-shrink para travar a elipse.
+          -->
+          <div style="width: 140px; height: 140px; min-width: 140px; min-height: 140px; aspect-ratio: 1 / 1; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--dourado, #d4af37); overflow: hidden; background: #071327; flex-shrink: 0;">
+            <img 
+              src="assets/images/MCE-JG/joaopi.jpeg" 
+              alt="João Guilherme Monteiro" 
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;"
+            >
+          </div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #ffffff; margin-bottom: 6px;">João Guilherme Monteiro</h3>
+          <span style="display: block; color: var(--dourado, #d4af37); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px;">CANDIDATO A MESTRE CONSELHEIRO ESTADUAL</span>
+        </div>
+        <a href="joaomce.html" style="display: block; width: 100%; padding: 12px; border: 1px solid var(--dourado, #d4af37); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s;">
+          Ver Biografia
+        </a>
+      </div>
 
       <!-- CARTÃO 2: PEDRO HENRIQUE -->
       <div style="background: rgba(13, 31, 61, 0.7); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 35px 25px; text-align: center; flex: 1; min-width: 300px; max-width: 480px; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="width: 140px; height: 140px; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--dourado, #d4af37); overflow: hidden; background: #071327;">
-            <img src="assets/images/MCEA - PH/pedro.jpg" alt="Pedro Henrique" style="width: 100%; height: 100%; object-fit: cover;">
+          <!-- 📌 FOTO DO PEDRO FIXADA -->
+          <div style="width: 140px; height: 140px; min-width: 140px; min-height: 140px; aspect-ratio: 1 / 1; margin: 0 auto 20px; border-radius: 50%; border: 2px solid var(--dourado, #d4af37); overflow: hidden; background: #071327; flex-shrink: 0;">
+            <img 
+              src="assets/images/MCEA - PH/pedro.jpg" 
+              alt="Pedro Henrique" 
+              style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;"
+            >
           </div>
           <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #ffffff; margin-bottom: 6px;">Pedro Henrique</h3>
           <span style="display: block; color: var(--dourado, #d4af37); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px;">CANDIDATO A MESTRE CONSELHEIRO ESTADUAL ADJUNTO</span>
@@ -181,56 +273,70 @@
   </div>
 </section>
 
- <!-- ==========================================================================
-   SEÇÃO: PLANO DE GESTÃO & NOSSOS PROJETOS (CARDS PADRONIZADOS)
+<!-- ==========================================================================
+   DIVISOR DE SEÇÃO DOURADO SUAVE
    ========================================================================== -->
-<section style="padding: 60px 20px; background: transparent;">
-  <div style="max-width: 1050px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; align-items: stretch;">
+<div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent); margin: 0;"></div>
+
+<!-- ==========================================================================
+   SEÇÃO 2: PLANO DE GESTÃO & NOSSOS PROJETOS (PROPOSTAS)
+   ========================================================================== -->
+<section id="propostas" class="propostas reveal" style="padding: 70px 20px; background: rgba(14, 30, 63, 0.35);">
+  <div style="max-width: 1050px; margin: 0 auto;">
     
-    <!-- CARD 1: PLANO DE GESTÃO -->
-    <div style="background: rgba(8, 18, 38, 0.75); border: 1.5px solid #d4af37; border-radius: 16px; padding: 35px 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: space-between; backdrop-filter: blur(10px); text-align: left;">
-      <div>
-        <span style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; font-weight: 700; display: block; margin-bottom: 10px;">
-          DOCUMENTO OFICIAL
-        </span>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; color: #ffffff; margin: 0 0 14px 0; font-weight: 700;">
-          Conheça nosso <br>
-          <span style="color: #d4af37;">Plano de Gestão!</span>
-        </h2>
-        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0 0 24px 0;">
-          Confira em detalhes todas as nossas diretrizes, metas e compromissos estruturados em documento para guiar o nosso trabalho.
-        </p>
-      </div>
-      <div>
-        <!-- Coloque aqui o link do seu PDF ou documento -->
-        <a href="plano.pdf" target="_blank" style="display: inline-block; width: 100%; text-align: center; padding: 12px 20px; background: #d4af37; color: #060d19; font-weight: 700; text-decoration: none; border-radius: 6px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
-          BAIXAR DOCUMENTO
-        </a>
-      </div>
+    <!-- CABEÇALHO DA SEÇÃO DE PROPOSTAS -->
+    <div style="text-align: center; margin-bottom: 45px;">
+      <span style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 8px;">DIRETRIZES & INICIATIVAS</span>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #ffffff; margin-bottom: 8px;">Nossas Propostas</h2>
+      <p style="color: #a0aec0; font-size: 1rem;">Conheça o planejamento estruturado e as ações para a nossa gestão.</p>
     </div>
 
-    <!-- CARD 2: NOSSOS PROJETOS -->
-    <div style="background: rgba(8, 18, 38, 0.75); border: 1.5px solid #d4af37; border-radius: 16px; padding: 35px 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: space-between; backdrop-filter: blur(10px); text-align: left;">
-      <div>
-        <span style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; font-weight: 700; display: block; margin-bottom: 10px;">
-          PROPOSTAS DA CHAPA
-        </span>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; color: #ffffff; margin: 0 0 14px 0; font-weight: 700;">
-          Explore nossos <br>
-          <span style="color: #d4af37;">Projetos & Ações!</span>
-        </h2>
-        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0 0 24px 0;">
-          Veja as 12 iniciativas práticas desenvolvidas para capacitar lideranças, apoiar os Capítulos e fortalecer o Piauí.
-        </p>
+    <!-- CARDS DE PROPOSTAS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; align-items: stretch;">
+      
+      <!-- CARD 1: PLANO DE GESTÃO -->
+      <div style="background: rgba(8, 18, 38, 0.85); border: 1.5px solid #d4af37; border-radius: 16px; padding: 35px 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: space-between; backdrop-filter: blur(10px); text-align: left;">
+        <div>
+          <span style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; font-weight: 700; display: block; margin-bottom: 10px;">
+            DOCUMENTO OFICIAL
+          </span>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; color: #ffffff; margin: 0 0 14px 0; font-weight: 700;">
+            Conheça nosso <br>
+            <span style="color: #d4af37;">Plano de Gestão!</span>
+          </h2>
+          <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0 0 24px 0;">
+            Confira em detalhes todas as nossas diretrizes, metas e compromissos estruturados em documento para guiar o nosso trabalho.
+          </p>
+        </div>
+        <div>
+          <a href="plano.pdf" target="_blank" style="display: inline-block; width: 100%; text-align: center; padding: 12px 20px; background: #d4af37; color: #060d19; font-weight: 700; text-decoration: none; border-radius: 6px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
+            BAIXAR DOCUMENTO
+          </a>
+        </div>
       </div>
-      <div>
-        <!-- Link para a página externa projetos.html -->
-        <a href="projetos.html" style="display: inline-block; width: 100%; text-align: center; padding: 12px 20px; background: #d4af37; color: #060d19; font-weight: 700; text-decoration: none; border-radius: 6px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
-          VER PROJETOS
-        </a>
-      </div>
-    </div>
 
+      <!-- CARD 2: NOSSOS PROJETOS -->
+      <div style="background: rgba(8, 18, 38, 0.85); border: 1.5px solid #d4af37; border-radius: 16px; padding: 35px 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: space-between; backdrop-filter: blur(10px); text-align: left;">
+        <div>
+          <span style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; font-weight: 700; display: block; margin-bottom: 10px;">
+            PROPOSTAS DA CHAPA
+          </span>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; color: #ffffff; margin: 0 0 14px 0; font-weight: 700;">
+            Explore nossos <br>
+            <span style="color: #d4af37;">Projetos & Ações!</span>
+          </h2>
+          <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin: 0 0 24px 0;">
+            Veja as 12 iniciativas práticas desenvolvidas para capacitar lideranças, apoiar os Capítulos e fortalecer o Piauí.
+          </p>
+        </div>
+        <div>
+          <a href="projetos.html" style="display: inline-block; width: 100%; text-align: center; padding: 12px 20px; background: #d4af37; color: #060d19; font-weight: 700; text-decoration: none; border-radius: 6px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
+            VER PROJETOS
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -575,7 +681,7 @@
           </div>
           <div>
             <div class="rotulo-card">Pedro Henrique (MCEA)</div>
-            <a href="https://wa.me/558999297467" target="_blank" rel="noopener noreferrer" class="link-dourado">(89) 9 9297-467</a>
+            <a href="https://wa.me/558999297467" target="_blank" rel="noopener noreferrer" class="link-dourado">(89) 9 9929-7467</a>
           </div>
         </div>
 
