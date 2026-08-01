@@ -97,6 +97,177 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .divisor-brasao svg { width: 28px; height: 28px; flex-shrink: 0; }
 
+/* ==========================================================================
+   1. BASE RESPONSIVA & ROLAGEM SUAVE
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px; /* Offset para o menu fixo do PC */
+  overflow-x: clip;         /* Evita rolagem lateral sem quebrar a animação no mobile */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #040d1a;
+  color: #e2e8f0;
+  overflow-x: clip;
+}
+
+/* Imagens responsivas que nunca estouram a tela */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   2. TIPOGRAFIA FLUIDA (PC & MOBILE)
+   ========================================================================== */
+/* clamp(tamanho-mínimo, tamanho-ideal, tamanho-máximo) */
+.titulo-principal {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.1rem, 5vw, 3.2rem) !important;
+  line-height: 1.2;
+}
+
+.titulo-secao {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+}
+
+.texto-projeto, .bio-membro {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  text-align: justify;
+}
+
+/* ==========================================================================
+   3. BOTÕES E TOUCH TARGETS (AMIGÁVEL PARA DEDOS E MOUSE)
+   ========================================================================== */
+.btn, .btn-destaque, .btn-suave, .btn-perfil {
+  min-height: 44px; /* Tamanho mínimo recomendado para toque no celular */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Efeito Hover Ativo APENAS em telas com Mouse (PC) */
+@media (hover: hover) {
+  .btn-destaque:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  }
+  
+  .card-membro:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.7);
+  }
+}
+
+/* ==========================================================================
+   4. BREAKPOINT MOBILE (ATÉ 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 70px; /* Offset ajustado para a barra menor no mobile */
+  }
+
+  section {
+    padding: 45px 16px !important;
+  }
+
+  /* Ajuste de Emblema e Margens no Celular */
+  .emblema-chapa {
+    max-width: 210px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Botões empilhados no celular para facilitar o clique */
+  .botoes-acao {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .botoes-acao .btn {
+    width: 100%;
+  }
+
+  /* Cards de Diretores empilhados */
+  .container-membros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-membro {
+    width: 100%;
+  }
+
+  /* Projetos e Propostas em Coluna Única */
+  .linha-projeto, 
+  .linha-projeto.invertida {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .bloco-conteudo {
+    padding: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   ANIMAÇÃO DE ENTRADA SUAVE (COMPATÍVEL COM CELULAR)
+   ========================================================================== */
+html, body {
+  overflow-x: clip; /* Evita que a rolagem do celular trave o sensor */
+  max-width: 100vw;
+}
+
+/* Estado Inicial (Escondido) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Estado Visível (Quando entra na tela) */
+.reveal.is-visible,
+.reveal.visivel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Efeito ao tocar/passar o mouse nos cards de comendas */
+.card-comenda, .bloco-conteudo, .card-membro {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* No PC (Mouse) */
+@media (hover: hover) {
+  .card-comenda:hover, .bloco-conteudo:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.8);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+  }
+}
+
+/* No Celular (Toque do dedo) */
+@media (hover: none) {
+  .card-comenda:active, .bloco-conteudo:active {
+    transform: scale(0.98);
+    border-color: #d4af37;
+  }
+}
 
 /* ==========================================================================
    2. CABEÇALHO E NAVEGAÇÃO

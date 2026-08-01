@@ -1,67 +1,60 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* ==========================================================================
-     1. SCROLL REVEAL (INTERSECTION OBSERVER)
-     ========================================================================== */
-  const elementosReveal = document.querySelectorAll(".reveal, .revelar");
-
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px 0px -50px 0px", // Dispara um pouco antes de entrar na tela
-    threshold: 0.15                  // Ativa quando 15% do elemento está visível
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible", "visivel");
-        observer.unobserve(entry.target); // Anima apenas uma vez
-      }
-    });
-  }, observerOptions);
-
-  elementosReveal.forEach(el => observer.observe(el));
-
 
   /* ==========================================================================
-     2. MENU MOBILE
+     1. SCROLL REVEAL BLINDADO (PC & MOBILE)
      ========================================================================== */
-  const btnMenu = document.getElementById("botao-menu-mobile");
-  
-  if (btnMenu) {
-    btnMenu.addEventListener("click", () => {
-      document.body.classList.toggle("menu-aberto");
-    });
+  // Seleciona todos os elementos do site, incluindo os cards de comendas e projetos
+  const elementos = document.querySelectorAll(
+    ".reveal, .revelar, .linha-projeto, .card-membro, .card-comenda, .bloco-conteudo, .grid-comendas > div"
+  );
 
-    // Fecha o menu ao clicar em um link
-    const linksNav = document.querySelectorAll("nav.menu-principal a");
-    linksNav.forEach(link => {
-      link.addEventListener("click", () => {
-        document.body.classList.remove("menu-aberto");
+  // Aplica a classe base .reveal caso não tenha no HTML
+  elementos.forEach(el => el.classList.add("reveal"));
+
+  if ("IntersectionObserver" in window) {
+    const observerOptions = {
+      root: null,
+      rootMargin: "100px 0px 50px 0px", // Detecta ANTES de entrar na tela no mobile
+      threshold: 0.01                  // Requer apenas 1% de visibilidade para disparar
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible", "visivel");
+          obs.unobserve(entry.target); // Anima e fixa
+        }
       });
-    });
+    }, observerOptions);
+
+    elementos.forEach(el => observer.observe(el));
+  } else {
+    // Caso o celular seja antigo/sem suporte
+    elementos.forEach(el => el.classList.add("is-visible", "visivel"));
   }
 
+  // TRAVA DE SEGURANÇA PARA MOBILE (Garante exibição mesmo com economia de bateria)
+  setTimeout(() => {
+    elementos.forEach(el => el.classList.add("is-visible", "visivel"));
+  }, 1000);
+
 
   /* ==========================================================================
-     3. FORMULÁRIO DE CONTATO (EFEITO SUCESSO)
+     2. MENU MOBILE INTELIGENTE
      ========================================================================== */
-  const formulario = document.querySelector(".formulario-container form");
-  const containerForm = document.querySelector(".formulario-container");
+  const btnMenu = document.getElementById("botao-menu-mobile");
+  const menuNav = document.getElementById("menu-navegacao");
+  const linksNav = document.querySelectorAll(".menu-principal a");
 
-  if (formulario) {
-    formulario.addEventListener("submit", (e) => {
-      e.preventDefault(); // Impede o recarregamento padrão da página
+  if (btnMenu && menuNav) {
+    btnMenu.addEventListener("click", () => {
+      menuNav.classList.toggle("ativo");
+    });
 
-      // Substitui o formulário pela caixa de sucesso definida no CSS
-      containerForm.innerHTML = `
-        <div class="mensagem-sucesso">
-          <span class="icone-sucesso">✨</span>
-          <p>Sua mensagem foi enviada com sucesso!</p>
-          <small style="color: var(--pergaminho-suave); display: block; margin-top: 8px;">
-            Entraremos em contato em breve.
-          </small>
-        </div>
-      `;
+    linksNav.forEach(link => {
+      link.addEventListener("click", () => {
+        menuNav.classList.remove("ativo");
+      });
     });
   }
 });
