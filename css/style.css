@@ -1445,3 +1445,51 @@ footer.rodape-principal {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
   }
 }
+
+/* ==========================================================================
+   MOVIMENTO E INTERAÇÃO PARA TODOS OS BOTÕES
+   ========================================================================== */
+
+/* Transição suave universal para qualquer botão */
+.btn, 
+.btn-destaque, 
+.btn-suave, 
+.btn-perfil, 
+.botoes-acao a, 
+#botao-menu-mobile {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s ease, 
+              border-color 0.3s ease !important;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+}
+
+/* NO COMPUTADOR (Ao passar o mouse) */
+@media (hover: hover) {
+  .btn:hover, 
+  .btn-destaque:hover, 
+  .btn-suave:hover, 
+  .btn-perfil:hover, 
+  .botoes-acao a:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35) !important;
+  }
+
+  #botao-menu-mobile:hover {
+    transform: scale(1.1) !important;
+  }
+}
+
+/* NO CELULAR (Ao tocar no botão com o dedo) */
+@media (hover: none) {
+  .btn:active, 
+  .btn-destaque:active, 
+  .btn-suave:active, 
+  .btn-perfil:active, 
+  .botoes-acao a:active,
+  #botao-menu-mobile:active {
+    transform: scale(0.94) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  }
+}

@@ -116,3 +116,61 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ==========================================================================
+     1. SCROLL REVEAL BLINDADO (INCLUINDO TODOS OS BOTÕES)
+     ========================================================================== */
+  const elementos = document.querySelectorAll(
+    ".reveal, .revelar, .linha-projeto, .card-membro, .card-comenda, .bloco-conteudo, .grid-comendas > div, .btn, .btn-destaque, .btn-suave, .btn-perfil, .botoes-acao a"
+  );
+
+  // Aplica a classe base de animação
+  elementos.forEach(el => el.classList.add("reveal"));
+
+  if ("IntersectionObserver" in window) {
+    const observerOptions = {
+      root: null,
+      rootMargin: "100px 0px 50px 0px",
+      threshold: 0.01
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible", "visivel");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    elementos.forEach(el => observer.observe(el));
+  } else {
+    elementos.forEach(el => el.classList.add("is-visible", "visivel"));
+  }
+
+  // Trava de segurança para telas de celular
+  setTimeout(() => {
+    elementos.forEach(el => el.classList.add("is-visible", "visivel"));
+  }, 1000);
+
+  /* ==========================================================================
+     2. MENU MOBILE
+     ========================================================================== */
+  const btnMenu = document.getElementById("botao-menu-mobile");
+  const menuNav = document.getElementById("menu-navegacao");
+  const linksNav = document.querySelectorAll(".menu-principal a");
+
+  if (btnMenu && menuNav) {
+    btnMenu.addEventListener("click", () => {
+      menuNav.classList.toggle("ativo");
+    });
+
+    linksNav.forEach(link => {
+      link.addEventListener("click", () => {
+        menuNav.classList.remove("ativo");
+      });
+    });
+  }
+});
