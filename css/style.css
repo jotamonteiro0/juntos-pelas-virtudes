@@ -1484,3 +1484,337 @@ footer.rodape-principal {
     filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5)) !important;
   }
 }
+
+/* FOTO DE PERFIL - BRILHO INTENSO E ELEVAÇÃO */
+    .foto-moldura:hover {
+      transform: scale(1.04);
+      border-color: #ffe066;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.75), 0 0 12px rgba(255, 224, 102, 0.6);
+    }
+
+    /* CAIXA DE TEXTO DESCRITIVO */
+    .caixa-texto-perfil:hover {
+      border-color: rgba(212, 175, 55, 0.7);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+    }
+
+    /* CARDS DE CARGOS - SENSOR TURBINADO */
+    .card-cargo:hover {
+      transform: translateY(-6px) !important;
+      border-color: #ffe066 !important;
+      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6) !important;
+    }
+
+    /* CARDS DE CONQUISTAS E MEDALHAS - SENSOR TURBINADO */
+    .card-conquista:hover {
+      transform: translateY(-6px) !important;
+      border-color: #ffe066 !important;
+      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6) !important;
+    }
+
+    .card-conquista:hover img {
+      transform: scale(1.12);
+      filter: drop-shadow(0 6px 16px rgba(212, 175, 55, 0.8));
+    }
+
+    /* FAIXA TRICOLOR DECORATIVA DO TOPO */
+.faixa-tricolor {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981 0%, #10b981 33.33%, #d4af37 33.33%, #d4af37 66.66%, #be123c 66.66%, #be123c 100%);
+  display: block;
+}
+
+/* ESTILOS DE ALINHAMENTO DO PERFIL */
+.container-perfil {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* BLOCO DA FOTO E BOTÃO */
+.coluna-foto-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* CONTAINER DA FOTO DE PERFIL COM SENSOR DE MOVIMENTO */
+.foto-perfil-container {
+  width: 220px;
+  height: 220px;
+  min-width: 220px;
+  min-height: 220px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  overflow: hidden;
+  background: #09152a;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.foto-perfil-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.3s ease !important;
+}
+
+/* SENSOR NA FOTO DE PERFIL */
+.coluna-foto-perfil:hover .foto-perfil-container,
+.foto-perfil-container:hover {
+  transform: translateY(-6px) scale(1.03) !important;
+  border-color: #ffe066 !important;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45) !important;
+}
+
+.coluna-foto-perfil:hover .foto-perfil-container img {
+  transform: scale(1.06);
+}
+
+/* BOTÃO CONTATO */
+.btn-contato-perfil {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1.5px solid #d4af37;
+  color: #ffffff;
+  background: transparent;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-contato-perfil:hover {
+  transform: translateY(-4px) scale(1.03) !important;
+  border-color: #ffe066 !important;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4) !important;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+/* CAIXA DE TEXTO DESCRITIVO COM SENSOR */
+.caixa-texto-perfil {
+  flex: 1;
+  min-width: 300px;
+  background: #09152a;
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 36px;
+  color: #cbd5e1;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  text-align: justify;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.caixa-texto-perfil:hover {
+  transform: translateY(-6px) !important;
+  border-color: #ffe066 !important;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
+}
+
+.caixa-texto-perfil p {
+  margin-bottom: 18px;
+}
+
+.caixa-texto-perfil p:last-child {
+  margin-bottom: 0;
+}
+
+/* DIVISOR DE SEÇÃO */
+.divisor-secao {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+  margin: 55px 0 45px 0;
+  width: 100%;
+}
+
+/* SEÇÃO: HISTÓRICO DE CARGOS */
+.secao-cargos {
+  width: 100%;
+}
+
+.grid-cargos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card-cargo {
+  background: #09152a;
+  border: 1.5px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card-cargo:hover {
+  transform: translateY(-6px) !important;
+  border-color: #ffe066 !important;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
+}
+
+.tag-nivel-cargo {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.titulo-cargo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.periodo-cargo {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* SEÇÃO: TRAJETÓRIA E CONQUISTAS */
+.secao-curriculo {
+  width: 100%;
+}
+
+.cabecalho-secao-curriculo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.tag-secao {
+  color: #d4af37;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.titulo-secao {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.descricao-secao {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.grid-curriculo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card-conquista {
+  background: #09152a;
+  border: 1.5px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 22px 12px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 185px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card-conquista:hover {
+  transform: translateY(-6px) !important;
+  border-color: #ffe066 !important;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
+}
+
+.card-conquista .icone-container {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.card-conquista img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+.card-conquista:hover img {
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.6)) !important;
+}
+
+.card-conquista .titulo-item {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.card-conquista .data-item {
+  font-size: 0.75rem;
+  color: #d4af37;
+  font-weight: 500;
+}
+
+/* ADAPTATIVO PARA CELULARES */
+@media (max-width: 850px) {
+  .caixa-texto-perfil {
+    padding: 24px;
+    text-align: left;
+  }
+  .grid-curriculo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .grid-cargos {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

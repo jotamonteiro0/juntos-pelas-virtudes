@@ -40,7 +40,70 @@
       flex-shrink: 0;
     }
 
-    /* CAIXA DE TEXTO DESCRITIVO */
+    /* CONTAINER DA FOTO DE PERFIL COM SENSOR DE MOVIMENTO */
+    .foto-perfil-container {
+      width: 220px;
+      height: 220px;
+      min-width: 220px;
+      min-height: 220px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 2px solid #d4af37;
+      overflow: hidden;
+      background: #09152a;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .foto-perfil-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.3s ease !important;
+    }
+
+    /* SENSOR NA FOTO DE PERFIL */
+    .coluna-foto-perfil:hover .foto-perfil-container,
+    .foto-perfil-container:hover {
+      transform: translateY(-6px) scale(1.03) !important;
+      border-color: #ffe066 !important;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45) !important;
+    }
+
+    .coluna-foto-perfil:hover .foto-perfil-container img {
+      transform: scale(1.06);
+    }
+
+    /* BOTÃO CONTATO */
+    .btn-contato-perfil {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 1.5px solid #d4af37;
+      color: #ffffff;
+      background: transparent;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .btn-contato-perfil:hover {
+      transform: translateY(-4px) scale(1.03) !important;
+      border-color: #ffe066 !important;
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4) !important;
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    /* CAIXA DE TEXTO DESCRITIVO COM SENSOR */
     .caixa-texto-perfil {
       flex: 1;
       min-width: 300px;
@@ -52,6 +115,14 @@
       font-size: 0.98rem;
       line-height: 1.8;
       text-align: justify;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .caixa-texto-perfil:hover {
+      transform: translateY(-6px) !important;
+      border-color: #ffe066 !important;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
     }
 
     .caixa-texto-perfil p {
@@ -62,7 +133,7 @@
       margin-bottom: 0;
     }
 
-    /* DIVISOR DE SEÇÃO (LINHA SUAVE DOURADA) */
+    /* DIVISOR DE SEÇÃO */
     .divisor-secao {
       border: none;
       height: 1px;
@@ -92,14 +163,15 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
     }
 
     .card-cargo:hover {
-      transform: translateY(-4px);
-      border-color: #d4af37;
-      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.25);
+      transform: translateY(-6px) !important;
+      border-color: #ffe066 !important;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
     }
 
     .tag-nivel-cargo {
@@ -183,14 +255,15 @@
       align-items: center;
       justify-content: space-between;
       min-height: 185px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
     }
 
     .card-conquista:hover {
-      transform: translateY(-6px);
-      border-color: #d4af37;
-      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.3);
+      transform: translateY(-6px) !important;
+      border-color: #ffe066 !important;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
     }
 
     .card-conquista .icone-container {
@@ -206,6 +279,12 @@
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
+      transition: transform 0.3s ease, filter 0.3s ease !important;
+    }
+
+    .card-conquista:hover img {
+      transform: scale(1.1) !important;
+      filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.6)) !important;
     }
 
     .card-conquista .titulo-item {
@@ -287,18 +366,17 @@
       
       <!-- FOTO E BOTÃO DE WHATSAPP -->
       <div class="coluna-foto-perfil">
-        <div style="width: 220px; height: 220px; min-width: 220px; min-height: 220px; aspect-ratio: 1 / 1; border-radius: 50%; border: 2px solid #d4af37; overflow: hidden; background: #09152a; box-shadow: 0 4px 20px rgba(0,0,0,0.3); flex-shrink: 0;">
+        <div class="foto-perfil-container">
           <img 
             src="assets/images/pedro.jpg" 
-            alt="Pedro Henrique Fontes" 
-            style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;"
+            alt="Pedro Henrique Fontes"
           >
         </div>
 
         <a href="https://wa.me/558999297467?text=Ol%C3%A1%2C%20Pedro!%20Vim%20pelo%20site%20da%20Chapa%20e%20gostaria%20de%20conversar." 
            target="_blank" 
            rel="noopener noreferrer" 
-           style="display: inline-block; padding: 12px 24px; border: 1px solid #d4af37; color: #ffffff; background: transparent; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 4px; transition: all 0.3s ease; text-align: center;">
+           class="btn-contato-perfil">
           ENTRE EM CONTATO AQUI
         </a>
       </div>
@@ -540,10 +618,5 @@
   <!-- SCRIPT JS PRINCIPAL -->
   <script src="js/main.js"></script>
 
-</body>
-</html>
-
-<!-- SCRIPT JS PRINCIPAL (Necessário em TODAS as páginas) -->
-  <script src="js/main.js"></script>
 </body>
 </html>
