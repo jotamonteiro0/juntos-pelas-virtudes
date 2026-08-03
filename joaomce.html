@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* FAIXA TRICOLOR DECORATIVA DO TOPO */
     .faixa-tricolor {
       width: 100%;
       height: 4px;
@@ -22,7 +21,6 @@
       display: block;
     }
 
-    /* ESTILOS DE ALINHAMENTO DO PERFIL */
     .container-perfil {
       display: flex;
       gap: 40px;
@@ -31,7 +29,6 @@
       justify-content: center;
     }
 
-    /* BLOCO DA FOTO E BOTÃO */
     .coluna-foto-perfil {
       display: flex;
       flex-direction: column;
@@ -40,7 +37,6 @@
       flex-shrink: 0;
     }
 
-    /* CONTAINER DA FOTO DE PERFIL COM SENSOR DE MOVIMENTO */
     .foto-perfil-container {
       width: 220px;
       height: 220px;
@@ -66,7 +62,6 @@
       transition: transform 0.3s ease !important;
     }
 
-    /* SENSOR NA FOTO DE PERFIL */
     .coluna-foto-perfil:hover .foto-perfil-container,
     .foto-perfil-container:hover {
       transform: translateY(-6px) scale(1.03) !important;
@@ -78,7 +73,6 @@
       transform: scale(1.06);
     }
 
-    /* BOTÃO CONTATO */
     .btn-contato-perfil {
       display: inline-block;
       padding: 12px 24px;
@@ -103,7 +97,6 @@
       background: rgba(212, 175, 55, 0.1);
     }
 
-    /* CAIXA DE TEXTO DESCRITIVO COM SENSOR */
     .caixa-texto-perfil {
       flex: 1;
       min-width: 300px;
@@ -133,7 +126,6 @@
       margin-bottom: 0;
     }
 
-    /* DIVISOR DE SEÇÃO */
     .divisor-secao {
       border: none;
       height: 1px;
@@ -142,7 +134,6 @@
       width: 100%;
     }
 
-    /* SEÇÃO: HISTÓRICO DE CARGOS */
     .secao-cargos {
       width: 100%;
     }
@@ -203,7 +194,6 @@
       font-weight: 500;
     }
 
-    /* SEÇÃO: TRAJETÓRIA E CONQUISTAS */
     .secao-curriculo {
       width: 100%;
     }
@@ -301,7 +291,6 @@
       font-weight: 500;
     }
 
-    /* ADAPTATIVO PARA CELULARES */
     @media (max-width: 850px) {
       .caixa-texto-perfil {
         padding: 24px;
@@ -319,7 +308,7 @@
 </head>
 <body>
 
-  <!-- CABECALHO E NAVEGAÇÃO -->
+  <!-- CABEÇALHO -->
   <header class="cabecalho-principal">
     <div class="conteudo-navegacao">
       <a href="index.html" class="marca">
@@ -342,13 +331,11 @@
     </div>
   </header>
 
-  <!-- FAIXA TRICOLOR -->
   <div class="faixa-tricolor"></div>
 
-  <!-- CONTEÚDO PRINCIPAL DO JOÃO GUILHERME MONTEIRO -->
+  <!-- CONTEÚDO PRINCIPAL -->
   <main style="padding: 60px 20px; max-width: 1100px; margin: 0 auto;">
     
-    <!-- TÍTULO DA PÁGINA -->
     <div style="text-align: center; margin-bottom: 40px;">
       <span style="color: #d4af37; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
         GABINETE ESTADUAL 2026/2027
@@ -361,16 +348,12 @@
       </p>
     </div>
 
-    <!-- ESTRUTURA DO PERFIL -->
+    <!-- SEÇÃO DE PERFIL -->
     <div class="container-perfil">
       
-      <!-- FOTO E BOTÃO DE WHATSAPP -->
       <div class="coluna-foto-perfil">
         <div class="foto-perfil-container">
-          <img 
-            src="assets/images/MCE-JG/joaopi.jpeg" 
-            alt="João Guilherme Monteiro" 
-          >
+          <img src="assets/images/MCE-JG/joaopi.jpeg" alt="João Guilherme Monteiro">
         </div>
 
         <a href="https://wa.me/5586999999999?text=Ol%C3%A1%2C%20Jo%C3%A3o!%20Vim%20pelo%20site%20da%20Chapa%20e%20gostaria%20de%20conversar." 
@@ -381,7 +364,6 @@
         </a>
       </div>
 
-      <!-- TEXTO DESCRITIVO PERSONALIZADO -->
       <div class="caixa-texto-perfil">
         <p>
           Meu nome é <strong style="color: #ffffff;">João Guilherme Martins Lopes Monteiro</strong>. Sou membro do Capítulo Professor Carvalho Neves nº 500 e filiado ao Capítulo Luiz Ribeiro Gonçalves Neto nº 408, ambos de Teresina. Iniciei minha trajetória na Ordem DeMolay em 26 de agosto de 2023 e, desde o momento em que atravessei as portas do meu Capítulo, compreendi que estava entrando em algo muito maior do que uma organização: encontrei uma família, um propósito e uma oportunidade permanente de aprender, servir e crescer ao lado dos meus irmãos.
@@ -399,10 +381,9 @@
 
     </div>
 
-    <!-- LINHA DE DIVISÃO ELEGANTE -->
     <hr class="divisor-secao">
 
-    <!-- SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS -->
+    <!-- HISTÓRICO DE CARGOS -->
     <section class="secao-cargos">
       <div class="cabecalho-secao-curriculo">
         <span class="tag-secao">SERVIÇO & LIDERANÇA</span>
@@ -411,51 +392,42 @@
       </div>
 
       <div class="grid-cargos">
-        
-        <!-- Cargo 1: Mestre Conselheiro -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Capítulo</span>
           <h3 class="titulo-cargo">Mestre Conselheiro</h3>
           <span class="periodo-cargo">Capítulo Prof. Carvalho Neves nº 500 (2025.2)</span>
         </div>
 
-        <!-- Cargo 2: Primeiro Conselheiro Estadual -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Grande Capítulo</span>
           <h3 class="titulo-cargo">Primeiro Conselheiro Estadual</h3>
           <span class="periodo-cargo">Grande Capítulo Estadual 2025/2026</span>
         </div>
 
-        <!-- Cargo 3: Primeiro Conselheiro -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Capítulo</span>
           <h3 class="titulo-cargo">Primeiro Conselheiro</h3>
           <span class="periodo-cargo">Capítulo Prof. Carvalho Neves nº 500</span>
         </div>
 
-        <!-- Cargo 4: Protocolista -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Priorado</span>
           <h3 class="titulo-cargo">Protocolista</h3>
           <span class="periodo-cargo">Priorado de Cavaleiros de Argonath n° 247</span>
         </div>
 
-        <!-- Cargo 5: Tesoureiro -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Capítulo</span>
           <h3 class="titulo-cargo">Tesoureiro</h3>
           <span class="periodo-cargo">Capítulo Prof. Carvalho Neves nº 500</span>
         </div>
-
       </div>
     </section>
 
-    <!-- LINHA DE DIVISÃO ELEGANTE -->
     <hr class="divisor-secao">
 
-    <!-- SEÇÃO: TRAJETÓRIA E CONQUISTAS -->
+    <!-- TRAJETÓRIA E CONQUISTAS -->
     <section class="secao-curriculo">
-      
       <div class="cabecalho-secao-curriculo">
         <span class="tag-secao">HONRARIAS & CONQUISTAS</span>
         <h2 class="titulo-secao">Trajetória DeMolay</h2>
@@ -463,8 +435,6 @@
       </div>
 
       <div class="grid-curriculo">
-
-        <!-- 1. Grau Iniciático -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/iniciatico.png" alt="Grau Iniciático">
@@ -473,7 +443,6 @@
           <span class="data-item">26/08/2023</span>
         </div>
 
-        <!-- 2. 1 Ano de Iniciação -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/1_ano_iniciacao.png" alt="1 Ano de Iniciação">
@@ -482,7 +451,6 @@
           <span class="data-item">26/08/2024</span>
         </div>
 
-        <!-- 3. Grau DeMolay -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/demolay.png" alt="Grau DeMolay">
@@ -491,7 +459,6 @@
           <span class="data-item">10/12/2023</span>
         </div>
 
-        <!-- 4. Nobre Cavaleiro -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/cavaleiro.png" alt="Nobre Cavaleiro">
@@ -500,7 +467,6 @@
           <span class="data-item">25/05/2024</span>
         </div>
 
-        <!-- 5. Cavaleiro da Capela -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/capela.png" alt="Cavaleiro da Capela">
@@ -509,7 +475,6 @@
           <span class="data-item">05/10/2025</span>
         </div>
 
-        <!-- 6. Cruz de Salém -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/salem.png" alt="Cavaleiro da Cruz de Salém">
@@ -518,7 +483,6 @@
           <span class="data-item">21/05/2026</span>
         </div>
 
-        <!-- 7. PMC - PSM -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/porservico.png" alt="PMC - PSM">
@@ -527,7 +491,6 @@
           <span class="data-item">20/12/2025</span>
         </div>
 
-        <!-- 8. CNIE Capítulos -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/cnie.png" alt="CNIE Capítulos">
@@ -536,7 +499,6 @@
           <span class="data-item">20/12/2025</span>
         </div>
 
-        <!-- 9. Oficial do Capítulo -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/traoficial.png" alt="Trabalho como Oficial do Capítulo">
@@ -545,7 +507,6 @@
           <span class="data-item">27/05/2026</span>
         </div>
 
-        <!-- 10. Oficial do Priorado -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/trapri.png" alt="Trabalho como Oficial do Priorado">
@@ -554,7 +515,6 @@
           <span class="data-item">28/05/2026</span>
         </div>
 
-        <!-- 11. Prêmio Tirando o Chapéu -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/chapeu.png" alt="Prêmio Tirando o Chapéu">
@@ -563,7 +523,6 @@
           <span class="data-item">27/05/2026</span>
         </div>
 
-        <!-- 12. Medalha do Fundador -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/fundador.png" alt="Medalha do Fundador">
@@ -571,13 +530,12 @@
           <span class="titulo-item">Medalha do Fundador</span>
           <span class="data-item">10/06/2026</span>
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- RODAPÉ PRINCIPAL -->
+  <!-- RODAPÉ -->
   <footer class="rodape-principal" style="text-align: center; padding: 30px 20px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
     <div class="caixa">
       <p style="color: #8a9bb0; font-size: 0.85rem; margin: 0;">
@@ -586,7 +544,6 @@
     </div>
   </footer>
 
-  <!-- SCRIPT JS PRINCIPAL -->
   <script src="js/main.js"></script>
 
 </body>

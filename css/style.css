@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   1. VARIÁVEIS E RESET GLOBAL
    ========================================================================== */
 :root {
   --azul-noite:        #081226;
@@ -28,18 +28,31 @@
 
 html { 
   scroll-behavior: smooth; 
+  scroll-padding-top: 85px;
+  overflow-x: clip;
 }
 
 body {
   background: var(--azul-noite);
+  background-color: #040d1a;
   color: var(--pergaminho);
   font-family: var(--fonte-texto);
   line-height: 1.6;
+  max-width: 100vw;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
+img { 
+  max-width: 100%; 
+  height: auto;
+  display: block; 
+}
+
+a { 
+  color: inherit; 
+  text-decoration: none; 
+}
 
 .caixa {
   max-width: var(--largura-maxima);
@@ -63,6 +76,40 @@ h1, h2, h3, h4 {
   margin-bottom: 14px;
 }
 
+.titulo-principal {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.1rem, 5vw, 3.2rem) !important;
+  line-height: 1.2;
+}
+
+.titulo-secao {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.descricao-secao {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.tag-secao {
+  color: #d4af37;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.texto-projeto, .bio-membro {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  text-align: justify;
+}
+
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--dourado-vivo);
   outline-offset: 3px;
@@ -76,7 +123,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
 }
 
-/* DIVISOR COM BRASÃO */
+/* ==========================================================================
+   2. ELEMENTOS DECORATIVOS E DIVISORES
+   ========================================================================== */
+.faixa-tricolor {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981 0%, #10b981 33.33%, #d4af37 33.33%, #d4af37 66.66%, #be123c 66.66%, #be123c 100%);
+  display: block;
+}
+
 .divisor-brasao {
   display: flex;
   align-items: center;
@@ -95,57 +151,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   opacity: 0.6;
 }
 
-.divisor-brasao svg { width: 28px; height: 28px; flex-shrink: 0; }
-
-/* ==========================================================================
-   1. BASE RESPONSIVA & ROLAGEM SUAVE
-   ========================================================================== */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 85px; /* Offset para o menu fixo do PC */
-  overflow-x: clip;         /* Evita rolagem lateral sem quebrar a animação no mobile */
+.divisor-brasao svg { 
+  width: 28px; 
+  height: 28px; 
+  flex-shrink: 0; 
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #040d1a;
-  color: #e2e8f0;
-  overflow-x: clip;
+.divisor-secao {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
+  margin: 55px 0 45px 0;
+  border: none;
 }
 
-/* Imagens responsivas que nunca estouram a tela */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.divisor { 
+  border: 0; 
+  height: 1px; 
+  background: rgba(201, 168, 76, 0.2); 
+  margin: 12px 0; 
 }
 
 /* ==========================================================================
-   2. TIPOGRAFIA FLUIDA (PC & MOBILE)
-   ========================================================================== */
-/* clamp(tamanho-mínimo, tamanho-ideal, tamanho-máximo) */
-.titulo-principal {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.1rem, 5vw, 3.2rem) !important;
-  line-height: 1.2;
-}
-
-.titulo-secao {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
-}
-
-.texto-projeto, .bio-membro {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
-  text-align: justify;
-}
-
-/* ==========================================================================
-   3. BOTÕES E TOUCH TARGETS (AMIGÁVEL PARA DEDOS E MOUSE)
+   3. BOTÕES E COMPONENTES INTERATIVOS
    ========================================================================== */
 .btn, .btn-destaque, .btn-suave, .btn-perfil {
-  min-height: 44px; /* Tamanho mínimo recomendado para toque no celular */
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -153,124 +184,60 @@ img {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--dourado);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s ease, 
+              border-color 0.3s ease !important;
+  will-change: transform, box-shadow;
+  cursor: pointer;
 }
 
-/* Efeito Hover Ativo APENAS em telas com Mouse (PC) */
-@media (hover: hover) {
-  .btn-destaque:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-  }
-  
-  .card-membro:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212, 175, 55, 0.7);
-  }
+.btn-destaque {
+  background: var(--dourado);
+  color: var(--azul-noite);
+  font-weight: 600;
 }
 
-/* ==========================================================================
-   4. BREAKPOINT MOBILE (ATÉ 768px)
-   ========================================================================== */
-@media (max-width: 768px) {
-  html {
-    scroll-padding-top: 70px; /* Offset ajustado para a barra menor no mobile */
-  }
+.btn-suave { 
+  color: var(--dourado); 
+}
 
-  section {
-    padding: 45px 16px !important;
-  }
+.btn-contato-perfil {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1.5px solid #d4af37;
+  color: #ffffff;
+  background: transparent;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-align: center;
+  cursor: pointer;
+}
 
-  /* Ajuste de Emblema e Margens no Celular */
-  .emblema-chapa {
-    max-width: 210px !important;
-    margin-bottom: 10px !important;
-  }
-
-  /* Botões empilhados no celular para facilitar o clique */
-  .botoes-acao {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .botoes-acao .btn {
-    width: 100%;
-  }
-
-  /* Cards de Diretores empilhados */
-  .container-membros {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card-membro {
-    width: 100%;
-  }
-
-  /* Projetos e Propostas em Coluna Única */
-  .linha-projeto, 
-  .linha-projeto.invertida {
-    flex-direction: column !important;
-    gap: 16px !important;
-  }
-
-  .bloco-conteudo {
-    padding: 20px !important;
-  }
+#botao-menu-mobile {
+  display: none;
+  background: none;
+  border: 1px solid var(--dourado);
+  color: var(--dourado);
+  width: 40px; 
+  height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 /* ==========================================================================
-   ANIMAÇÃO DE ENTRADA SUAVE (COMPATÍVEL COM CELULAR)
-   ========================================================================== */
-html, body {
-  overflow-x: clip; /* Evita que a rolagem do celular trave o sensor */
-  max-width: 100vw;
-}
-
-/* Estado Inicial (Escondido) */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-/* Estado Visível (Quando entra na tela) */
-.reveal.is-visible,
-.reveal.visivel {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* Efeito ao tocar/passar o mouse nos cards de comendas */
-.card-comenda, .bloco-conteudo, .card-membro {
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* No PC (Mouse) */
-@media (hover: hover) {
-  .card-comenda:hover, .bloco-conteudo:hover {
-    transform: translateY(-4px);
-    border-color: rgba(212, 175, 55, 0.8);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
-  }
-}
-
-/* No Celular (Toque do dedo) */
-@media (hover: none) {
-  .card-comenda:active, .bloco-conteudo:active {
-    transform: scale(0.98);
-    border-color: #d4af37;
-  }
-}
-
-/* ==========================================================================
-   2. CABEÇALHO E NAVEGAÇÃO
+   4. CABEÇALHO E NAVEGAÇÃO
    ========================================================================== */
 header.cabecalho-principal {
   position: sticky;
@@ -300,7 +267,10 @@ header.cabecalho-principal {
   color: var(--pergaminho);
 }
 
-.marca .icone-marca { width: 34px; height: 34px; }
+.marca .icone-marca { 
+  width: 34px; 
+  height: 34px; 
+}
 
 .marca small {
   display: block;
@@ -326,7 +296,9 @@ nav.menu-principal a {
   padding: 6px 0;
 }
 
-nav.menu-principal a:hover { color: var(--dourado-vivo); }
+nav.menu-principal a:hover { 
+  color: var(--dourado-vivo); 
+}
 
 nav.menu-principal a::after {
   content: "";
@@ -339,39 +311,12 @@ nav.menu-principal a::after {
   transition: transform .25s ease;
 }
 
-nav.menu-principal a:hover::after { transform: scaleX(1); }
-
-#botao-menu-mobile {
-  display: none;
-  background: none;
-  border: 1px solid var(--dourado);
-  color: var(--dourado);
-  width: 40px; 
-  height: 40px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  border-radius: 4px;
+nav.menu-principal a:hover::after { 
+  transform: scaleX(1); 
 }
-
-@media (max-width: 860px) {
-  nav.menu-principal {
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: var(--azul-marinho);
-    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease;
-  }
-  nav.menu-principal ul { flex-direction: column; gap: 0; padding: 8px 32px 20px; }
-  nav.menu-principal a { display: block; padding: 12px 0; }
-  body.menu-aberto nav.menu-principal { max-height: 400px; }
-  #botao-menu-mobile { display: block; }
-}
-
 
 /* ==========================================================================
-   3. SEÇÃO HERO / CAPA
+   5. SEÇÃO HERO / CAPA
    ========================================================================== */
 .capa {
   position: relative;
@@ -393,7 +338,9 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   margin: 0 auto 34px;
 }
 
-.capa .chapeu { letter-spacing: 0.3em; }
+.capa .chapeu { 
+  letter-spacing: 0.3em; 
+}
 
 .capa h1 {
   font-size: clamp(2.2rem, 5vw, 3.6rem);
@@ -422,34 +369,13 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   flex-wrap: wrap;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 30px;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: 1px solid var(--dourado);
-  border-radius: 4px;
-  transition: background .2s ease, color .2s ease;
-}
-
-.btn-destaque {
-  background: var(--dourado);
-  color: var(--azul-noite);
-  font-weight: 600;
-}
-
-.btn-destaque:hover { background: var(--dourado-vivo); }
-
-.btn-suave { color: var(--dourado); }
-
-.btn-suave:hover { background: rgba(201, 168, 76, 0.1); }
-
-
 /* ==========================================================================
-   4. SEÇÃO SOBRE
+   6. SEÇÕES DE CONTEÚDO (SOBRE, PILARES, DIRETORIA, LINHA DO TEMPO)
    ========================================================================== */
-.sobre { padding: 20px 0 80px; }
+/* SOBRE */
+.sobre { 
+  padding: 20px 0 80px; 
+}
 
 .sobre-grid {
   display: grid;
@@ -478,25 +404,36 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   margin-bottom: 18px;
 }
 
-.sobre p { color: var(--pergaminho-suave); margin-bottom: 16px; }
-.sobre p:last-child { margin-bottom: 0; }
-
-@media (max-width: 860px) {
-  .sobre-grid { grid-template-columns: 1fr; gap: 34px; }
+.sobre p { 
+  color: var(--pergaminho-suave); 
+  margin-bottom: 16px; 
 }
 
+.sobre p:last-child { 
+  margin-bottom: 0; 
+}
 
-/* ==========================================================================
-   5. SEÇÃO PILARES
-   ========================================================================== */
+/* PILARES */
 .pilares {
   padding: 80px 0;
   background: var(--azul-marinho);
 }
 
-.cabecalho-secao { text-align: center; margin-bottom: 56px; }
-.cabecalho-secao h2 { font-size: 2.1rem; color: var(--pergaminho); }
-.cabecalho-secao p { color: var(--pergaminho-suave); max-width: 520px; margin: 12px auto 0; }
+.cabecalho-secao { 
+  text-align: center; 
+  margin-bottom: 56px; 
+}
+
+.cabecalho-secao h2 { 
+  font-size: 2.1rem; 
+  color: var(--pergaminho); 
+}
+
+.cabecalho-secao p { 
+  color: var(--pergaminho-suave); 
+  max-width: 520px; 
+  margin: 12px auto 0; 
+}
 
 .pilares-grid {
   display: grid;
@@ -518,7 +455,8 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
 }
 
 .cartao-pilar .simbolo {
-  width: 46px; height: 46px;
+  width: 46px; 
+  height: 46px;
   margin: 0 auto 20px;
   color: var(--dourado);
 }
@@ -534,11 +472,10 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   color: var(--pergaminho-suave);
 }
 
-
-/* ==========================================================================
-   6. SEÇÃO DIRETORIA / TIME
-   ========================================================================== */
-.diretoria { padding: 80px 0; }
+/* DIRETORIA */
+.diretoria { 
+  padding: 80px 0; 
+}
 
 .diretoria-grid {
   display: grid;
@@ -553,11 +490,6 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   padding: 30px 20px;
   text-align: center;
   transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.cartao-membro:hover {
-  transform: translateY(-5px);
-  border-color: var(--dourado);
 }
 
 .foto-membro {
@@ -576,9 +508,17 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   overflow: hidden;
 }
 
-.foto-membro img { width: 100%; height: 100%; object-fit: cover; }
+.foto-membro img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
 
-.cartao-membro h3 { font-size: 1.15rem; color: var(--pergaminho); margin-bottom: 4px; }
+.cartao-membro h3 { 
+  font-size: 1.15rem; 
+  color: var(--pergaminho); 
+  margin-bottom: 4px; 
+}
 
 .cartao-membro .cargo {
   display: block;
@@ -589,8 +529,10 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   margin-bottom: 12px;
 }
 
-/* HISTÓRICO EXPANSÍVEL (DETAILS) */
-.info-expansivel { margin-top: 15px; text-align: left; }
+.info-expansivel { 
+  margin-top: 15px; 
+  text-align: left; 
+}
 
 .btn-saber-mais {
   font-size: 0.75rem;
@@ -604,7 +546,9 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   border-radius: 4px;
 }
 
-.btn-saber-mais:hover { background: rgba(201, 168, 76, 0.1); }
+.btn-saber-mais:hover { 
+  background: rgba(201, 168, 76, 0.1); 
+}
 
 .detalhes-conteudo {
   margin-top: 12px;
@@ -616,15 +560,20 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   border: 1px solid rgba(201, 168, 76, 0.15);
 }
 
-.detalhes-conteudo ul { list-style: none; margin-top: 8px; }
-.detalhes-conteudo li { margin-bottom: 4px; }
-.divisor { border: 0; height: 1px; background: rgba(201, 168, 76, 0.2); margin: 12px 0; }
+.detalhes-conteudo ul { 
+  list-style: none; 
+  margin-top: 8px; 
+}
 
+.detalhes-conteudo li { 
+  margin-bottom: 4px; 
+}
 
-/* ==========================================================================
-   7. SEÇÃO LINHA DO TEMPO / JORNADA
-   ========================================================================== */
-.linha-tempo { padding: 80px 0; background: var(--azul-marinho); }
+/* LINHA DO TEMPO */
+.linha-tempo { 
+  padding: 80px 0; 
+  background: var(--azul-marinho); 
+}
 
 .lista-linha-tempo {
   max-width: 720px;
@@ -637,7 +586,9 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   padding: 0 0 42px 34px;
 }
 
-.item-linha-tempo:last-child { padding-bottom: 0; }
+.item-linha-tempo:last-child { 
+  padding-bottom: 0; 
+}
 
 .item-linha-tempo::before {
   content: attr(data-passo);
@@ -656,7 +607,11 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   justify-content: center;
 }
 
-.item-linha-tempo h3 { font-size: 1.15rem; color: var(--pergaminho); margin-bottom: 4px; }
+.item-linha-tempo h3 { 
+  font-size: 1.15rem; 
+  color: var(--pergaminho); 
+  margin-bottom: 4px; 
+}
 
 .item-linha-tempo time {
   display: block;
@@ -666,15 +621,227 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   margin-bottom: 8px;
 }
 
-.item-linha-tempo p { color: var(--pergaminho-suave); font-size: 0.92rem; }
-
+.item-linha-tempo p { 
+  color: var(--pergaminho-suave); 
+  font-size: 0.92rem; 
+}
 
 /* ==========================================================================
-   8. SEÇÃO CONTATO
+   7. SEÇÃO PERFIL, CARGOS & TRAJETÓRIA (CURRÍCULO)
    ========================================================================== */
-.contato {
-  padding: 80px 0;
-  background-color: var(--azul-marinho);
+.container-perfil {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coluna-foto-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.foto-perfil-container {
+  width: 220px;
+  height: 220px;
+  min-width: 220px;
+  min-height: 220px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  overflow: hidden;
+  background: #09152a;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.foto-perfil-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.3s ease !important;
+}
+
+.caixa-texto-perfil {
+  flex: 1;
+  min-width: 300px;
+  background: #09152a;
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 36px;
+  color: #cbd5e1;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  text-align: justify;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.caixa-texto-perfil p {
+  margin-bottom: 18px;
+}
+
+.caixa-texto-perfil p:last-child {
+  margin-bottom: 0;
+}
+
+/* SEÇÃO CARGOS */
+.secao-cargos {
+  width: 100%;
+}
+
+.grid-cargos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card-cargo {
+  background: #09152a;
+  border: 1.5px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.tag-nivel-cargo {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.titulo-cargo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.periodo-cargo {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* SEÇÃO CURRÍCULO / CONQUISTAS */
+.secao-curriculo {
+  margin-top: 80px;
+  width: 100%;
+}
+
+.cabecalho-secao-curriculo {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.titulo-curriculo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.titulo-curriculo::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #d4af37;
+  margin: 10px auto 0;
+}
+
+.grid-curriculo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card-conquista {
+  background: #09152a;
+  border: 1.5px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 22px 12px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 185px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card-conquista .icone-container {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.card-conquista img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+.card-conquista .titulo-item {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.card-conquista .data-item {
+  font-size: 0.75rem;
+  color: #d4af37;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   8. SEÇÃO CONTATO E FORMULÁRIO
+   ========================================================================== */
+.contato, #contato.secao-contato {
+  padding: 80px 20px;
+  background-color: var(--azul-marinho) !important;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Work Sans', 'Inter', sans-serif;
+  color: #ffffff;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .contato-grid {
@@ -715,7 +882,6 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   word-break: break-word;
 }
 
-/* FORMULÁRIO DE CONTATO */
 .formulario-container {
   max-width: 650px;
   margin: 0 auto;
@@ -794,7 +960,6 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   background-color: var(--dourado-vivo);
 }
 
-/* CAIXA DE SUCESSO DO FORMULÁRIO */
 .mensagem-sucesso {
   text-align: center;
   padding: 30px 20px;
@@ -816,9 +981,198 @@ nav.menu-principal a:hover::after { transform: scaleX(1); }
   font-weight: bold;
 }
 
+.secao-contato .msg-sucesso {
+  display: none;
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+  color: #f3e5ab;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  animation: aparecerSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 
 /* ==========================================================================
-   9. SEÇÃO RODAPÉ / FOOTER
+   9. INTERAÇÕES, EMBLEMAS E EFEITOS HOVER / ACTIVE
+   ========================================================================== */
+.bloco-emblema {
+  flex: 0 0 140px;
+  min-height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloco-emblema img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+  will-change: transform, filter;
+}
+
+.card-comenda, .bloco-conteudo, .card-membro {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* COMPORTAMENTO NO COMPUTADOR (HOVER) */
+@media (hover: hover) {
+  .btn:hover, 
+  .btn-destaque:hover, 
+  .btn-suave:hover, 
+  .btn-perfil:hover, 
+  .botoes-acao a:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35) !important;
+  }
+
+  .btn-destaque:hover {
+    background: var(--dourado-vivo);
+  }
+
+  .btn-suave:hover {
+    background: rgba(201, 168, 76, 0.1);
+  }
+
+  .btn-contato-perfil:hover {
+    transform: translateY(-4px) scale(1.03) !important;
+    border-color: #ffe066 !important;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4) !important;
+    background: rgba(212, 175, 55, 0.1);
+  }
+
+  #botao-menu-mobile:hover {
+    transform: scale(1.1) !important;
+  }
+
+  .card-membro:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.7);
+  }
+
+  .card-comenda:hover, .bloco-conteudo:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.8);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+  }
+
+  .linha-projeto:hover .bloco-emblema img,
+  .bloco-emblema:hover img,
+  .bloco-emblema img:hover {
+    transform: translateY(-6px) scale(1.08) !important;
+    filter: drop-shadow(0 10px 25px rgba(212, 175, 55, 0.7)) !important;
+  }
+
+  .coluna-foto-perfil:hover .foto-perfil-container,
+  .foto-perfil-container:hover {
+    transform: translateY(-6px) scale(1.03) !important;
+    border-color: #ffe066 !important;
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45) !important;
+  }
+
+  .coluna-foto-perfil:hover .foto-perfil-container img {
+    transform: scale(1.06);
+  }
+
+  .foto-moldura:hover {
+    transform: scale(1.04);
+    border-color: #ffe066;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.75), 0 0 12px rgba(255, 224, 102, 0.6);
+  }
+
+  .caixa-texto-perfil:hover {
+    transform: translateY(-6px) !important;
+    border-color: #ffe066 !important;
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
+  }
+
+  .card-cargo:hover {
+    transform: translateY(-6px) !important;
+    border-color: #ffe066 !important;
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6) !important;
+  }
+
+  .card-conquista:hover {
+    transform: translateY(-6px) !important;
+    border-color: #ffe066 !important;
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6) !important;
+  }
+
+  .card-conquista:hover img {
+    transform: scale(1.12);
+    filter: drop-shadow(0 6px 16px rgba(212, 175, 55, 0.8));
+  }
+}
+
+/* COMPORTAMENTO NO CELULAR (ACTIVE / TOQUE) */
+@media (hover: none) {
+  .btn:active, 
+  .btn-destaque:active, 
+  .btn-suave:active, 
+  .btn-perfil:active, 
+  .botoes-acao a:active,
+  #botao-menu-mobile:active {
+    transform: scale(0.94) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .card-comenda:active, .bloco-conteudo:active {
+    transform: scale(0.98);
+    border-color: #d4af37;
+  }
+
+  .bloco-emblema img:active {
+    transform: scale(0.95) !important;
+    filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5)) !important;
+  }
+}
+
+/* ==========================================================================
+   10. ANIMAÇÕES & SCROLL REVEAL
+   ========================================================================== */
+.reveal, .revelar {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible, .reveal.visivel,
+.revelar.visivel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@keyframes surgimento {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes aparecerSuave {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   11. RODAPÉ / FOOTER
    ========================================================================== */
 footer.rodape-principal {
   background: var(--azul-noite);
@@ -853,481 +1207,118 @@ footer.rodape-principal {
   color: var(--azul-noite);
 }
 
-.redes-sociais svg { width: 17px; height: 17px; }
-
+.redes-sociais svg { 
+  width: 17px; 
+  height: 17px; 
+}
 
 /* ==========================================================================
-   10. ANIMAÇÃO DE REVELAÇÃO (SCROLL REVEAL / FIGMA)
+   12. MEDIA QUERIES & RESPONSIVIDADE
    ========================================================================== */
-/* Estado inicial (invisível e 30px abaixo) */
-.reveal, .revelar {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-/* Estado final quando entra na tela ao rolar */
-.reveal.is-visible, .revelar.visivel {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes surgimento {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Mensagem de Sucesso Integrada e Translúcida */
-  .secao-contato .msg-sucesso {
-    display: none;
-    margin-top: 20px;
-    padding: 14px 18px;
-    background: rgba(212, 175, 55, 0.08); /* Dourado translúcido bem suave */
-    border: 1px solid rgba(212, 175, 55, 0.35); /* Borda refinada */
-    border-radius: 10px;
-    color: #f3e5ab; /* Texto dourado claro */
-    font-size: 0.9rem;
-    font-weight: 500;
-    line-height: 1.4;
-    text-align: center;
-    backdrop-filter: blur(8px); /* Efeito de vidro desfocado */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    
-    /* Layout com Ícone */
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    /* Animação suave ao surgir */
-    animation: aparecerSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@media (max-width: 860px) {
+  nav.menu-principal {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--azul-marinho);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
   }
 
-  @keyframes aparecerSuave {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  nav.menu-principal ul { 
+    flex-direction: column; 
+    gap: 0; 
+    padding: 8px 32px 20px; 
   }
 
-  .divisor-secao {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
-  margin: 0;
+  nav.menu-principal a { 
+    display: block; 
+    padding: 12px 0; 
+  }
+
+  body.menu-aberto nav.menu-principal { 
+    max-height: 400px; 
+  }
+
+  #botao-menu-mobile { 
+    display: block; 
+  }
+
+  .sobre-grid { 
+    grid-template-columns: 1fr; 
+    gap: 34px; 
+  }
 }
 
-#contato.secao-contato {
-  padding: 80px 20px;
-  /* Alterado para #0E1E3F para criar a alternância com a seção anterior */
-  background-color: #0E1E3F !important; 
-  position: relative;
-  overflow: hidden;
-  font-family: 'Work Sans', 'Inter', sans-serif;
-  color: #ffffff;
-  /* Adiciona uma linha sutil no topo da seção */
-  border-top: 1px solid rgba(212, 175, 55, 0.2); 
+@media (max-width: 850px) {
+  .grid-curriculo {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+
+  .grid-cargos {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .caixa-texto-perfil {
+    padding: 24px !important;
+    text-align: left !important;
+  }
 }
-
-/* Estado inicial dos elementos escondidos */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-/* Estado quando o elemento entra na tela */
-.reveal.is-visible,
-.reveal.visivel {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ==========================================================================
-   ESTILOS DA ANIMAÇÃO DE REVELAÇÃO (SCROLL REVEAL)
-   ========================================================================== */
-
-/* 1. Estado Inicial: O elemento começa invisível e 30px abaixo da sua posição */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  
-  /* Transição suave de transparência e movimento */
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-              
-  /* Otimização para a placa de vídeo do navegador rodar a animação sem travar */
-  will-change: opacity, transform;
-}
-
-/* 2. Estado Ativo: Quando o JS adiciona a classe, o elemento fica 100% visível na posição final */
-.reveal.is-visible,
-.reveal.visivel {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ==========================================================================
-   ESTILOS DO CURRÍCULO DEMOLAY (ESTILO SISDM)
-   ========================================================================== */
-.secao-curriculo {
-  margin-top: 50px;
-  width: 100%;
-}
-
-.titulo-curriculo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.titulo-curriculo::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: #d4af37;
-  margin: 10px auto 0;
-}
-
-/* Grid responsivo: organiza os cards lado a lado */
-.grid-curriculo {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 16px;
-  justify-content: center;
-}
-
-/* Card individual da conquista */
-.card-conquista {
-  background: #09152a;
-  border: 1.5px solid rgba(212, 175, 55, 0.25);
-  border-radius: 12px;
-  padding: 18px 10px 14px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Efeito ao passar o mouse (levanta o card e acende a borda em ouro) */
-.card-conquista:hover {
-  transform: translateY(-6px);
-  border-color: #d4af37;
-  box-shadow: 0 8px 22px rgba(212, 175, 55, 0.25);
-}
-
-/* Container da imagem/insígnia */
-.card-conquista .icone-container {
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.card-conquista img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* Textos dentro do card */
-.card-conquista .titulo-item {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-
-.card-conquista .data-item {
-  font-size: 0.75rem;
-  color: #d4af37;
-  font-weight: 500;
-}
-
-/* ==========================================================================
-       DIVISOR DE SEÇÃO (IGUAL AO ESTILO DO INDEX.HTML)
-       ========================================================================== */
-    .divisor-secao {
-      border: none;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
-      margin: 65px 0 50px 0;
-      width: 100%;
-    }
-
-    /* ==========================================================================
-       ESTILOS DA SEÇÃO TRAJETÓRIA DEMOLAY
-       ========================================================================== */
-    .secao-curriculo {
-      width: 100%;
-    }
-
-    /* Cabeçalho idêntico ao "Nossas Propostas" do index */
-    .cabecalho-secao {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .tag-secao {
-      color: #d4af37;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .titulo-secao {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      color: #ffffff;
-      margin: 0 0 8px 0;
-    }
-
-    .descricao-secao {
-      color: #cbd5e1;
-      font-size: 0.95rem;
-      margin: 0;
-    }
-
-    /* GRID PERFEITO: 4 COLUNAS (3 LINHAS DE 4 = 12 CONQUISTAS) */
-    .grid-curriculo {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* Cartão individual */
-    .card-conquista {
-      background: #09152a;
-      border: 1.5px solid rgba(212, 175, 55, 0.25);
-      border-radius: 12px;
-      padding: 22px 12px 18px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 185px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .card-conquista:hover {
-      transform: translateY(-6px);
-      border-color: #d4af37;
-      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.3);
-    }
-
-    .card-conquista .icone-container {
-      width: 70px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
-    }
-
-    .card-conquista img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .card-conquista .titulo-item {
-      font-size: 0.83rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    .card-conquista .data-item {
-      font-size: 0.75rem;
-      color: #d4af37;
-      font-weight: 500;
-    }
-
-    /* RESPONSIVIDADE PARA TABLETS E CELULARES */
-    @media (max-width: 850px) {
-      .grid-curriculo {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
-    }
-
-/* ==========================================================================
-       ESTILOS DA SEÇÃO TRAJETÓRIA DEMOLAY (PADRÃO INDEX.HTML)
-       ========================================================================== */
-    .secao-curriculo {
-      margin-top: 80px;  /* Espaçamento natural que separa do perfil acima */
-      width: 100%;
-    }
-
-    /* Cabeçalho de seção idêntico ao "Nossas Propostas" do index.html */
-    .cabecalho-secao-curriculo {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .tag-secao {
-      color: #d4af37;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .titulo-secao {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      color: #ffffff;
-      margin: 0 0 10px 0;
-    }
-
-    .descricao-secao {
-      color: #a0aec0;
-      font-size: 1rem;
-      margin: 0;
-    }
-
-    /* GRID PERFEITO: 4 COLUNAS (3 LINHAS DE 4 CARDS = 12 ITENS) */
-    .grid-curriculo {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .card-conquista {
-      background: #09152a;
-      border: 1.5px solid rgba(212, 175, 55, 0.25);
-      border-radius: 12px;
-      padding: 22px 12px 18px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 185px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .card-conquista:hover {
-      transform: translateY(-6px);
-      border-color: #d4af37;
-      box-shadow: 0 8px 22px rgba(212, 175, 55, 0.3);
-    }
-
-    .card-conquista .icone-container {
-      width: 70px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
-    }
-
-    .card-conquista img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .card-conquista .titulo-item {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    .card-conquista .data-item {
-      font-size: 0.75rem;
-      color: #d4af37;
-      font-weight: 500;
-    }
-
-    /* RESPONSIVO PARA TABLET E CELULAR */
-    @media (max-width: 850px) {
-      .grid-curriculo {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
-    }
-
-    /* ==========================================================================
-   ORGANIZAÇÃO PADRÃO PARA CELULARES (MOBILE)
-   ========================================================================== */
 
 @media (max-width: 768px) {
-  
-  /* 1. SEÇÃO HERO / CAPA */
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  section {
+    padding: 45px 16px !important;
+  }
+
+  main {
+    padding: 30px 15px !important;
+  }
+
+  .emblema-chapa {
+    max-width: 200px !important;
+    margin-bottom: 10px !important;
+  }
+
   .capa {
     padding: 40px 15px !important;
   }
 
-  .emblema-chapa {
-    max-width: 200px !important; /* Ajusta a imagem para não ocupar a tela inteira */
-  }
-
   .capa h1 {
-    font-size: 1.8rem !important; /* Reduz o título principal para caber confortavelmente */
+    font-size: 1.8rem !important;
     line-height: 1.3 !important;
     margin-bottom: 25px !important;
   }
 
   .botoes-acao {
-    flex-direction: column !important; /* Empilha os botões um sobre o outro */
-    width: 100%;
+    flex-direction: column !important;
     gap: 12px !important;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 
   .botoes-acao .btn {
-    width: 100% !important; /* Botões ocupam a largura completa no celular */
+    width: 100% !important;
     text-align: center;
     box-sizing: border-box;
   }
 
-  /* 2. NAVEGAÇÃO E CABEÇALHO */
   .conteudo-navegacao {
     padding: 12px 15px !important;
-  }
-
-  .marca small {
-    display: none; /* Oculta o subtítulo muito longo no topo para limpar o visual */
   }
 
   .marca {
     font-size: 0.85rem !important;
   }
 
-  /* 3. PÁGINA / SEÇÃO DO PERFIL DO CANDIDATO */
-  main {
-    padding: 30px 15px !important;
+  .marca small {
+    display: none !important;
   }
 
   .container-perfil {
@@ -1341,18 +1332,29 @@ footer.rodape-principal {
   }
 
   .coluna-foto-perfil a {
-    width: 100%; /* Botão do WhatsApp em largura total no celular */
+    width: 100%;
     box-sizing: border-box;
   }
 
-  .caixa-texto-perfil {
-    padding: 20px 16px !important; /* Aproveita melhor as bordas da tela */
-    font-size: 0.93rem !important;
-    line-height: 1.7 !important;
-    text-align: left !important; /* Texto alinhado à esquerda evita espaços gigantes entre palavras no celular */
+  .container-membros {
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* 4. TÍTULOS DAS SEÇÕES */
+  .card-membro {
+    width: 100%;
+  }
+
+  .linha-projeto, 
+  .linha-projeto.invertida {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .bloco-conteudo {
+    padding: 20px !important;
+  }
+
   .titulo-secao {
     font-size: 2rem !important;
   }
@@ -1361,14 +1363,8 @@ footer.rodape-principal {
     font-size: 0.88rem !important;
   }
 
-  /* 5. CARGOS E CONQUISTAS (GRIDS) */
   .grid-cargos {
-    grid-template-columns: 1fr !important; /* 1 card de cargo por linha */
-    gap: 12px !important;
-  }
-
-  .grid-curriculo {
-    grid-template-columns: repeat(2, 1fr) !important; /* 2 medalhas por linha */
+    grid-template-columns: 1fr !important;
     gap: 12px !important;
   }
 
@@ -1387,434 +1383,12 @@ footer.rodape-principal {
   }
 }
 
-/* AJUSTES EXTRA PARA CELULARES MUITO PEQUENOS (Até 400px de largura) */
 @media (max-width: 400px) {
   .capa h1 {
     font-size: 1.5rem !important;
   }
 
   .grid-curriculo {
-    grid-template-columns: 1fr !important; /* 1 medalha por linha em telas muito pequenas */
-  }
-}
-
-/* ==========================================================================
-   INTERAÇÕES E MOVIMENTOS (BOTÕES & EMBLEMAS)
-   ========================================================================== */
-
-/* 1. TRANSIÇÃO UNIVERSAL PARA BOTÕES */
-.btn, 
-.btn-destaque, 
-.btn-suave, 
-.btn-perfil, 
-.botoes-acao a, 
-#botao-menu-mobile {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-              background-color 0.3s ease, 
-              border-color 0.3s ease !important;
-  will-change: transform, box-shadow;
-  cursor: pointer;
-}
-
-/* 2. ESTRUTURA E TRANSIÇÃO DOS EMBLEMAS */
-.bloco-emblema {
-  flex: 0 0 140px;
-  min-height: 110px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.bloco-emblema img {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  display: block;
-  cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease !important;
-  will-change: transform, filter;
-}
-
-/* ==========================================================================
-   COMPORTAMENTO NO COMPUTADOR (HOVER)
-   ========================================================================== */
-@media (hover: hover) {
-  /* Efeito nos botões ao passar o mouse */
-  .btn:hover, 
-  .btn-destaque:hover, 
-  .btn-suave:hover, 
-  .btn-perfil:hover, 
-  .botoes-acao a:hover {
-    transform: translateY(-4px) scale(1.02) !important;
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35) !important;
-  }
-
-  #botao-menu-mobile:hover {
-    transform: scale(1.1) !important;
-  }
-
-  /* Efeito no emblema ao passar o mouse no card ou direto na imagem */
-  .linha-projeto:hover .bloco-emblema img,
-  .bloco-emblema:hover img,
-  .bloco-emblema img:hover {
-    transform: translateY(-6px) scale(1.08) !important;
-    filter: drop-shadow(0 10px 25px rgba(212, 175, 55, 0.7)) !important;
-  }
-}
-
-/* ==========================================================================
-   COMPORTAMENTO NO CELULAR (TOQUE COM O DEDO)
-   ========================================================================== */
-@media (hover: none) {
-  /* Feedback nos botões ao tocar */
-  .btn:active, 
-  .btn-destaque:active, 
-  .btn-suave:active, 
-  .btn-perfil:active, 
-  .botoes-acao a:active,
-  #botao-menu-mobile:active {
-    transform: scale(0.94) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
-  }
-
-  /* Feedback no emblema ao tocar no celular */
-  .bloco-emblema img:active {
-    transform: scale(0.95) !important;
-    filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5)) !important;
-  }
-}
-
-/* FOTO DE PERFIL - BRILHO INTENSO E ELEVAÇÃO */
-    .foto-moldura:hover {
-      transform: scale(1.04);
-      border-color: #ffe066;
-      box-shadow: 0 0 30px rgba(212, 175, 55, 0.75), 0 0 12px rgba(255, 224, 102, 0.6);
-    }
-
-    /* CAIXA DE TEXTO DESCRITIVO */
-    .caixa-texto-perfil:hover {
-      border-color: rgba(212, 175, 55, 0.7);
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
-    }
-
-    /* CARDS DE CARGOS - SENSOR TURBINADO */
-    .card-cargo:hover {
-      transform: translateY(-6px) !important;
-      border-color: #ffe066 !important;
-      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6) !important;
-    }
-
-    /* CARDS DE CONQUISTAS E MEDALHAS - SENSOR TURBINADO */
-    .card-conquista:hover {
-      transform: translateY(-6px) !important;
-      border-color: #ffe066 !important;
-      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6) !important;
-    }
-
-    .card-conquista:hover img {
-      transform: scale(1.12);
-      filter: drop-shadow(0 6px 16px rgba(212, 175, 55, 0.8));
-    }
-
-    /* FAIXA TRICOLOR DECORATIVA DO TOPO */
-.faixa-tricolor {
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #10b981 0%, #10b981 33.33%, #d4af37 33.33%, #d4af37 66.66%, #be123c 66.66%, #be123c 100%);
-  display: block;
-}
-
-/* ESTILOS DE ALINHAMENTO DO PERFIL */
-.container-perfil {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* BLOCO DA FOTO E BOTÃO */
-.coluna-foto-perfil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-}
-
-/* CONTAINER DA FOTO DE PERFIL COM SENSOR DE MOVIMENTO */
-.foto-perfil-container {
-  width: 220px;
-  height: 220px;
-  min-width: 220px;
-  min-height: 220px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  border: 2px solid #d4af37;
-  overflow: hidden;
-  background: #09152a;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.foto-perfil-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  transition: transform 0.3s ease !important;
-}
-
-/* SENSOR NA FOTO DE PERFIL */
-.coluna-foto-perfil:hover .foto-perfil-container,
-.foto-perfil-container:hover {
-  transform: translateY(-6px) scale(1.03) !important;
-  border-color: #ffe066 !important;
-  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45) !important;
-}
-
-.coluna-foto-perfil:hover .foto-perfil-container img {
-  transform: scale(1.06);
-}
-
-/* BOTÃO CONTATO */
-.btn-contato-perfil {
-  display: inline-block;
-  padding: 12px 24px;
-  border: 1.5px solid #d4af37;
-  color: #ffffff;
-  background: transparent;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  text-align: center;
-  cursor: pointer;
-}
-
-.btn-contato-perfil:hover {
-  transform: translateY(-4px) scale(1.03) !important;
-  border-color: #ffe066 !important;
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4) !important;
-  background: rgba(212, 175, 55, 0.1);
-}
-
-/* CAIXA DE TEXTO DESCRITIVO COM SENSOR */
-.caixa-texto-perfil {
-  flex: 1;
-  min-width: 300px;
-  background: #09152a;
-  border: 1.5px solid rgba(212, 175, 55, 0.3);
-  border-radius: 12px;
-  padding: 36px;
-  color: #cbd5e1;
-  font-size: 0.98rem;
-  line-height: 1.8;
-  text-align: justify;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.caixa-texto-perfil:hover {
-  transform: translateY(-6px) !important;
-  border-color: #ffe066 !important;
-  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
-}
-
-.caixa-texto-perfil p {
-  margin-bottom: 18px;
-}
-
-.caixa-texto-perfil p:last-child {
-  margin-bottom: 0;
-}
-
-/* DIVISOR DE SEÇÃO */
-.divisor-secao {
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), transparent);
-  margin: 55px 0 45px 0;
-  width: 100%;
-}
-
-/* SEÇÃO: HISTÓRICO DE CARGOS */
-.secao-cargos {
-  width: 100%;
-}
-
-.grid-cargos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.card-cargo {
-  background: #09152a;
-  border: 1.5px solid rgba(212, 175, 55, 0.25);
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.card-cargo:hover {
-  transform: translateY(-6px) !important;
-  border-color: #ffe066 !important;
-  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
-}
-
-.tag-nivel-cargo {
-  display: inline-block;
-  align-self: flex-start;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #d4af37;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.titulo-cargo {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1.4;
-  margin-bottom: 8px;
-}
-
-.periodo-cargo {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  font-weight: 500;
-}
-
-/* SEÇÃO: TRAJETÓRIA E CONQUISTAS */
-.secao-curriculo {
-  width: 100%;
-}
-
-.cabecalho-secao-curriculo {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.tag-secao {
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.titulo-secao {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin: 0 0 8px 0;
-}
-
-.descricao-secao {
-  color: #cbd5e1;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-.grid-curriculo {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.card-conquista {
-  background: #09152a;
-  border: 1.5px solid rgba(212, 175, 55, 0.25);
-  border-radius: 12px;
-  padding: 22px 12px 18px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 185px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.card-conquista:hover {
-  transform: translateY(-6px) !important;
-  border-color: #ffe066 !important;
-  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35) !important;
-}
-
-.card-conquista .icone-container {
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.card-conquista img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease, filter 0.3s ease !important;
-}
-
-.card-conquista:hover img {
-  transform: scale(1.1) !important;
-  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.6)) !important;
-}
-
-.card-conquista .titulo-item {
-  font-size: 0.83rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-
-.card-conquista .data-item {
-  font-size: 0.75rem;
-  color: #d4af37;
-  font-weight: 500;
-}
-
-/* ADAPTATIVO PARA CELULARES */
-@media (max-width: 850px) {
-  .caixa-texto-perfil {
-    padding: 24px;
-    text-align: left;
-  }
-  .grid-curriculo {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  .grid-cargos {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr !important;
   }
 }

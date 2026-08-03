@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* FAIXA TRICOLOR DECORATIVA DO TOPO */
     .faixa-tricolor {
       width: 100%;
       height: 4px;
@@ -22,7 +21,6 @@
       display: block;
     }
 
-    /* ESTILOS DE ALINHAMENTO DO PERFIL */
     .container-perfil {
       display: flex;
       gap: 40px;
@@ -31,7 +29,6 @@
       justify-content: center;
     }
 
-    /* BLOCO DA FOTO E BOTÃO */
     .coluna-foto-perfil {
       display: flex;
       flex-direction: column;
@@ -40,7 +37,6 @@
       flex-shrink: 0;
     }
 
-    /* CONTAINER DA FOTO DE PERFIL COM SENSOR DE MOVIMENTO */
     .foto-perfil-container {
       width: 220px;
       height: 220px;
@@ -66,7 +62,6 @@
       transition: transform 0.3s ease !important;
     }
 
-    /* SENSOR NA FOTO DE PERFIL */
     .coluna-foto-perfil:hover .foto-perfil-container,
     .foto-perfil-container:hover {
       transform: translateY(-6px) scale(1.03) !important;
@@ -78,7 +73,6 @@
       transform: scale(1.06);
     }
 
-    /* BOTÃO CONTATO */
     .btn-contato-perfil {
       display: inline-block;
       padding: 12px 24px;
@@ -103,7 +97,6 @@
       background: rgba(212, 175, 55, 0.1);
     }
 
-    /* CAIXA DE TEXTO DESCRITIVO COM SENSOR */
     .caixa-texto-perfil {
       flex: 1;
       min-width: 300px;
@@ -133,7 +126,6 @@
       margin-bottom: 0;
     }
 
-    /* DIVISOR DE SEÇÃO */
     .divisor-secao {
       border: none;
       height: 1px;
@@ -142,7 +134,6 @@
       width: 100%;
     }
 
-    /* SEÇÃO: HISTÓRICO DE CARGOS */
     .secao-cargos {
       width: 100%;
     }
@@ -203,7 +194,6 @@
       font-weight: 500;
     }
 
-    /* SEÇÃO: TRAJETÓRIA E CONQUISTAS */
     .secao-curriculo {
       width: 100%;
     }
@@ -301,7 +291,6 @@
       font-weight: 500;
     }
 
-    /* ADAPTATIVO PARA CELULARES */
     @media (max-width: 850px) {
       .caixa-texto-perfil {
         padding: 24px;
@@ -319,7 +308,7 @@
 </head>
 <body>
 
-  <!-- CABECALHO E NAVEGAÇÃO -->
+  <!-- CABEÇALHO -->
   <header class="cabecalho-principal">
     <div class="conteudo-navegacao">
       <a href="index.html" class="marca">
@@ -342,13 +331,11 @@
     </div>
   </header>
 
-  <!-- FAIXA TRICOLOR -->
   <div class="faixa-tricolor"></div>
 
-  <!-- CONTEÚDO PRINCIPAL DO PEDRO HENRIQUE FONTES -->
+  <!-- CONTEÚDO PRINCIPAL -->
   <main style="padding: 60px 20px; max-width: 1100px; margin: 0 auto;">
     
-    <!-- TÍTULO DA PÁGINA -->
     <div style="text-align: center; margin-bottom: 40px;">
       <span style="color: #d4af37; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
         GABINETE ESTADUAL 2026/2027
@@ -361,16 +348,12 @@
       </p>
     </div>
 
-    <!-- ESTRUTURA DO PERFIL -->
+    <!-- SEÇÃO DE PERFIL -->
     <div class="container-perfil">
       
-      <!-- FOTO E BOTÃO DE WHATSAPP -->
       <div class="coluna-foto-perfil">
         <div class="foto-perfil-container">
-          <img 
-            src="assets/images/pedro.jpg" 
-            alt="Pedro Henrique Fontes"
-          >
+          <img src="assets/images/pedro.jpg" alt="Pedro Henrique Fontes">
         </div>
 
         <a href="https://wa.me/558999297467?text=Ol%C3%A1%2C%20Pedro!%20Vim%20pelo%20site%20da%20Chapa%20e%20gostaria%20de%20conversar." 
@@ -381,7 +364,6 @@
         </a>
       </div>
 
-      <!-- TEXTO DESCRITIVO PERSONALIZADO -->
       <div class="caixa-texto-perfil">
         <p>
           Meu nome é <strong style="color: #ffffff;">Pedro Henrique Sobral Fontes</strong>, sou membro ativo do Capítulo Antônio Cardoso de Albuquerque nº 466, de Picos. Iniciei minha caminhada na Ordem DeMolay em 13 de abril de 2024.
@@ -399,10 +381,9 @@
 
     </div>
 
-    <!-- LINHA DE DIVISÃO ELEGANTE -->
     <hr class="divisor-secao">
 
-    <!-- SEÇÃO: HISTÓRICO DE CARGOS OCUPADOS -->
+    <!-- HISTÓRICO DE CARGOS -->
     <section class="secao-cargos">
       <div class="cabecalho-secao-curriculo">
         <span class="tag-secao">SERVIÇO & LIDERANÇA</span>
@@ -411,44 +392,36 @@
       </div>
 
       <div class="grid-cargos">
-        
-        <!-- Cargo 1: Mestre Conselheiro -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Capítulo</span>
           <h3 class="titulo-cargo">Mestre Conselheiro</h3>
           <span class="periodo-cargo">Capítulo Antônio Cardoso de Albuquerque nº 466 (2025.2)</span>
         </div>
 
-        <!-- Cargo 2: Secretário de Análises e Desenvolvimento GE -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Gabinete Estadual</span>
           <h3 class="titulo-cargo">Secretário de Análises e Desenvolvimento</h3>
           <span class="periodo-cargo">Gestão 2025/2026</span>
         </div>
 
-        <!-- Cargo 3: Corretor CRE GE -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Gabinete Estadual</span>
           <h3 class="titulo-cargo">Corretor CRE</h3>
           <span class="periodo-cargo">Gestão 2024/2025</span>
         </div>
 
-        <!-- Cargo 4: Corretor + DeMolay GN -->
         <div class="card-cargo">
           <span class="tag-nivel-cargo">Gabinete Nacional</span>
           <h3 class="titulo-cargo">Corretor + DeMolay</h3>
           <span class="periodo-cargo">Gestão 2024/2025</span>
         </div>
-
       </div>
     </section>
 
-    <!-- LINHA DE DIVISÃO ELEGANTE -->
     <hr class="divisor-secao">
 
-    <!-- SEÇÃO: TRAJETÓRIA E CONQUISTAS -->
+    <!-- TRAJETÓRIA E CONQUISTAS -->
     <section class="secao-curriculo">
-      
       <div class="cabecalho-secao-curriculo">
         <span class="tag-secao">HONRARIAS & CONQUISTAS</span>
         <h2 class="titulo-secao">Trajetória DeMolay</h2>
@@ -456,8 +429,6 @@
       </div>
 
       <div class="grid-curriculo">
-
-        <!-- 1. 1 Ano de Iniciação -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/1_ano_iniciacao.png" alt="1 Ano de Iniciação">
@@ -466,7 +437,6 @@
           <span class="data-item">13/04/2025</span>
         </div>
 
-        <!-- 2. Grau Iniciático -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/iniciatico.png" alt="Grau Iniciático">
@@ -475,7 +445,6 @@
           <span class="data-item">13/04/2024</span>
         </div>
 
-        <!-- 3. Grau DeMolay -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/demolay.png" alt="Grau DeMolay">
@@ -484,7 +453,6 @@
           <span class="data-item">26/10/2024</span>
         </div>
 
-        <!-- 4. Nobre Cavaleiro -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/cavaleiro.png" alt="Nobre Cavaleiro">
@@ -493,7 +461,6 @@
           <span class="data-item">13/11/2024</span>
         </div>
 
-        <!-- 5. Cavaleiro da Capela -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/capela.png" alt="Cavaleiro da Capela">
@@ -502,7 +469,6 @@
           <span class="data-item">05/06/2025</span>
         </div>
 
-        <!-- 6. Barra de Mérito - Curso -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Curso">
@@ -511,7 +477,6 @@
           <span class="data-item">28/10/2024</span>
         </div>
 
-        <!-- 7. Trabalho como Oficial do Capítulo -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/traoficial.png" alt="Trabalho como Oficial do Capítulo">
@@ -520,7 +485,6 @@
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 8. Barra de Mérito - Curso -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Curso">
@@ -529,7 +493,6 @@
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 9. Barra de Mérito - Escolar -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Escolar">
@@ -538,7 +501,6 @@
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 10. Barra de Mérito - Frequência -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Frequência">
@@ -547,7 +509,6 @@
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 11. Barra de Mérito - Frequência Maçônica -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Frequência Maçônica">
@@ -556,7 +517,6 @@
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 12. Barra de Mérito - Mérito -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Mérito">
@@ -565,7 +525,6 @@
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 13. Prêmio Tirando o Chapéu -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/chapeu.png" alt="Prêmio Tirando o Chapéu">
@@ -574,7 +533,6 @@
           <span class="data-item">30/05/2025</span>
         </div>
 
-        <!-- 14. PMC - PSM -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/porservico.png" alt="PMC - PSM">
@@ -583,7 +541,6 @@
           <span class="data-item">20/12/2025</span>
         </div>
 
-        <!-- 15. CNIE Capítulos -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/cnie.png" alt="CNIE Capítulos">
@@ -592,7 +549,6 @@
           <span class="data-item">20/12/2025</span>
         </div>
 
-        <!-- 16. Barra de Mérito - Arrecadação -->
         <div class="card-conquista">
           <div class="icone-container">
             <img src="assets/images/Material Gráfico/barra.png" alt="Barra de Mérito - Arrecadação">
@@ -600,13 +556,12 @@
           <span class="titulo-item">Barra de Mérito - Arrecadação</span>
           <span class="data-item">18/05/2026</span>
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- RODAPÉ PRINCIPAL -->
+  <!-- RODAPÉ -->
   <footer class="rodape-principal" style="text-align: center; padding: 30px 20px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
     <div class="caixa">
       <p style="color: #8a9bb0; font-size: 0.85rem; margin: 0;">
@@ -615,7 +570,6 @@
     </div>
   </footer>
 
-  <!-- SCRIPT JS PRINCIPAL -->
   <script src="js/main.js"></script>
 
 </body>
