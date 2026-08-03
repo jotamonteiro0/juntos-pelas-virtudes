@@ -1399,10 +1399,10 @@ footer.rodape-principal {
 }
 
 /* ==========================================================================
-   MOVIMENTO E INTERAÇÃO PARA TODOS OS BOTÕES
+   INTERAÇÕES E MOVIMENTOS (BOTÕES & EMBLEMAS)
    ========================================================================== */
 
-/* Transição suave universal para qualquer botão */
+/* 1. TRANSIÇÃO UNIVERSAL PARA BOTÕES */
 .btn, 
 .btn-destaque, 
 .btn-suave, 
@@ -1417,8 +1417,30 @@ footer.rodape-principal {
   cursor: pointer;
 }
 
-/* NO COMPUTADOR (Ao passar o mouse) */
+/* 2. ESTRUTURA E TRANSIÇÃO DOS EMBLEMAS */
+.bloco-emblema {
+  flex: 0 0 140px;
+  min-height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloco-emblema img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+  will-change: transform, filter;
+}
+
+/* ==========================================================================
+   COMPORTAMENTO NO COMPUTADOR (HOVER)
+   ========================================================================== */
 @media (hover: hover) {
+  /* Efeito nos botões ao passar o mouse */
   .btn:hover, 
   .btn-destaque:hover, 
   .btn-suave:hover, 
@@ -1431,58 +1453,21 @@ footer.rodape-principal {
   #botao-menu-mobile:hover {
     transform: scale(1.1) !important;
   }
-}
 
-/* NO CELULAR (Ao tocar no botão com o dedo) */
-@media (hover: none) {
-  .btn:active, 
-  .btn-destaque:active, 
-  .btn-suave:active, 
-  .btn-perfil:active, 
-  .botoes-acao a:active,
-  #botao-menu-mobile:active {
-    transform: scale(0.94) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  /* Efeito no emblema ao passar o mouse no card ou direto na imagem */
+  .linha-projeto:hover .bloco-emblema img,
+  .bloco-emblema:hover img,
+  .bloco-emblema img:hover {
+    transform: translateY(-6px) scale(1.08) !important;
+    filter: drop-shadow(0 10px 25px rgba(212, 175, 55, 0.7)) !important;
   }
 }
 
 /* ==========================================================================
-   MOVIMENTO E INTERAÇÃO PARA TODOS OS BOTÕES
+   COMPORTAMENTO NO CELULAR (TOQUE COM O DEDO)
    ========================================================================== */
-
-/* Transição suave universal para qualquer botão */
-.btn, 
-.btn-destaque, 
-.btn-suave, 
-.btn-perfil, 
-.botoes-acao a, 
-#botao-menu-mobile {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-              background-color 0.3s ease, 
-              border-color 0.3s ease !important;
-  will-change: transform, box-shadow;
-  cursor: pointer;
-}
-
-/* NO COMPUTADOR (Ao passar o mouse) */
-@media (hover: hover) {
-  .btn:hover, 
-  .btn-destaque:hover, 
-  .btn-suave:hover, 
-  .btn-perfil:hover, 
-  .botoes-acao a:hover {
-    transform: translateY(-4px) scale(1.02) !important;
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35) !important;
-  }
-
-  #botao-menu-mobile:hover {
-    transform: scale(1.1) !important;
-  }
-}
-
-/* NO CELULAR (Ao tocar no botão com o dedo) */
 @media (hover: none) {
+  /* Feedback nos botões ao tocar */
   .btn:active, 
   .btn-destaque:active, 
   .btn-suave:active, 
@@ -1491,5 +1476,11 @@ footer.rodape-principal {
   #botao-menu-mobile:active {
     transform: scale(0.94) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Feedback no emblema ao tocar no celular */
+  .bloco-emblema img:active {
+    transform: scale(0.95) !important;
+    filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5)) !important;
   }
 }

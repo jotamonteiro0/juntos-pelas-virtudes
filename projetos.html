@@ -81,19 +81,38 @@
       align-items: center;
     }
 
+    /* EMBLEMA COM MOVIMENTO E BRILHO DOURADO */
     .bloco-emblema img {
       width: 110px;
       height: 110px;
       object-fit: contain;
       display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
 
+    /* SENSOR DE MOVIMENTO NO EMBLEMA (HOVER) */
+    .bloco-emblema img:hover {
+      transform: translateY(-6px) scale(1.05);
+      filter: drop-shadow(0 10px 20px rgba(212, 175, 55, 0.6));
+    }
+
+    /* CARD DE CONTEÚDO DOS PROJETOS */
     .bloco-conteudo {
       flex: 1;
       background: #09152a;
       border: 1.5px solid rgba(212, 175, 55, 0.3);
       border-radius: 12px;
       padding: 28px 32px;
+      cursor: pointer;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* SENSOR DE MOVIMENTO NOS CARDS */
+    .bloco-conteudo:hover {
+      transform: translateY(-6px);
+      border-color: #ffe066;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
     }
 
     .titulo-projeto-amarelo {
@@ -356,10 +375,5 @@
   <!-- SCRIPT JS PRINCIPAL -->
   <script src="js/main.js"></script>
 
-</body>
-</html>
-
-<!-- SCRIPT JS PRINCIPAL (Necessário em TODAS as páginas) -->
-  <script src="js/main.js"></script>
 </body>
 </html>
